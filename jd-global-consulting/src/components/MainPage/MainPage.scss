@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: Poppins;
+}
+
+.page {
+  .baner {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    img {
+      width: 148.75px;
+      height: 85px;
+      margin-left: 60px;
+    }
+    .nav-buttons {
+      margin-right: 50px;
+      button {
+        margin-left: 40px;
+        margin-right: 40px;
+        border: none;
+        background-color: white;
+      }
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 80px;
+    margin-bottom: 150px;
+    .mission {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 297px;
+      height: 197px;
+      text-align: left;
+      margin-left: 60px;
+      h4 {
+        color: #070046;
+      }
+      span {
+        margin-bottom: 20px;
+      }
+      button {
+        border: none;
+        color: white;
+        background-color: #0041d8;
+        width: 274px;
+        height: 46px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        text-align: center;
+        border-radius: 6px;
+      }
+    }
+    .company {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 50px;
+      text-align: center;
+      span {
+        width: 604px;
+        font-size: 52px;
+        color: #070046;
+        font-weight: 300;
+        .bold {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .companies {
+    width: 1440px;
+    height: 84px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    span {
+      color: #070046;
+      margin-right: 60px;
+      margin-left: 150px;
+    }
+    .partner {
+      margin-right: 60px;
+    }
+  }
+  .building {
+    width: 1640px;
+  }
+  .whatWeDo {
+    margin-top: 130px;
+    h2 {
+      font-weight: 400;
+      color: #070046;
+    }
+    span {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      .bold {
+        font-weight: 600;
+      }
+    }
+    .images {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      margin-top: 40px;
+      margin-bottom: 170px;
+      .image1 {
+        background: url(./../../../public/building1.png);
+        width: 283px;
+        height: 283px;
+        border-radius: 12px;
+        color: white;
+        position: relative;
+        display: block !important;
+        text-align: left !important;
+        margin-right: 50px;
+
+        p {
+          width: 247px;
+          height: auto;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          margin: 0;
+          text-align: left;
+          display: block !important;
+        }
+      }
+      .image2 {
+        background: url(./../../../public/tech.png);
+        width: 283px;
+        height: 283px;
+        border-radius: 12px;
+        color: white;
+        position: relative;
+        display: block !important;
+        text-align: left !important;
+        margin-right: 50px;
+
+        p {
+          width: 247px;
+          height: auto;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          margin: 0;
+          text-align: left;
+          display: block !important;
+        }
+      }
+      .image3 {
+        background: url(./../../../public/team.png);
+        width: 283px;
+        height: 283px;
+        border-radius: 12px;
+        color: white;
+        position: relative;
+        display: block !important;
+        text-align: left !important;
+
+        p {
+          width: 247px;
+          height: auto;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          margin: 0;
+          text-align: left;
+          display: block !important;
+        }
+      }
+      .image4 {
+        background: url(./../../../public/building2.png);
+        width: 283px;
+        height: 283px;
+        border-radius: 12px;
+        color: white;
+        position: relative;
+        display: block !important;
+        text-align: left !important;
+        margin-left: 50px;
+
+        p {
+          width: 247px;
+          height: auto;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          margin: 0;
+          text-align: left;
+          display: block !important;
+        }
+      }
+    }
+  }
+}

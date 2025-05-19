@@ -5,14 +5,16 @@ const MainPage = () => {
   return (
     <div className="page">
       <header className="baner">
-        <img src="" alt="logo" />
-        <button className="aboutUs">O nas</button>
-        <button className="specialists">Specjaliści</button>
-        <button className="services">Nasze usługi</button>
-        <button className="partners">Partnerzy</button>
-        <button className="recomendations">Rekomendacje</button>
-        <button className="news">Aktualności</button>
-        <button className="contact">Kontakt</button>
+        <img src="/logo JD global.png" alt="logo" />
+        <div className="nav-buttons">
+          <button className="aboutUs">O nas</button>
+          <button className="specialists">Specjaliści</button>
+          <button className="services">Nasze usługi</button>
+          <button className="partners">Partnerzy</button>
+          <button className="recomendations">Rekomendacje</button>
+          <button className="news">Aktualności</button>
+          <button className="contact">Kontakt</button>
+        </div>
       </header>
       <body>
         <section className="info">
@@ -26,42 +28,57 @@ const MainPage = () => {
             <button className="learnMore">Dowiedz się więcej</button>
           </div>
           <div className="company">
-            <h1>JD Global Consulting -</h1>
-            <h1>Twój partner rozwoju i transformacji biznesu</h1>
+            <span>
+              <span className="bold">JD Global Consulting -</span> Twój partner
+              rozwoju i transformacji biznesu
+            </span>
           </div>
         </section>
         <div className="companies">
-          <h3>Zaufali nam:</h3>
-          <div className="company">//img + p</div>
-          <div className="company">//img + p</div>
-          <div className="company">//img + p</div>
-          <div className="company">//img + p</div>
+          <span>Zaufali nam:</span>
+          <div className="partner">
+            <img src="Microsoft Black 4.png" alt="microsoft" />
+          </div>
+          <div className="partner">
+            <img src="logo 1.png" alt="" />
+          </div>
+          <div className="partner">
+            <img src="Microsoft Black 4.png" alt="" />
+          </div>
+          <div className="partner">
+            <img src="logo 1.png" alt="" />
+          </div>
+          <div className="partner">
+            <img src="Microsoft Black 4.png" alt="" />
+          </div>
+          <div className="partner">
+            <img src="logo 1.png" alt="" />
+          </div>
         </div>
-        //zdj budynku
+        <img className="building" src="Rectangle 1.png" alt="" />
         <section className="whatWeDo">
           <h2>Zmieniamy wyzwania w możliwości</h2>
           <span>
             W świecie dynamicznych zmian pomagamy firmom osiągać stabilny
             wzrost, wdrażać innowacyjne strategie i zdobywać przewagę
-            konkurencyjną. Wspieramy zarówno małe i średnie przedsiębiorstwa,
-            jak i duże korporacje -niezależnie od branży.
+            konkurencyjną.
+            <span className="bold">
+              Wspieramy zarówno małe i średnie przedsiębiorstwa, jak i duże
+              korporacje -niezależnie od branży.
+            </span>
           </span>
           <div className="images">
-            <div className="image">
+            <div className="image1">
               <p>Łączymy doradztwo strategiczne z operacyjnym wsparciem</p>
-              //bg budynek
             </div>
-            <div className="image">
+            <div className="image2">
               <p>Wdrażamy innowacyjne technologie</p>
-              //bg tech
             </div>
-            <div className="image">
+            <div className="image3">
               <p>Stawiamy na długoterminowe relacje</p>
-              //bg team
             </div>
-            <div className="image">
+            <div className="image4">
               <p>Rozumiemy wyzwania MŚP i dużych korporacji</p>
-              //bg budynki
             </div>
           </div>
         </section>
@@ -195,7 +212,7 @@ const MainPage = () => {
         </section>
         <section className="contactForm">
           <h1>
-            <strong>Porozmawiajmy</strong>o przyszłości Twojego biznesu
+            <strong>Porozmawiajmy</strong> o przyszłości Twojego biznesu
           </h1>
           <p>
             Chcesz dowiedzieć się, jak możemy Ci pomóc? Skontaktuj się z nami.
@@ -244,7 +261,7 @@ const MainPage = () => {
               />
               <br />
               <input type="checkbox" name="agreement" id="agreement" />
-              Akceptuję politykę prywatności i chce otrzymywać newsletter, czyli
+              Akceptuję politykę prywatności i chce otrzymywać newsletter, czyli
               informacje handlowe o promocjach.
               <button type="submit" name="send" id="send">
                 Wyślij wiadomość
