@@ -1,40 +1,94 @@
 import React from "react";
 import "./MainPage.scss";
+import useIsMobile from "../../hooks/useIsMobile";
+
+const scrollToSection = (id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const MainPage = () => {
+  const isMobile = useIsMobile();
   return (
-    <div className="page">
+    <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <header className="baner">
+      <header className={`baner${isMobile ? " mobile" : ""}`}>
         <img src="/logo JD global.png" alt="logo" />
-        <div className="nav-buttons">
-          <button className="aboutUs">O nas</button>
-          <button className="specialists">Specjaliści</button>
-          <button className="services">Nasze usługi</button>
-          <button className="partners">Partnerzy</button>
-          <button className="recomendations">Rekomendacje</button>
-          <button className="news">Aktualności</button>
-          <button className="contact">Kontakt</button>
+        <div className={`nav-buttons${isMobile ? " mobile" : ""}`}>
+          <button
+            className="aboutUs"
+            onClick={() => scrollToSection("whatWeDo")}
+          >
+            O nas
+          </button>
+          <button
+            className="specialists"
+            onClick={() => scrollToSection("team-header")}
+          >
+            Specjaliści
+          </button>
+          <button className="services" onClick={() => scrollToSection("offer")}>
+            Oferta
+          </button>
+          <button
+            className="partners"
+            onClick={() => scrollToSection("companies")}
+          >
+            Partnerzy
+          </button>
+          <button className="news" onClick={() => scrollToSection("newsFeed")}>
+            Aktualności
+          </button>
+          <button
+            className="contact"
+            onClick={() => scrollToSection("contactForm")}
+          >
+            Kontakt
+          </button>
         </div>
       </header>
-      <section className="info">
-        <div className="mission">
-          <h4>Nasza misja</h4>
-          <span>
-            W świecie dynamicznych zmian pomagamy firmom osiągać stabilny
-            wzrost, wdrażać innowacyjne strategie i zdobywać przewagę
-            konkurencyjną.
-          </span>
-          <button className="learnMore">Dowiedz się więcej</button>
-        </div>
-        <div className="company">
-          <span>
-            <span className="bold">JD Global Consulting -</span> Twój partner
-            rozwoju i transformacji biznesu
-          </span>
-        </div>
+      <section className={`info${isMobile ? " mobile" : ""}`}>
+        {isMobile ? (
+          <>
+            <div className="company">
+              <span>
+                <span className="bold">JD Global Consulting -</span> Twój
+                partner rozwoju i transformacji biznesu
+              </span>
+            </div>
+            <div className="mission">
+              <h4>Nasza misja</h4>
+              <span>
+                W świecie dynamicznych zmian pomagamy firmom osiągać stabilny
+                wzrost, wdrażać innowacyjne strategie i zdobywać przewagę
+                konkurencyjną.
+              </span>
+              <button className="learnMore">Dowiedz się więcej</button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="mission">
+              <h4>Nasza misja</h4>
+              <span>
+                W świecie dynamicznych zmian pomagamy firmom osiągać stabilny
+                wzrost, wdrażać innowacyjne strategie i zdobywać przewagę
+                konkurencyjną.
+              </span>
+              <button className="learnMore">Dowiedz się więcej</button>
+            </div>
+            <div className="company">
+              <span>
+                <span className="bold">JD Global Consulting -</span> Twój
+                partner rozwoju i transformacji biznesu
+              </span>
+            </div>
+          </>
+        )}
       </section>
-      <div className="companies">
+      <div className={`companies${isMobile ? " mobile" : ""}`} id="companies">
         <span>Zaufali nam:</span>
         <div className="companies__slider">
           <div className="companies__track">
@@ -70,7 +124,7 @@ const MainPage = () => {
         </div>
       </div>
       <img className="building" src="Rectangle 1.png" alt="" />
-      <section className="whatWeDo">
+      <section className={`whatWeDo${isMobile ? " mobile" : ""}`} id="whatWeDo">
         <h2>Zmieniamy wyzwania w możliwości</h2>
         <span>
           W świecie dynamicznych zmian pomagamy firmom osiągać stabilny wzrost,
@@ -95,7 +149,7 @@ const MainPage = () => {
           </div>
         </div>
       </section>
-      <section className="offer">
+      <section className={`offer${isMobile ? " mobile" : ""}`} id="offer">
         <h2>Zakres usług</h2>
         <p>Ekspercka pomoc w kluczowych obszarach biznesu</p>
         <div className="services-list">
@@ -184,7 +238,7 @@ const MainPage = () => {
         </div>
         <button>Zobacz więcej usług</button>
       </section>
-      <section className="team">
+      <section className={`team${isMobile ? " mobile" : ""}`} id="team-header">
         <h3>Nasi Specjaliści</h3>
         <hr />
         <div className="team-header">
@@ -247,7 +301,10 @@ const MainPage = () => {
           </div>
         </div>
       </section>
-      <section className="contactForm">
+      <section
+        className={`contactForm${isMobile ? " mobile" : ""}`}
+        id="contactForm"
+      >
         <div className="contactForm__left">
           <h1>
             <strong>Porozmawiajmy</strong> o przyszłości
@@ -341,7 +398,7 @@ const MainPage = () => {
           </form>
         </div>
       </section>
-      <section className="newsfeed">
+      <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
         <h1>Aktualności</h1>
         <hr />
         <div className="articles">
@@ -407,7 +464,7 @@ const MainPage = () => {
         </div>
         <button className="main-news-btn">Zobacz wszystkie artykuły</button>
       </section>
-      <section className="newsletter">
+      <section className={`newsletter${isMobile ? " mobile" : ""}`}>
         <div className="newsletter-left">
           <h2>Bądź na bieżąco z rynkiem i innowacjami.</h2>
           <p>Zapisz się na nasz newsletter i otrzymuj:</p>
@@ -486,7 +543,7 @@ const MainPage = () => {
           </form>
         </div>
       </section>
-      <footer className="footer">
+      <footer className={`footer${isMobile ? " mobile" : ""}`}>
         <div className="footer-top">
           <div className="footer-left">
             <h2>Bądź na bieżąco z rynkiem i innowacjami.</h2>
@@ -519,11 +576,36 @@ const MainPage = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs">O nas</button>
-            <button className="news">Aktualności</button>
-            <button className="specialists">Specjaliści</button>
-            <button className="services">Oferta</button>
-            <button className="contact">Kontakt</button>
+            <button
+              className="aboutUs"
+              onClick={() => scrollToSection("whatWeDo")}
+            >
+              O nas
+            </button>
+            <button
+              className="news"
+              onClick={() => scrollToSection("newsFeed")}
+            >
+              Aktualności
+            </button>
+            <button
+              className="specialists"
+              onClick={() => scrollToSection("team-header")}
+            >
+              Specjaliści
+            </button>
+            <button
+              className="services"
+              onClick={() => scrollToSection("offer")}
+            >
+              Oferta
+            </button>
+            <button
+              className="contact"
+              onClick={() => scrollToSection("contactForm")}
+            >
+              Kontakt
+            </button>
           </nav>
         </div>
       </footer>
