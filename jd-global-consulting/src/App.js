@@ -5,8 +5,7 @@ import MainPage from "./components/MainPage/MainPage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Contact from "./components/Contact/Contact";
 import Offer from "./components/Offer/Offer";
-import Specialists from "./components/Specialists/Specialists";
-
+import News from "./components/News/News";
 function App() {
   return (
     <Router>
@@ -16,7 +15,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/offer" element={<Offer />} />
-          <Route path="/specialists" element={<Specialists />} />
+          <Route path="/news" element={<News />} />
         </Routes>
       </div>
     </Router>

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MainPage.scss";
 import useIsMobile from "../../hooks/useIsMobile";
+import { useNavigate } from "react-router-dom";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -11,39 +12,70 @@ const scrollToSection = (id) => {
 
 const MainPage = () => {
   const isMobile = useIsMobile();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSectionClick = (id) => {
+    scrollToSection(id);
+    if (isMobile) {
+      setIsMenuOpen(false); // Close menu on mobile after clicking a link
+    }
+  };
+
   return (
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
         <img src="/logo JD global.png" alt="logo" />
-        <div className={`nav-buttons${isMobile ? " mobile" : ""}`}>
+        {isMobile && (
+          <button className="hamburger-icon" onClick={toggleMenu}>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </button>
+        )}
+        <div
+          className={`nav-buttons${isMobile ? " mobile" : ""}${
+            isMenuOpen ? " open" : ""
+          }`}
+        >
           <button
             className="aboutUs"
-            onClick={() => scrollToSection("whatWeDo")}
+            onClick={() => handleSectionClick("whatWeDo")}
           >
             O nas
           </button>
           <button
             className="specialists"
-            onClick={() => scrollToSection("team-header")}
+            onClick={() => handleSectionClick("team-header")}
           >
             Specjaliści
           </button>
-          <button className="services" onClick={() => scrollToSection("offer")}>
+          <button
+            className="services"
+            onClick={() => handleSectionClick("offer")}
+          >
             Oferta
           </button>
           <button
             className="partners"
-            onClick={() => scrollToSection("companies")}
+            onClick={() => handleSectionClick("companies")}
           >
             Partnerzy
           </button>
-          <button className="news" onClick={() => scrollToSection("newsFeed")}>
+          <button
+            className="news"
+            onClick={() => handleSectionClick("newsFeed")}
+          >
             Aktualności
           </button>
           <button
             className="contact"
-            onClick={() => scrollToSection("contactForm")}
+            onClick={() => handleSectionClick("contactForm")}
           >
             Kontakt
           </button>
@@ -65,7 +97,9 @@ const MainPage = () => {
                 wzrost, wdrażać innowacyjne strategie i zdobywać przewagę
                 konkurencyjną.
               </span>
-              <button className="learnMore">Dowiedz się więcej</button>
+              <button className="learnMore" onClick={() => navigate("/about")}>
+                Dowiedz się więcej
+              </button>
             </div>
           </>
         ) : (
@@ -77,7 +111,9 @@ const MainPage = () => {
                 wzrost, wdrażać innowacyjne strategie i zdobywać przewagę
                 konkurencyjną.
               </span>
-              <button className="learnMore">Dowiedz się więcej</button>
+              <button className="learnMore" onClick={() => navigate("/about")}>
+                Dowiedz się więcej
+              </button>
             </div>
             <div className="company">
               <span>
@@ -162,7 +198,7 @@ const MainPage = () => {
               profesjonalne zarządzanie ryzykiem.
             </span>
             <p>Z nami audyt to nie kontrola – to strategia na przyszłość.</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>Cyberbezpieczeństwo, na które możesz liczyć.</p>
@@ -177,7 +213,7 @@ const MainPage = () => {
               Z nami cyberbezpieczeństwo to nie tylko technologia – to strategia
               obrony Twojej firmy.
             </p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>
@@ -195,7 +231,7 @@ const MainPage = () => {
               Z nami zyskujesz pewność, że Twoja firma jest zawsze w zgodzie z
               prawem i optymalizuje obciążenia podatkowe.
             </p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>Doradztwo technologiczne, które napędza innowacje.</p>
@@ -207,7 +243,7 @@ const MainPage = () => {
               strategiczną z praktycznym podejściem do transformacji cyfrowej.
             </span>
             <p>Z nami technologia staje się Twoją przewagą – nie przeszkodą.</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>Doradztwo marketingowe, które realnie napędza sprzedaż.</p>
@@ -222,7 +258,7 @@ const MainPage = () => {
               Z nami Twój marketing wreszcie zaczyna działać. Skutecznie.
               Strategicznie. Sprzedażowo.
             </p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>Doradztwo finansowe i fundusze unijne w jednym miejscu.</p>
@@ -233,10 +269,10 @@ const MainPage = () => {
               planowaniu, zabezpieczaniu i realizacji Twoich celów biznesowych.
             </span>
             <p>Z nami pieniądze nie są przeszkodą – są narzędziem rozwoju.</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
           </div>
         </div>
-        <button>Zobacz więcej usług</button>
+        <button onClick={() => navigate("/offer")}>Zobacz więcej usług</button>
       </section>
       <section className={`team${isMobile ? " mobile" : ""}`} id="team-header">
         <h3>Nasi Specjaliści</h3>
@@ -462,7 +498,9 @@ const MainPage = () => {
             </div>
           </div>
         </div>
-        <button className="main-news-btn">Zobacz wszystkie artykuły</button>
+        <button className="main-news-btn" onClick={() => navigate("/news")}>
+          Zobacz wszystkie artykuły
+        </button>
       </section>
       <section className={`newsletter${isMobile ? " mobile" : ""}`}>
         <div className="newsletter-left">
@@ -578,31 +616,31 @@ const MainPage = () => {
           <nav className="footer-nav">
             <button
               className="aboutUs"
-              onClick={() => scrollToSection("whatWeDo")}
+              onClick={() => handleSectionClick("whatWeDo")}
             >
               O nas
             </button>
             <button
               className="news"
-              onClick={() => scrollToSection("newsFeed")}
+              onClick={() => handleSectionClick("newsFeed")}
             >
               Aktualności
             </button>
             <button
               className="specialists"
-              onClick={() => scrollToSection("team-header")}
+              onClick={() => handleSectionClick("team-header")}
             >
               Specjaliści
             </button>
             <button
               className="services"
-              onClick={() => scrollToSection("offer")}
+              onClick={() => handleSectionClick("offer")}
             >
               Oferta
             </button>
             <button
               className="contact"
-              onClick={() => scrollToSection("contactForm")}
+              onClick={() => handleSectionClick("contactForm")}
             >
               Kontakt
             </button>

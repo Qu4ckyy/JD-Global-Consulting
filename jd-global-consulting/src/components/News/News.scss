@@ -4,7 +4,7 @@
   font-family: Poppins;
 }
 
-.contactPage {
+.newsPage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@
   }
 }
 @media (max-width: 600px) {
-  .contactPage {
+  .newsPage {
     padding: 24px 8px;
     img {
       width: 90vw;

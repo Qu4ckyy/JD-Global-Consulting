@@ -1,8 +1,8 @@
-import "./Offer.scss";
+import "./News.scss";
 
-const Offer = () => {
+const News = () => {
   return (
-    <div className="offerPage">
+    <div className="newsPage">
       <img src="/logo JD global.png" alt="logo" />
       <h1>Czekamy tu na ciebie</h1>
       <h1>Dołącz do nas wkótce</h1>
@@ -10,4 +10,4 @@ const Offer = () => {
   );
 };
 
-export default Offer;
+export default News;
