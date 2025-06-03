@@ -52,7 +52,7 @@ html {
         padding: 8px 18px;
         border-radius: 8px;
         min-width: 80px;
-        height: 50px;
+        height: 40px;
         font-weight: 500;
         transition: background 0.2s, color 0.2s;
         cursor: pointer;
@@ -168,7 +168,7 @@ html {
         color: white;
         background-color: #0041d8;
         width: 220px;
-        height: 40px;
+        height: 50px;
         padding-left: 25px;
         padding-right: 25px;
         padding-top: 16px;
@@ -307,9 +307,8 @@ html {
       flex-shrink: 0;
 
       img {
-        height: 32px;
-        max-width: 60px;
-        margin: 0 8px;
+        height: 48px;
+        width: 100%;
         object-fit: contain;
         filter: grayscale(0.2);
         display: block;
