@@ -52,7 +52,7 @@ html {
         padding: 8px 18px;
         border-radius: 8px;
         min-width: 80px;
-        height: 40px;
+        height: 50px;
         font-weight: 500;
         transition: background 0.2s, color 0.2s;
         cursor: pointer;
@@ -307,8 +307,9 @@ html {
       flex-shrink: 0;
 
       img {
-        height: 48px;
-        width: 100%;
+        height: 32px;
+        max-width: 60px;
+        margin: 0 8px;
         object-fit: contain;
         filter: grayscale(0.2);
         display: block;
@@ -1147,16 +1148,17 @@ html {
 }
 
 .newsfeed {
-  max-width: 1400px;
-  margin: 140px auto 0 auto;
-  padding: 0 40px 80px 40px;
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+  padding: 0 20px 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   text-align: left;
+  transform: scale(1);
 
   h1 {
-    font-size: 44px;
+    font-size: 32px;
     font-weight: 400;
     color: #070046;
     margin-bottom: 0;
@@ -1168,81 +1170,81 @@ html {
     border: none;
     border-top: 2px solid #e5e5f0;
     width: 100%;
-    margin: 28px 0 44px 0;
+    margin: 18px 0 24px 0;
   }
 
   .articles {
     display: flex;
-    gap: 48px;
+    gap: 24px;
     justify-content: center;
-    margin-bottom: 44px;
+    margin-bottom: 24px;
     flex-wrap: wrap;
   }
 
   .article {
     background: #fff;
-    border-radius: 24px;
-    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.1);
-    padding: 0 0 36px 0;
-    max-width: 420px;
-    min-width: 340px;
-    flex: 1 1 340px;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 0 0 18px 0;
+    max-width: 340px;
+    min-width: 240px;
+    flex: 1 1 240px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     overflow: hidden;
     transition: box-shadow 0.2s;
     &:hover {
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     }
     img[alt="articleImg"] {
       width: 100%;
-      height: 200px;
+      height: 120px;
       object-fit: cover;
-      border-radius: 24px 24px 0 0;
+      border-radius: 18px 18px 0 0;
       margin-bottom: 0;
     }
     .readingTime {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 28px 0 0 28px;
-      font-size: 17px;
+      gap: 6px;
+      margin: 12px 0 0 12px;
+      font-size: 13px;
       color: #888;
       img {
-        width: 20px;
-        height: 20px;
+        width: 14px;
+        height: 14px;
         object-fit: contain;
       }
       p {
         margin: 0;
-        font-size: 17px;
+        font-size: 13px;
         color: #888;
       }
     }
     h3 {
-      font-size: 28px;
+      font-size: 18px;
       font-weight: 700;
       color: #1a237e;
-      margin: 28px 28px 16px 28px;
+      margin: 12px 12px 8px 12px;
       line-height: 1.3;
     }
     span {
       color: #444;
-      font-size: 19px;
-      margin: 0 28px 28px 28px;
+      font-size: 13px;
+      margin: 0 12px 12px 12px;
       display: block;
-      line-height: 1.7;
+      line-height: 1.5;
     }
     .author {
-      margin: 0 28px;
+      margin: 0 12px;
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       img {
-        width: 36px;
-        height: 36px;
+        width: 22px;
+        height: 22px;
         border-radius: 50%;
         object-fit: cover;
         border: 2px solid #e5e5f0;
@@ -1252,13 +1254,13 @@ html {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 2px;
+        gap: 1px;
       }
       p {
         margin: 0;
-        font-size: 16px;
+        font-size: 12px;
         color: #888;
-        line-height: 1.5;
+        line-height: 1.2;
         &:first-of-type {
           color: #222;
           font-weight: 600;
@@ -1268,15 +1270,15 @@ html {
   }
 
   .main-news-btn {
-    margin: 44px auto 0 auto;
+    margin: 24px auto 0 auto;
     background: #0056f3;
     color: #fff;
     border: none;
     border-radius: 10px;
-    padding: 22px 0;
-    font-size: 22px;
+    padding: 14px 0;
+    font-size: 16px;
     font-weight: 700;
-    width: 400px;
+    width: 300px;
     cursor: pointer;
     text-align: center;
     transition: background 0.2s;
@@ -1392,12 +1394,12 @@ html {
 .newsletter {
   background: #eef1fd;
   border-radius: 28px;
-  max-width: 1300px;
-  margin: 60px auto 0 auto;
-  padding: 64px 60px;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 32px 20px;
   display: flex;
   flex-direction: row;
-  gap: 64px;
+  gap: 32px;
   align-items: center;
   box-sizing: border-box;
 
@@ -1408,42 +1410,42 @@ html {
     justify-content: flex-start;
     text-align: left;
     h2 {
-      font-size: 44px;
+      font-size: 26px;
       font-weight: 700;
       color: #070046;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       line-height: 1.15;
       text-align: left;
-      padding: 0 20px;
+      padding: 0 10px;
     }
     p {
       color: #222;
-      font-size: 20px;
-      margin-bottom: 24px;
+      font-size: 15px;
+      margin-bottom: 16px;
       font-weight: 400;
       text-align: left;
-      padding: 0 20px;
+      padding: 0 10px;
     }
     .benefits {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 8px;
       .benefit {
         display: flex;
         align-items: center;
-        gap: 12px;
-        font-size: 18px;
+        gap: 8px;
+        font-size: 14px;
         color: #222;
         font-weight: 500;
         img {
-          width: 28px;
-          height: 28px;
+          width: 18px;
+          height: 18px;
         }
         p {
           margin: 0;
-          font-size: 18px;
+          font-size: 14px;
           font-weight: 500;
-          padding: 0 20px;
+          padding: 0 10px;
         }
       }
     }
@@ -1457,24 +1459,24 @@ html {
     form {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 10px;
       input[type="text"],
       input[type="email"] {
         background: #fff;
         border: none;
         border-radius: 8px;
-        padding: 16px 20px;
-        font-size: 18px;
+        padding: 10px 14px;
+        font-size: 14px;
         color: #222;
         margin-bottom: 0;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
       }
       input[type="checkbox"] {
-        margin-right: 8px;
+        margin-right: 6px;
       }
       label,
       .checkbox-row label {
-        font-size: 14px;
+        font-size: 12px;
         color: #222;
         font-weight: 400;
         margin-bottom: 0;
@@ -1482,19 +1484,19 @@ html {
       .checkbox-row {
         display: flex;
         align-items: flex-start;
-        gap: 8px;
-        font-size: 14px;
+        gap: 6px;
+        font-size: 12px;
         color: #222;
         margin-bottom: 0;
       }
       button[type="submit"] {
-        margin-top: 8px;
+        margin-top: 6px;
         background: #0056f3;
         color: #fff;
         border: none;
         border-radius: 8px;
-        padding: 18px 0;
-        font-size: 18px;
+        padding: 10px 0;
+        font-size: 14px;
         font-weight: 600;
         cursor: pointer;
         width: 100%;
@@ -1647,16 +1649,16 @@ hr {
 .footer-left {
   flex: 1.2;
   h2 {
-    font-size: 40px;
+    font-size: 28px;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     line-height: 1.15;
     text-align: left;
   }
   p {
     color: #fff;
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 0;
     font-weight: 400;
     text-align: left;
@@ -1668,13 +1670,13 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  min-width: 340px;
-  max-width: 480px;
+  min-width: 240px;
+  max-width: 340px;
   label {
     color: #fff;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 500;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     align-self: flex-start;
   }
   input[type="email"] {
@@ -1683,17 +1685,17 @@ hr {
     color: #070046;
     border: none;
     border-radius: 8px;
-    padding: 16px 20px;
-    font-size: 18px;
-    margin-bottom: 16px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 10px;
     margin-top: 0;
     box-sizing: border-box;
   }
   .checkbox-row {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
-    font-size: 15px;
+    gap: 6px;
+    font-size: 12px;
     color: #fff;
     margin-bottom: 0;
     input[type="checkbox"] {
@@ -1701,7 +1703,7 @@ hr {
     }
     label {
       color: #fff;
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 400;
       margin: 0;
       text-align: left;
@@ -1741,7 +1743,7 @@ hr {
   }
   span {
     color: #fff;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
   }
 }
@@ -1753,7 +1755,7 @@ hr {
     background: none;
     border: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     padding: 0 12px;
