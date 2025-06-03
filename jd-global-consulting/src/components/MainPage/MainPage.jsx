@@ -22,7 +22,7 @@ const MainPage = () => {
   const handleSectionClick = (id) => {
     scrollToSection(id);
     if (isMobile) {
-      setIsMenuOpen(false); // Close menu on mobile after clicking a link
+      setIsMenuOpen(false);
     }
   };
 
@@ -59,13 +59,19 @@ const MainPage = () => {
             className="services"
             onClick={() => handleSectionClick("offer")}
           >
-            Oferta
+            Nasze usługi
           </button>
           <button
             className="partners"
             onClick={() => handleSectionClick("companies")}
           >
             Partnerzy
+          </button>
+          <button
+            className="recomendations"
+            onClick={() => handleSectionClick("")}
+          >
+            Rekomendacje
           </button>
           <button
             className="news"
@@ -94,8 +100,9 @@ const MainPage = () => {
               <h4>Nasza misja</h4>
               <span>
                 W świecie dynamicznych zmian pomagamy firmom osiągać stabilny
-                wzrost, wdrażać innowacyjne strategie i zdobywać przewagę
-                konkurencyjną.
+                wzrost,
+                <br />
+                wdrażać innowacyjne strategie i zdobywać przewagę konkurencyjną.
               </span>
               <button className="learnMore" onClick={() => navigate("/about")}>
                 Dowiedz się więcej
@@ -108,8 +115,9 @@ const MainPage = () => {
               <h4>Nasza misja</h4>
               <span>
                 W świecie dynamicznych zmian pomagamy firmom osiągać stabilny
-                wzrost, wdrażać innowacyjne strategie i zdobywać przewagę
-                konkurencyjną.
+                wzrost,
+                <br />
+                wdrażać innowacyjne strategie i zdobywać przewagę konkurencyjną.
               </span>
               <button className="learnMore" onClick={() => navigate("/about")}>
                 Dowiedz się więcej
@@ -190,14 +198,22 @@ const MainPage = () => {
         <p>Ekspercka pomoc w kluczowych obszarach biznesu</p>
         <div className="services-list">
           <div className="service">
-            <p>Twój biznes pod kontrolą. Ryzyko – pod naszą.</p>
+            <p>
+              Twój biznes pod kontrolą.
+              <br />
+              Ryzyko - pod naszą.
+            </p>
             <span>
               W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad
               ryzykiem to zbyt duże ryzyko. Dlatego wspieramy firmy w budowaniu
               stabilnych, bezpiecznych fundamentów – poprzez skuteczny audyt i
               profesjonalne zarządzanie ryzykiem.
             </span>
-            <p>Z nami audyt to nie kontrola – to strategia na przyszłość.</p>
+            <p>
+              Z nami audyt to nie kontrola-
+              <br />
+              to strategia na przyszłość.
+            </p>
             <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
           </div>
           <div className="service">
@@ -246,7 +262,11 @@ const MainPage = () => {
             <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
           </div>
           <div className="service">
-            <p>Doradztwo marketingowe, które realnie napędza sprzedaż.</p>
+            <p>
+              Doradztwo marketingowe,
+              <br />
+              które realnie napędza sprzedaż.
+            </p>
             <span>
               Silna marka, skuteczna komunikacja i dobrze zaplanowane działania
               marketingowe to dziś podstawa biznesowego sukcesu. Nasze doradztwo
@@ -288,52 +308,52 @@ const MainPage = () => {
         </div>
         <div className="employees">
           <div className="employee">
-            <img src="krzysztof1.png" alt="person" />
-            <p>Krzysztof Iksiński</p>
-            <p>Founder & CEO</p>
+            <p>Specjalista ds. Strategii i Zarządzania</p>
+            <button>Zobacz więcej</button>
           </div>
           <div className="employee">
-            <img src="krzysztof2.png" alt="person" />
-            <p>Krzysztof Iksiński</p>
-            <p>Founder & CEO</p>
+            <p>Specjalista ds. Technologii i Cyfrowej Transformacji</p>
+            <button>Zobacz więcej</button>
           </div>
           <div className="employee">
-            <img src="krzysztof3.png" alt="person" />
-            <p>Krzysztof Iksiński</p>
-            <p>Chief of staff</p>
+            <p>Specjalista ds. Finansów</p>
+            <button>Zobacz więcej</button>
           </div>
           <div className="employee">
-            <img src="elżbieta1.png" alt="person" />
-            <div className="author-info">
-              <p>Elżbieta Wolska</p>
-              <p>System developer</p>
-            </div>
+            <p>Specjalista ds. Podatków</p>
+            <button>Zobacz więcej</button>
           </div>
           <div className="employee">
-            <img src="krzysztof4.png" alt="person" />
-            <p>Krzysztof Iksiński</p>
-            <p>Founder & CEO</p>
+            <p>Specjalista ds. Fuzji i Przejęć</p>
+            <button>Zobacz więcej</button>
           </div>
           <div className="employee">
-            <img src="krzysztof5.png" alt="person" />
-            <div className="author-info">
-              <p>Krzysztof Iksiński</p>
-              <p>System developer</p>
-            </div>
+            <p>Specjalista ds. Prawnych</p>
+            <button>Zobacz więcej</button>
           </div>
           <div className="employee">
-            <img src="elżbieta2.png" alt="person" />
-            <div className="author-info">
-              <p>Elżbieta Wolska</p>
-              <p>System Developer</p>
-            </div>
+            <p>Specjalista ds. Zarządzania Zasobami Ludzkimi</p>
+            <button>Zobacz więcej</button>
           </div>
           <div className="employee">
-            <img src="krzysztof6.png" alt="person" />
-            <div className="author-info">
-              <p>Krzysztof Iksiński</p>
-              <p>System Developer</p>
-            </div>
+            <p>Specjalista ds. Marketingu</p>
+            <button>Zobacz więcej</button>
+          </div>
+          <div className="employee">
+            <p>Specjalista ds. Rozwoju</p>
+            <button>Zobacz więcej</button>
+          </div>
+          <div className="employee">
+            <p>Specjalista ds. Produkcji</p>
+            <button>Zobacz więcej</button>
+          </div>
+          <div className="employee">
+            <p>Specjalista ds. Transportu i Logistyki</p>
+            <button>Zobacz więcej</button>
+          </div>
+          <div className="employee">
+            <p>Specjalista ds. Funduszy Unijnych</p>
+            <button>Zobacz więcej</button>
           </div>
         </div>
       </section>
@@ -416,15 +436,18 @@ const MainPage = () => {
           </div>
         </div>
         <div className="contactForm__right">
-          <form>
+          <form action="https://formspree.io/f/mrbkgrww" method="POST">
             <label>Imie</label>
-            <input type="text" placeholder="Jan Kowalski" />
+            <input type="text" name="name" placeholder="Jan Kowalski" />
             <label>Email</label>
-            <input type="email" placeholder="imie@gmail.com" />
+            <input type="email" name="email" placeholder="imie@gmail.com" />
             <label>Wiadomość</label>
-            <textarea placeholder="Tu wpisz swoją wiadomość"></textarea>
+            <textarea
+              placeholder="Tu wpisz swoją wiadomość"
+              name="message"
+            ></textarea>
             <div className="checkbox-row">
-              <input type="checkbox" id="agreement" />
+              <input type="checkbox" id="agreement" required />
               <label htmlFor="agreement">
                 Akceptuję politykę prywatności i chce otrzymywać newsletter,
                 czyli informacje handlowe o promocjach.
@@ -433,74 +456,6 @@ const MainPage = () => {
             <button type="submit">Wyślij wiadomość</button>
           </form>
         </div>
-      </section>
-      <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
-        <h1>Aktualności</h1>
-        <hr />
-        <div className="articles">
-          <div className="article">
-            <img src="news1.png" alt="articleImg" />
-            <div className="readingTime">
-              <img src="clock.png" alt="icon" />
-              <p>5-10 minut czytania</p>
-            </div>
-            <h3>5 kluczowych kroków do skutecznej transformacji biznesowej</h3>
-            <span>
-              W dynamicznie zmieniającym się świecie transformacja biznesowa to
-              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
-            </span>
-            <div className="author">
-              <img src="elżbieta1.png" alt="author" />
-              <div className="author-info">
-                <p>Katarzyna Wójcik</p>
-                <p>Specjalistka do spraw finansowych</p>
-              </div>
-            </div>
-          </div>
-          <div className="article">
-            <img src="news2.png" alt="articleImg" />
-            <div className="readingTime">
-              <img src="clock.png" alt="icon" />
-              <p>5-10 minut czytania</p>
-            </div>
-            <h3>
-              Cyberbezpieczeństwo w małej i średniej firmie — od czego zacząć?
-            </h3>
-            <span>
-              W dynamicznie zmieniającym się świecie transformacja biznesowa to
-              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
-            </span>
-            <div className="author">
-              <img src="krzysztof5.png" alt="author" />
-              <div className="author-info">
-                <p>Krzysztof Iksiński</p>
-                <p>System developer</p>
-              </div>
-            </div>
-          </div>
-          <div className="article">
-            <img src="news3.png" alt="articleImg" />
-            <div className="readingTime">
-              <img src="clock.png" alt="icon" />
-              <p>5-10 minut czytania</p>
-            </div>
-            <h3>5 kluczowych kroków do skutecznej transformacji biznesowej</h3>
-            <span>
-              W dynamicznie zmieniającym się świecie transformacja biznesowa to
-              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
-            </span>
-            <div className="author">
-              <img src="elżbieta1.png" alt="author" />
-              <div className="author-info">
-                <p>Katarzyna Wójcik</p>
-                <p>Specjalistka do spraw finansowych</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button className="main-news-btn" onClick={() => navigate("/news")}>
-          Zobacz wszystkie artykuły
-        </button>
       </section>
       <section className={`newsletter${isMobile ? " mobile" : ""}`}>
         <div className="newsletter-left">
@@ -580,6 +535,74 @@ const MainPage = () => {
             <button type="submit">Zapisz się do newslettera</button>
           </form>
         </div>
+      </section>
+      <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
+        <h1>Aktualności</h1>
+        <hr />
+        <div className="articles">
+          <div className="article">
+            <img src="news1.png" alt="articleImg" />
+            <div className="readingTime">
+              <img src="clock.png" alt="icon" />
+              <p>5-10 minut czytania</p>
+            </div>
+            <h3>5 kluczowych kroków do skutecznej transformacji biznesowej</h3>
+            <span>
+              W dynamicznie zmieniającym się świecie transformacja biznesowa to
+              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
+            </span>
+            <div className="author">
+              <img src="elżbieta1.png" alt="author" />
+              <div className="author-info">
+                <p>Katarzyna Wójcik</p>
+                <p>Specjalistka do spraw finansowych</p>
+              </div>
+            </div>
+          </div>
+          <div className="article">
+            <img src="news2.png" alt="articleImg" />
+            <div className="readingTime">
+              <img src="clock.png" alt="icon" />
+              <p>5-10 minut czytania</p>
+            </div>
+            <h3>
+              Cyberbezpieczeństwo w małej i średniej firmie — od czego zacząć?
+            </h3>
+            <span>
+              W dynamicznie zmieniającym się świecie transformacja biznesowa to
+              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
+            </span>
+            <div className="author">
+              <img src="krzysztof5.png" alt="author" />
+              <div className="author-info">
+                <p>Krzysztof Iksiński</p>
+                <p>System developer</p>
+              </div>
+            </div>
+          </div>
+          <div className="article">
+            <img src="news3.png" alt="articleImg" />
+            <div className="readingTime">
+              <img src="clock.png" alt="icon" />
+              <p>5-10 minut czytania</p>
+            </div>
+            <h3>5 kluczowych kroków do skutecznej transformacji biznesowej</h3>
+            <span>
+              W dynamicznie zmieniającym się świecie transformacja biznesowa to
+              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
+            </span>
+            <div className="author">
+              <img src="elżbieta1.png" alt="author" />
+              <div className="author-info">
+                <p>Katarzyna Wójcik</p>
+                <p>Specjalistka do spraw finansowych</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button className="main-news-btn" onClick={() => navigate("/news")}>
+          Zobacz wszystkie artykuły
+        </button>
       </section>
       <footer className={`footer${isMobile ? " mobile" : ""}`}>
         <div className="footer-top">
