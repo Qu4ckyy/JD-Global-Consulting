@@ -309,51 +309,75 @@ const MainPage = () => {
         <div className="employees">
           <div className="employee">
             <p>Specjalista ds. Strategii i Zarządzania</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Technologii i Cyfrowej Transformacji</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Finansów</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Podatków</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Fuzji i Przejęć</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Prawnych</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Zarządzania Zasobami Ludzkimi</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Marketingu</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Rozwoju</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Produkcji</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Transportu i Logistyki</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Funduszy Unijnych</p>
-            <button>Zobacz więcej</button>
+            <button onClick={() => navigate("/specialist")}>
+              Zobacz więcej
+            </button>
           </div>
         </div>
       </section>
