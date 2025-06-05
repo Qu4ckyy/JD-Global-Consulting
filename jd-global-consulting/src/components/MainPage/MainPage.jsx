@@ -67,12 +67,12 @@ const MainPage = () => {
           >
             Partnerzy
           </button>
-          <button
+          {/*NARAZIE UKRYTE <button
             className="recomendations"
             onClick={() => handleSectionClick("")}
           >
             Rekomendacje
-          </button>
+          </button> */}
           <button
             className="news"
             onClick={() => handleSectionClick("newsFeed")}
@@ -132,7 +132,7 @@ const MainPage = () => {
           </>
         )}
       </section>
-      <div className={`companies${isMobile ? " mobile" : ""}`} id="companies">
+      {/* NARAZIE UKRYTE <div className={`companies${isMobile ? " mobile" : ""}`} id="companies">
         <span>Zaufali nam:</span>
         <div className="companies__slider">
           <div className="companies__track">
@@ -166,7 +166,7 @@ const MainPage = () => {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
       <img className="building" src="Rectangle 1.png" alt="" />
       <section className={`whatWeDo${isMobile ? " mobile" : ""}`} id="whatWeDo">
         <h2>Zmieniamy wyzwania w możliwości</h2>
@@ -214,7 +214,9 @@ const MainPage = () => {
               <br />
               to strategia na przyszłość.
             </p>
-            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/underControl")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="service">
             <p>Cyberbezpieczeństwo, na które możesz liczyć.</p>
@@ -450,13 +452,13 @@ const MainPage = () => {
                 <span>+ 48 888 888 888</span>
               </div>
             </div>
-            <div className="guardian">
+            {/* <div className="guardian">
               <img src="piotr.png" alt="person" />
               <div>
                 <p>Piotr Brzęczyszczykiewicz</p>
                 <span>Opiekun klienta</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="contactForm__right">
@@ -560,7 +562,7 @@ const MainPage = () => {
           </form>
         </div>
       </section>
-      <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
+      {/* NARAZIE UKRYTE <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
         <h1>Aktualności</h1>
         <hr />
         <div className="articles">
@@ -627,7 +629,7 @@ const MainPage = () => {
         <button className="main-news-btn" onClick={() => navigate("/news")}>
           Zobacz wszystkie artykuły
         </button>
-      </section>
+      </section> */}
       <footer className={`footer${isMobile ? " mobile" : ""}`}>
         <div className="footer-top">
           <div className="footer-left">

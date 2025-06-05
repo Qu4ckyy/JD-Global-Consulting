@@ -145,8 +145,8 @@ html {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    margin-top: 40px;
-    margin-bottom: 60px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     .mission {
       display: flex;
       flex-direction: column;
@@ -155,6 +155,7 @@ html {
       height: 120px;
       text-align: left;
       margin-left: 80px;
+
       h4 {
         color: #070046;
         font-size: 18px;
@@ -213,7 +214,8 @@ html {
       align-items: center;
       width: 100%;
       padding: 0 12px;
-      margin-top: 24px;
+      margin-top: 50px !important;
+      margin-bottom: 50px !important;
       position: relative;
       z-index: 2;
       gap: 32px;
@@ -381,6 +383,9 @@ html {
       flex-direction: column;
       flex-wrap: wrap;
       justify-content: center;
+      max-width: 950px;
+      margin-left: auto;
+      margin-right: auto;
       .bold {
         font-weight: 600;
       }
@@ -410,7 +415,7 @@ html {
           bottom: 20px;
           left: 20px;
           margin: 0;
-          text-align: left;
+          text-align: center;
           display: block !important;
         }
       }
@@ -769,13 +774,13 @@ html {
       flex-direction: column;
       justify-content: center;
       align-items: stretch;
-      background: #fff;
+      background: #f6f6f6;
       border-radius: 16px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
       padding: 32px 24px 24px 24px;
       min-height: 220px;
       transition: box-shadow 0.2s, transform 0.2s;
-      text-align: left;
+      text-align: center;
       position: relative;
 
       &:hover {
@@ -845,6 +850,8 @@ html {
       .employee {
         padding: 20px 12px 16px 12px;
         min-height: 160px;
+        height: 230px;
+        width: 230px;
       }
       .employee p {
         font-size: 16px;
@@ -1134,6 +1141,12 @@ html {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    .whatWeDo {
+      margin-bottom: 20px !important;
+    }
+    .offer {
+      margin-top: 20px !important;
+    }
   }
 }
 
@@ -1600,6 +1613,9 @@ html {
       margin: 0;
       margin-left: 5px;
     }
+    .newsletter-left {
+      padding-left: 25px !important;
+    }
   }
 }
 
@@ -1854,6 +1870,18 @@ hr {
       text-align: center;
     }
   }
+  .footer-newsletter label {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    display: block;
+    width: 100%;
+  }
+  .footer-newsletter input[type="email"] {
+    margin-top: 8px !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
 }
 
 .mobile .baner,
@@ -1929,4 +1957,66 @@ hr {
 .mobile .page {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+.info,
+.companies,
+.whatWeDo,
+.offer,
+.team,
+.contactForm,
+.newsletter,
+.newsfeed {
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+}
+
+@media (max-width: 600px) {
+  .info {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    padding-top: 5px !important;
+    padding-bottom: 80px !important;
+    min-height: 300px;
+    flex-direction: column !important;
+  }
+  .info .company {
+    margin-bottom: 32px !important;
+  }
+  .info .mission {
+    margin-top: 32px !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobile .whatWeDo {
+    margin-bottom: -50px !important;
+  }
+  .mobile .offer {
+    margin-top: -50px !important;
+    margin-bottom: 90px !important;
+  }
+  .mobile .newsletter {
+    margin-top: 80px !important;
+    margin-bottom: 60px !important;
+  }
+  .mobile .contactForm__left {
+    padding-left: 25px !important;
+    padding-right: 0 !important;
+    margin-bottom: 30px !important;
+  }
+  .mobile .contactForm__right {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    margin-right: 15px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobile .newsletter .newsletter-left {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    box-sizing: border-box;
+  }
 }

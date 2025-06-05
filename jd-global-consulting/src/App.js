@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import Offer from "./components/Offer/Offer";
 import News from "./components/News/News";
 import Specialist from "./components/Specialists/specialist";
+import UnderControl from "./components/Offer/moreOffers/yourBiznesUnderControl/underControl";
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/offer" element={<Offer />} />
           <Route path="/news" element={<News />} />
           <Route path="/specialist" element={<Specialist />} />
+          <Route path="/underControl" element={<UnderControl />}></Route>
         </Routes>
       </div>
     </Router>
