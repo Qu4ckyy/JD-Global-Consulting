@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "../yourBiznesUnderControl/underControl.scss";
+import "./finances.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -10,7 +10,7 @@ const scrollToSection = (id) => {
   }
 };
 
-const UnderControl = () => {
+const Finances = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -66,20 +66,22 @@ const UnderControl = () => {
       <section className="mainHeader">
         <div className="mainHeader-inner">
           <div className="headerLeft">
-            <img src="twójBiznes.png" alt="biznes" />
+            <img src="calculator.png" alt="praca" />
           </div>
           <div className="headerRight">
-            <h1 className="bold">Twój biznes pod kontrolą</h1>
-            <h1 className="thin">Ryzyko - pod naszą.</h1>
+            <h1 className="bold">
+              Doradztwo finansowe <br />i fundusze unijne
+            </h1>
+            <h1 className="thin">w jednym miejscu.</h1>
             <p className="description">
-              W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad
-              ryzykiem to zbyt duże ryzyko. Dlatego wspieramy firmy w budowaniu
-              stabilnych, bezpiecznych fundamentów – poprzez skuteczny audyt i
-              profesjonalne zarządzanie ryzykiem.
+              Rozwój firmy wymaga solidnych fundamentów finansowych i dostępu do
+              odpowiednich źródeł finansowania. Nasze doradztwo finansowe i
+              wsparcie w pozyskiwaniu funduszy unijnych to konkretna pomoc w
+              planowaniu, zabezpieczaniu i realizacji Twoich celów biznesowych.
             </p>
             <p className="ending">
-              Z nami audyt to nie kontrola - <br />
-              to strategia na przyszłość
+              Z nami pieniądze nie są przeszkodą – <br />
+              są narzędziem rozwoju.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -90,30 +92,31 @@ const UnderControl = () => {
           <h1>Co robimy?</h1>
           <div className="ourJob-tasks">
             <div className="task">
-              <img src="structure.png" alt="struktura" />
+              <img src="Addchart.png" alt="struktura" />
               <p>
-                ✔ Wykrywamy słabe punkty w strukturze, procesach i procedurach.
+                ✔Doradzamy w zakresie finansowania działalności, inwestycji i
+                rozwoju.
               </p>
             </div>
             <div className="task">
-              <img src="drop.png" alt="spadek" />
+              <img src="euro2.png" alt="euro" />
               <p>
-                ✔ Minimalizujemy ryzyka prawne, finansowe i operacyjne, zanim
-                zaczną generować straty.
+                ✔ Pomagamy pozyskać dotacje z funduszy unijnych – od pomysłu po
+                rozliczenie projektu.
               </p>
             </div>
             <div className="task">
-              <img src="sort.png" alt="sortowanie" />
+              <img src="Strategy.png" alt="strategia" />
               <p>
-                ✔ Uporządkowujemy wewnętrzne procesy i wzmacniamy zgodność z
-                regulacjami.
+                ✔Opracowujemy strategie finansowe i modele biznesowe oparte na
+                danych.
               </p>
             </div>
             <div className="task">
-              <img src="Verified.png" alt="zweryfikowane" />
+              <img src="Analytics.png" alt="analiza" />
               <p>
-                ✔ Dostarczamy praktyczne, gotowe do wdrożenia rozwiązania, nie
-                tylko raporty.
+                ✔ Analizujemy ryzyka i pomagamy podejmować bezpieczne decyzje
+                finansowe.
               </p>
             </div>
           </div>
@@ -125,30 +128,32 @@ const UnderControl = () => {
           <div className="subHeaderLeft-content">
             <h2>Jak działamy?</h2>
             <p className="description">
-              Stawiamy na jasną komunikację, konkretne dane i partnerskie
-              podejście. Mówimy językiem biznesu, a nie trudnym żargonem. Nasze
-              działania są dostosowane do skali i branży Twojej firmy – <br />
-              od MŚP, po duże organizacje.
+              Działamy kompleksowo – od identyfikacji możliwości finansowania,
+              przez przygotowanie dokumentacji, aż po wsparcie w realizacji i
+              rozliczeniu projektów. Pracujemy w oparciu o aktualne programy
+              unijne i krajowe oraz najlepsze praktyki finansowe.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
         </div>
         <div className="subHeaderRight">
-          <img src="work.png" alt="praca" />
+          <img src="UEflag.png" alt="flaga Unii" />
         </div>
       </section>
       <hr />
       <section className="subHeader2">
         <div className="subLeft2">
-          <img src="duo.png" alt="praca" />
+          <img src="euro.png" alt="pieniądze" />
         </div>
         <div className="subRight2">
           <div className="subRight2-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
-              Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. Chronisz
-              swój biznes przed nieprzewidzianymi zagrożeniami i budujesz
-              zaufanie – klientów, inwestorów i partnerów.
+              Zyskujesz dostęp do dodatkowych środków bez ryzyka przepaleń czy
+              błędów formalnych. Unikasz biurokracji, zyskujesz czas i partnera,
+              który przeprowadzi Cię przez cały proces finansowania. Pomagamy
+              firmom rosnąć mądrze – na solidnych, dobrze zaplanowanych
+              fundamentach finansowych.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -209,4 +214,4 @@ const UnderControl = () => {
   );
 };
 
-export default UnderControl;
+export default Finances;

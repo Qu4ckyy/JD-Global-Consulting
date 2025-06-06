@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "../yourBiznesUnderControl/underControl.scss";
+import "./cyberSec.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -10,7 +10,7 @@ const scrollToSection = (id) => {
   }
 };
 
-const UnderControl = () => {
+const CyberSec = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -66,20 +66,21 @@ const UnderControl = () => {
       <section className="mainHeader">
         <div className="mainHeader-inner">
           <div className="headerLeft">
-            <img src="twójBiznes.png" alt="biznes" />
+            <img src="trade.png" alt="biznes" />
           </div>
           <div className="headerRight">
-            <h1 className="bold">Twój biznes pod kontrolą</h1>
-            <h1 className="thin">Ryzyko - pod naszą.</h1>
+            <h1 className="bold">Cyberbezpieczeństwo, </h1>
+            <h1 className="thin">na które możesz liczyć.</h1>
             <p className="description">
-              W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad
-              ryzykiem to zbyt duże ryzyko. Dlatego wspieramy firmy w budowaniu
-              stabilnych, bezpiecznych fundamentów – poprzez skuteczny audyt i
-              profesjonalne zarządzanie ryzykiem.
+              W dobie cyfryzacji zagrożenia w sieci stają się coraz bardziej
+              zaawansowane i powszechne. Ochrona danych, systemów i informacji
+              to nie tylko kwestia technologii, ale przede wszystkim strategii.
+              Dzięki naszym usługom zyskujesz pewność, że Twoja firma jest
+              bezpieczna przed cyberatakami.
             </p>
             <p className="ending">
-              Z nami audyt to nie kontrola - <br />
-              to strategia na przyszłość
+              Z nami cyberbezpieczeństwo to nie tylko technologia <br /> – to
+              strategia obrony Twojej firmy.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -90,30 +91,31 @@ const UnderControl = () => {
           <h1>Co robimy?</h1>
           <div className="ourJob-tasks">
             <div className="task">
-              <img src="structure.png" alt="struktura" />
+              <img src="it.png" alt="IT" />
               <p>
-                ✔ Wykrywamy słabe punkty w strukturze, procesach i procedurach.
+                ✔ Audytujemy infrastrukturę IT, identyfikując potencjalne luki w
+                zabezpieczeniach.
               </p>
             </div>
             <div className="task">
-              <img src="drop.png" alt="spadek" />
+              <img src="bank.png" alt="bank" />
               <p>
-                ✔ Minimalizujemy ryzyka prawne, finansowe i operacyjne, zanim
-                zaczną generować straty.
+                ✔ Opracowujemy kompleksowe strategie ochrony danych i systemów
+                przed cyberzagrożeniami.
               </p>
             </div>
             <div className="task">
-              <img src="sort.png" alt="sortowanie" />
+              <img src="shield.png" alt="tarcza" />
               <p>
-                ✔ Uporządkowujemy wewnętrzne procesy i wzmacniamy zgodność z
-                regulacjami.
+                ✔ Wdrażamy rozwiązania chroniące przed atakami z zewnątrz i
+                wewnętrznymi incydentami.
               </p>
             </div>
             <div className="task">
-              <img src="Verified.png" alt="zweryfikowane" />
+              <img src="voice.png" alt="dźwięk" />
               <p>
-                ✔ Dostarczamy praktyczne, gotowe do wdrożenia rozwiązania, nie
-                tylko raporty.
+                ✔ Szkolimy pracowników, zwiększając świadomość zagrożeń i
+                umiejętności reagowania na kryzysowe sytuacje.
               </p>
             </div>
           </div>
@@ -125,30 +127,33 @@ const UnderControl = () => {
           <div className="subHeaderLeft-content">
             <h2>Jak działamy?</h2>
             <p className="description">
-              Stawiamy na jasną komunikację, konkretne dane i partnerskie
-              podejście. Mówimy językiem biznesu, a nie trudnym żargonem. Nasze
-              działania są dostosowane do skali i branży Twojej firmy – <br />
-              od MŚP, po duże organizacje.
+              Kroczymy z Tobą przez proces ochrony, zaczynając od audytu, przez
+              implementację rozwiązań, aż po stałe monitorowanie. Nasze
+              działania są dostosowane do charakterystyki Twojej działalności i
+              skali organizacji. Współpracujemy z firmami z różnych branż – od
+              małych bprzedsiębiorstw po duże korporacje.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
         </div>
         <div className="subHeaderRight">
-          <img src="work.png" alt="praca" />
+          <img src="office.png" alt="praca" />
         </div>
       </section>
       <hr />
       <section className="subHeader2">
         <div className="subLeft2">
-          <img src="duo.png" alt="praca" />
+          <img src="compShield.png" alt="tarcza" />
         </div>
         <div className="subRight2">
           <div className="subRight2-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
-              Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. Chronisz
-              swój biznes przed nieprzewidzianymi zagrożeniami i budujesz
-              zaufanie – klientów, inwestorów i partnerów.
+              Ochrona przed cyberzagrożeniami to nie tylko kwestia technologii,
+              ale i reputacji firmy. Działając w zgodzie z najlepszymi
+              praktykami, minimalizujesz ryzyko utraty danych, finansowych
+              konsekwencji czy uszczerbku na wizerunku. Z nami budujesz cyfrową
+              odporność i zyskujesz zaufanie swoich klientów i partnerów.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -209,4 +214,4 @@ const UnderControl = () => {
   );
 };
 
-export default UnderControl;
+export default CyberSec;

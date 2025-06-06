@@ -231,7 +231,7 @@ const MainPage = () => {
               Z nami cyberbezpieczeństwo to nie tylko technologia – to strategia
               obrony Twojej firmy.
             </p>
-            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/cyberSec")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>
@@ -249,7 +249,7 @@ const MainPage = () => {
               Z nami zyskujesz pewność, że Twoja firma jest zawsze w zgodzie z
               prawem i optymalizuje obciążenia podatkowe.
             </p>
-            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/taxes")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>Doradztwo technologiczne, które napędza innowacje.</p>
@@ -261,7 +261,7 @@ const MainPage = () => {
               strategiczną z praktycznym podejściem do transformacji cyfrowej.
             </span>
             <p>Z nami technologia staje się Twoją przewagą – nie przeszkodą.</p>
-            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/tech")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>
@@ -280,7 +280,9 @@ const MainPage = () => {
               Z nami Twój marketing wreszcie zaczyna działać. Skutecznie.
               Strategicznie. Sprzedażowo.
             </p>
-            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/marketing")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="service">
             <p>Doradztwo finansowe i fundusze unijne w jednym miejscu.</p>
@@ -291,7 +293,7 @@ const MainPage = () => {
               planowaniu, zabezpieczaniu i realizacji Twoich celów biznesowych.
             </span>
             <p>Z nami pieniądze nie są przeszkodą – są narzędziem rozwoju.</p>
-            <button onClick={() => navigate("/offer")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/finances")}>Zobacz więcej</button>
           </div>
         </div>
         <button onClick={() => navigate("/offer")}>Zobacz więcej usług</button>
@@ -449,7 +451,7 @@ const MainPage = () => {
               </span>
               <div>
                 <p>Telefon</p>
-                <span>+ 48 888 888 888</span>
+                <span>+ 48 601 27 26 25</span>
               </div>
             </div>
             {/* <div className="guardian">

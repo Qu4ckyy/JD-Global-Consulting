@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "../yourBiznesUnderControl/underControl.scss";
+import "./marketing.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -10,7 +10,7 @@ const scrollToSection = (id) => {
   }
 };
 
-const UnderControl = () => {
+const Marketing = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -66,20 +66,23 @@ const UnderControl = () => {
       <section className="mainHeader">
         <div className="mainHeader-inner">
           <div className="headerLeft">
-            <img src="twójBiznes.png" alt="biznes" />
+            <img src="marketing1.png" alt="spotkanie" />
           </div>
           <div className="headerRight">
-            <h1 className="bold">Twój biznes pod kontrolą</h1>
-            <h1 className="thin">Ryzyko - pod naszą.</h1>
+            <div className="header-title">
+              <h1 className="bold">Doradztwo marketingowe,</h1>
+              <h1 className="thin">które realnie napędza sprzedaż.</h1>
+            </div>
             <p className="description">
-              W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad
-              ryzykiem to zbyt duże ryzyko. Dlatego wspieramy firmy w budowaniu
-              stabilnych, bezpiecznych fundamentów – poprzez skuteczny audyt i
-              profesjonalne zarządzanie ryzykiem.
+              Silna marka, skuteczna komunikacja i dobrze zaplanowane działania
+              marketingowe to dziś podstawa biznesowego sukcesu. Nasze doradztwo
+              marketingowe łączy strategię z kreatywnością, a dane z
+              doświadczeniem. Dzięki nam Twoje działania marketingowe są spójne,
+              trafne i przede wszystkim – skuteczne.
             </p>
             <p className="ending">
-              Z nami audyt to nie kontrola - <br />
-              to strategia na przyszłość
+              Z nami Twój marketing wreszcie zaczyna działać. Skutecznie.
+              Strategicznie. Sprzedażowo.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -90,30 +93,30 @@ const UnderControl = () => {
           <h1>Co robimy?</h1>
           <div className="ourJob-tasks">
             <div className="task">
-              <img src="structure.png" alt="struktura" />
+              <img src="Data.png" alt="dane" />
               <p>
-                ✔ Wykrywamy słabe punkty w strukturze, procesach i procedurach.
+                ✔Tworzymy strategie marketingowe dopasowane do Twojego biznesu i
+                rynku.
               </p>
             </div>
             <div className="task">
-              <img src="drop.png" alt="spadek" />
+              <img src="settings.png" alt="ustawienia" />
               <p>
-                ✔ Minimalizujemy ryzyka prawne, finansowe i operacyjne, zanim
-                zaczną generować straty.
+                ✔ Doradzamy w zakresie brandingu, komunikacji, digital
+                marketingu i kampanii reklamowych.
               </p>
             </div>
             <div className="task">
-              <img src="sort.png" alt="sortowanie" />
+              <img src="dynamicform.png" alt="formularz" />
               <p>
-                ✔ Uporządkowujemy wewnętrzne procesy i wzmacniamy zgodność z
-                regulacjami.
+                ✔Analizujemy efektywność dotychczasowych działań i wskazujemy,
+                co naprawdę działa.
               </p>
             </div>
             <div className="task">
-              <img src="Verified.png" alt="zweryfikowane" />
+              <img src="document.png" alt="dokument" />
               <p>
-                ✔ Dostarczamy praktyczne, gotowe do wdrożenia rozwiązania, nie
-                tylko raporty.
+                ✔ Pomagamy w budowie silnej marki, która przyciąga i sprzedaje.
               </p>
             </div>
           </div>
@@ -125,30 +128,33 @@ const UnderControl = () => {
           <div className="subHeaderLeft-content">
             <h2>Jak działamy?</h2>
             <p className="description">
-              Stawiamy na jasną komunikację, konkretne dane i partnerskie
-              podejście. Mówimy językiem biznesu, a nie trudnym żargonem. Nasze
-              działania są dostosowane do skali i branży Twojej firmy – <br />
-              od MŚP, po duże organizacje.
+              Zaczynamy od zrozumienia Twojego biznesu, a nie od narzucania
+              gotowych technologii. Doradzamy tak, by technologia była
+              narzędziem realizacji celów – nie kosztem bez efektu.
+              Współpracujemy z menedżerami, zespołami IT i dostawcami, by całość
+              była spójna, opłacalna i przyszłościowa.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
         </div>
         <div className="subHeaderRight">
-          <img src="work.png" alt="praca" />
+          <img src="socialmedia.png" alt="Social Media" />
         </div>
       </section>
       <hr />
       <section className="subHeader2">
         <div className="subLeft2">
-          <img src="duo.png" alt="praca" />
+          <img src="bars.png" alt="praca" />
         </div>
         <div className="subRight2">
           <div className="subRight2-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
-              Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. Chronisz
-              swój biznes przed nieprzewidzianymi zagrożeniami i budujesz
-              zaufanie – klientów, inwestorów i partnerów.
+              Zyskujesz pewność, że inwestujesz w rozwiązania, które faktycznie
+              działają i przynoszą zwrot. Unikasz kosztownych błędów,
+              niepotrzebnych systemów i wdrożeń bez strategii. Dzięki naszej
+              pomocy Twoja firma staje się bardziej nowoczesna, elastyczna i
+              gotowa na wyzwania cyfrowej gospodarki.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -209,4 +215,4 @@ const UnderControl = () => {
   );
 };
 
-export default UnderControl;
+export default Marketing;

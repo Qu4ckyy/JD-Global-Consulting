@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "../yourBiznesUnderControl/underControl.scss";
+import "./taxes.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -10,7 +10,7 @@ const scrollToSection = (id) => {
   }
 };
 
-const UnderControl = () => {
+const Taxes = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -66,20 +66,24 @@ const UnderControl = () => {
       <section className="mainHeader">
         <div className="mainHeader-inner">
           <div className="headerLeft">
-            <img src="twójBiznes.png" alt="biznes" />
+            <img src="lawyers.png" alt="prawnicy" />
           </div>
           <div className="headerRight">
-            <h1 className="bold">Twój biznes pod kontrolą</h1>
-            <h1 className="thin">Ryzyko - pod naszą.</h1>
+            <div className="header-title">
+              <h1 className="bold">Doradztwo prawno-podatkowe, które chroni</h1>
+              <h1 className="thin">i wspiera Twój biznes.</h1>
+            </div>
             <p className="description">
-              W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad
-              ryzykiem to zbyt duże ryzyko. Dlatego wspieramy firmy w budowaniu
-              stabilnych, bezpiecznych fundamentów – poprzez skuteczny audyt i
-              profesjonalne zarządzanie ryzykiem.
+              Zarządzanie kwestiami prawnymi i podatkowymi to kluczowy element
+              sukcesu każdej firmy. Nasze doradztwo prawno-podatkowe pomoże Ci
+              unikać ryzyk, minimalizować koszty i działać zgodnie z
+              obowiązującymi przepisami. Zapewniamy pełne wsparcie, które
+              pozwala skoncentrować się na rozwoju biznesu, a nie na problemach
+              prawnych.
             </p>
             <p className="ending">
-              Z nami audyt to nie kontrola - <br />
-              to strategia na przyszłość
+              Z nami zyskujesz pewność, że Twoja firma jest zawsze w zgodzie z
+              prawem i optymalizuje obciążenia podatkowe.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -90,30 +94,31 @@ const UnderControl = () => {
           <h1>Co robimy?</h1>
           <div className="ourJob-tasks">
             <div className="task">
-              <img src="structure.png" alt="struktura" />
+              <img src="bar.png" alt="wykres" />
               <p>
-                ✔ Wykrywamy słabe punkty w strukturze, procesach i procedurach.
+                ✔ Oferujemy kompleksową pomoc w zakresie doradztwa podatkowego,
+                w tym optymalizacji podatkowej.
               </p>
             </div>
             <div className="task">
-              <img src="drop.png" alt="spadek" />
+              <img src="Balance.png" alt="waga" />
               <p>
-                ✔ Minimalizujemy ryzyka prawne, finansowe i operacyjne, zanim
-                zaczną generować straty.
+                ✔ Udzielamy wsparcia prawnego w zakresie umów, transakcji, fuzji
+                i przejęć.
               </p>
             </div>
             <div className="task">
-              <img src="sort.png" alt="sortowanie" />
+              <img src="bank2.png" alt="bank" />
               <p>
-                ✔ Uporządkowujemy wewnętrzne procesy i wzmacniamy zgodność z
-                regulacjami.
+                ✔ Reprezentujemy naszych klientów przed organami podatkowymi i
+                sądami.
               </p>
             </div>
             <div className="task">
-              <img src="Verified.png" alt="zweryfikowane" />
+              <img src="money.png" alt="waluta" />
               <p>
-                ✔ Dostarczamy praktyczne, gotowe do wdrożenia rozwiązania, nie
-                tylko raporty.
+                ✔ Pomagamy w dostosowaniu struktury organizacyjnej i finansowej
+                do zmieniających się przepisów.
               </p>
             </div>
           </div>
@@ -125,30 +130,35 @@ const UnderControl = () => {
           <div className="subHeaderLeft-content">
             <h2>Jak działamy?</h2>
             <p className="description">
-              Stawiamy na jasną komunikację, konkretne dane i partnerskie
-              podejście. Mówimy językiem biznesu, a nie trudnym żargonem. Nasze
-              działania są dostosowane do skali i branży Twojej firmy – <br />
-              od MŚP, po duże organizacje.
+              Pracujemy w ścisłej współpracy z Twoją firmą, analizując
+              indywidualne potrzeby i wyzwania. Nasze podejście jest dostosowane
+              do branży i specyfiki Twojego biznesu. Dzięki naszej wiedzy
+              prawnej i podatkowej oferujemy praktyczne rozwiązania, które są
+              zgodne z aktualnymi przepisami, ale także skuteczne w obniżeniu
+              obciążeń podatkowych i prawnych.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
         </div>
         <div className="subHeaderRight">
-          <img src="work.png" alt="praca" />
+          <img src="office.png" alt="praca" />
         </div>
       </section>
       <hr />
       <section className="subHeader2">
         <div className="subLeft2">
-          <img src="duo.png" alt="praca" />
+          <img src="work2.png" alt="praca" />
         </div>
         <div className="subRight2">
           <div className="subRight2-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
-              Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. Chronisz
-              swój biznes przed nieprzewidzianymi zagrożeniami i budujesz
-              zaufanie – klientów, inwestorów i partnerów.
+              Z nami unikniesz błędów, które mogą prowadzić do kosztownych
+              konsekwencji prawnych lub podatkowych. Nasze wsparcie pozwala
+              zaoszczędzić czas i pieniądze, zapewniając pełną zgodność z
+              przepisami. Dzięki naszym usługom masz pewność, że Twoja firma
+              działa na solidnych fundamentach prawnych i finansowych, co w
+              dłuższej perspektywie przyczynia się do jej stabilności i rozwoju.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -209,4 +219,4 @@ const UnderControl = () => {
   );
 };
 
-export default UnderControl;
+export default Taxes;

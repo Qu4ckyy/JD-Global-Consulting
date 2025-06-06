@@ -428,28 +428,41 @@ hr {
 }
 
 .headerRight {
-  width: 50%;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  text-align: left;
-  padding: 0 64px 0 64px;
-  background: #fff;
+  align-items: flex-start;
+  padding: 0 48px;
   box-sizing: border-box;
+
+  .header-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .bold {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0a1970;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  .thin {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #0a1970;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
 }
 
-.headerRight .bold {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #0a1970;
-  margin: 0 0 1.2rem 0;
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-
-.headerRight .thin {
+.headerRight h1 {
   font-size: 1.6rem;
   font-weight: 400;
   color: #0a1970;

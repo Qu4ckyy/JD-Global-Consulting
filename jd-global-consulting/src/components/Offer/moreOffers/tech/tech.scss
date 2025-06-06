@@ -440,22 +440,21 @@ hr {
   box-sizing: border-box;
 }
 
-.headerRight .bold {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #0a1970;
-  margin: 0 0 1.2rem 0;
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-
-.headerRight .thin {
+.headerRight h1 {
   font-size: 1.6rem;
   font-weight: 400;
   color: #0a1970;
   margin: 0 0 1.2rem 0;
   line-height: 1.1;
   letter-spacing: -1px;
+  .headerRight .bold {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0a1970;
+    margin: 0 0 1.2rem 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
 }
 
 .headerRight .description {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "../yourBiznesUnderControl/underControl.scss";
+import "./tech.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -10,7 +10,7 @@ const scrollToSection = (id) => {
   }
 };
 
-const UnderControl = () => {
+const Tech = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -66,20 +66,24 @@ const UnderControl = () => {
       <section className="mainHeader">
         <div className="mainHeader-inner">
           <div className="headerLeft">
-            <img src="twójBiznes.png" alt="biznes" />
+            <img src="stocks.png" alt="wykresy" />
           </div>
           <div className="headerRight">
-            <h1 className="bold">Twój biznes pod kontrolą</h1>
-            <h1 className="thin">Ryzyko - pod naszą.</h1>
+            <h1>
+              <h1 className="bold">
+                Doradztwo <br /> technologiczne,
+              </h1>{" "}
+              które <br /> napędza innowacje.
+            </h1>
             <p className="description">
-              W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad
-              ryzykiem to zbyt duże ryzyko. Dlatego wspieramy firmy w budowaniu
-              stabilnych, bezpiecznych fundamentów – poprzez skuteczny audyt i
-              profesjonalne zarządzanie ryzykiem.
+              Technologia to dziś nie dodatek – to fundament konkurencyjnego
+              biznesu. W świecie, gdzie zmiana jest stałą, pomagamy firmom
+              wybierać, wdrażać i wykorzystywać rozwiązania technologiczne,
+              które realnie wspierają wzrost i efektywność. Łączymy wiedzę
+              strategiczną z praktycznym podejściem do transformacji cyfrowej.
             </p>
             <p className="ending">
-              Z nami audyt to nie kontrola - <br />
-              to strategia na przyszłość
+              Z nami technologia staje się Twoją przewagą – nie przeszkodą.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -90,30 +94,31 @@ const UnderControl = () => {
           <h1>Co robimy?</h1>
           <div className="ourJob-tasks">
             <div className="task">
-              <img src="structure.png" alt="struktura" />
+              <img src="Data.png" alt="dane" />
               <p>
-                ✔ Wykrywamy słabe punkty w strukturze, procesach i procedurach.
+                ✔ Analizujemy potrzeby technologiczne Twojej firmy i wskazujemy
+                najlepsze rozwiązania.
               </p>
             </div>
             <div className="task">
-              <img src="drop.png" alt="spadek" />
+              <img src="settings.png" alt="ustawienia" />
               <p>
-                ✔ Minimalizujemy ryzyka prawne, finansowe i operacyjne, zanim
-                zaczną generować straty.
+                ✔ Doradzamy w zakresie cyfryzacji, automatyzacji procesów i
+                transformacji IT.
               </p>
             </div>
             <div className="task">
-              <img src="sort.png" alt="sortowanie" />
+              <img src="dynamicform.png" alt="formularz" />
               <p>
-                ✔ Uporządkowujemy wewnętrzne procesy i wzmacniamy zgodność z
-                regulacjami.
+                ✔ Pomagamy w wyborze, wdrożeniu i integracji nowoczesnych
+                narzędzi IT, ERP, CRM i innych systemów wspierających biznes.
               </p>
             </div>
             <div className="task">
-              <img src="Verified.png" alt="zweryfikowane" />
+              <img src="document.png" alt="dokument" />
               <p>
-                ✔ Dostarczamy praktyczne, gotowe do wdrożenia rozwiązania, nie
-                tylko raporty.
+                ✔ Wspieramy przy projektach IT, przetargach, migracjach danych i
+                zmianie infrastruktury.
               </p>
             </div>
           </div>
@@ -125,30 +130,33 @@ const UnderControl = () => {
           <div className="subHeaderLeft-content">
             <h2>Jak działamy?</h2>
             <p className="description">
-              Stawiamy na jasną komunikację, konkretne dane i partnerskie
-              podejście. Mówimy językiem biznesu, a nie trudnym żargonem. Nasze
-              działania są dostosowane do skali i branży Twojej firmy – <br />
-              od MŚP, po duże organizacje.
+              Zaczynamy od zrozumienia Twojego biznesu, a nie od narzucania
+              gotowych technologii. Doradzamy tak, by technologia była
+              narzędziem realizacji celów – nie kosztem bez efektu.
+              Współpracujemy z menedżerami, zespołami IT i dostawcami, by całość
+              była spójna, opłacalna i przyszłościowa.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
         </div>
         <div className="subHeaderRight">
-          <img src="work.png" alt="praca" />
+          <img src="office.png" alt="praca" />
         </div>
       </section>
       <hr />
       <section className="subHeader2">
         <div className="subLeft2">
-          <img src="duo.png" alt="praca" />
+          <img src="work2.png" alt="praca" />
         </div>
         <div className="subRight2">
           <div className="subRight2-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
-              Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. Chronisz
-              swój biznes przed nieprzewidzianymi zagrożeniami i budujesz
-              zaufanie – klientów, inwestorów i partnerów.
+              Zyskujesz pewność, że inwestujesz w rozwiązania, które faktycznie
+              działają i przynoszą zwrot. Unikasz kosztownych błędów,
+              niepotrzebnych systemów i wdrożeń bez strategii. Dzięki naszej
+              pomocy Twoja firma staje się bardziej nowoczesna, elastyczna i
+              gotowa na wyzwania cyfrowej gospodarki.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>
@@ -209,4 +217,4 @@ const UnderControl = () => {
   );
 };
 
-export default UnderControl;
+export default Tech;
