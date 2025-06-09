@@ -361,7 +361,7 @@ html {
   }
 
   .building {
-    width: 100vw;
+    width: 85vw;
     @media (max-width: 600px) {
       width: 100vw;
       margin-left: 0;
@@ -437,7 +437,7 @@ html {
           bottom: 20px;
           left: 20px;
           margin: 0;
-          text-align: left;
+          text-align: center;
           display: block !important;
         }
       }
@@ -458,7 +458,7 @@ html {
           bottom: 20px;
           left: 20px;
           margin: 0;
-          text-align: left;
+          text-align: center;
           display: block !important;
         }
       }
@@ -480,7 +480,7 @@ html {
           bottom: 20px;
           left: 20px;
           margin: 0;
-          text-align: left;
+          text-align: center;
           display: block !important;
         }
       }
@@ -580,7 +580,7 @@ html {
     }
 
     .service {
-      background: #fff;
+      background: #f6f6f6;
       border: 1px solid #bdbdbd;
       border-radius: 10px;
       padding: 32px 24px 24px 24px;
@@ -793,7 +793,7 @@ html {
         font-size: 20px;
         font-weight: 500;
         color: #222;
-        text-align: left;
+        text-align: center;
         line-height: 1.3;
         flex: 1 1 auto;
         display: flex;

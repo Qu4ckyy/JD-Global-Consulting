@@ -13,9 +13,12 @@ import Taxes from "./components/Offer/moreOffers/taxes/taxes";
 import Tech from "./components/Offer/moreOffers/tech/tech";
 import Marketing from "./components/Offer/moreOffers/marketing/marketing";
 import Finances from "./components/Offer/moreOffers/finances/finances";
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Routes>
           <Route path="/" element={<MainPage />} />
