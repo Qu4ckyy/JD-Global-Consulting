@@ -85,7 +85,7 @@ const Article = () => {
         <p className="subtitle">{article.description}</p>
         <div className="meta">
           <span className="date">{article.date}</span>
-          <span className="authorsName">{article.authorName}</span>
+          {/* <span className="authorsName">{article.authorName}</span> */}
           <span className="time">{article.time}</span>
         </div>
       </section>

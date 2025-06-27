@@ -91,13 +91,13 @@ const News = () => {
             </div>
             <h3>{article.title}</h3>
             <p className="description">{truncate(article.description, 120)}</p>
-            <div className="authorData">
+            {/* <div className="authorData">
               <img src={article.authorImg} alt={article.authorName} />
               <div className="authorInfo">
                 <p>{article.authorName}</p>
                 <p>{article.authorRole}</p>
               </div>
-            </div>
+            </div> */}
           </div>
         ))}
       </section>

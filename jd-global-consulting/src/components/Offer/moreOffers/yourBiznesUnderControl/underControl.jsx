@@ -67,7 +67,7 @@ const UnderControl = () => {
       <section className="mainHeader">
         <div className="mainHeader-inner">
           <div className="headerLeft">
-            <img src="twójbiznes.png" alt="biznes" />
+            <img src="/twójbiznes.png" alt="biznes" />
           </div>
           <div className="headerRight">
             <h1 className="bold">Twój biznes pod kontrolą</h1>

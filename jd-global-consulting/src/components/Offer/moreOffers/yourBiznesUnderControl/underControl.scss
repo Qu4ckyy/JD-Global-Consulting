@@ -34,7 +34,7 @@
 }
 .headerLeft img {
   height: 100%;
-  width: auto;
+  width: 90%;
   object-fit: cover;
   display: block;
   margin: 0;
@@ -91,7 +91,7 @@
 }
 
 .headerRight .description {
-  font-size: 0.75rem;
+  font-size: 18px;
   max-width: 500px;
   color: #222;
   margin: 0 0 1.2rem 0;
@@ -99,7 +99,7 @@
 }
 
 .headerRight .ending {
-  font-size: 0.78rem;
+  font-size: 16pxrem;
   color: #0a1970;
   font-weight: 700;
   margin: 0 0 1.8rem 0;
@@ -136,7 +136,7 @@
 }
 
 .ourJob {
-  max-width: 1800px;
+  max-width: 1120px;
   margin: 100px auto 40px auto;
   display: flex;
   flex-direction: column;
@@ -156,7 +156,7 @@
   flex-direction: row;
   justify-content: center;
   gap: 40px;
-  width: 100%;
+  width: 80%;
 
   @media (max-width: 1024px) {
     display: flex;
@@ -245,7 +245,7 @@
 }
 
 .subHeaderLeft h2 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 400;
   color: #0a1970;
   margin: 0 0 1.2rem 0;
@@ -254,7 +254,7 @@
 }
 
 .subHeaderLeft .description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #222;
   margin: 0 0 1.2rem 0;
   line-height: 1.5;
@@ -357,7 +357,7 @@
 }
 
 .subRight2-content h2 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 400;
   color: #0a1970;
   margin: 0 0 1.2rem 0;
@@ -366,7 +366,7 @@
 }
 
 .subRight2-content .description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #222;
   margin: 0 0 0 0;
   line-height: 1.5;

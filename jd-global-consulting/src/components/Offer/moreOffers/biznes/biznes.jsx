@@ -97,7 +97,7 @@ const Biznes = () => {
               </p>
             </div>
             <div className="task">
-              <img src="webhook.png" alt="bank" />
+              <img src="/webhook.png" alt="bank" />
               <p>
                 Doradzamy w zakresie zarządzania, wprowadzania innowacji oraz
                 poprawy efektywności operacyjnej.

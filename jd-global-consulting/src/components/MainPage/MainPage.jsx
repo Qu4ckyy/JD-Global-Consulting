@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./MainPage.scss";
 import useIsMobile from "../../hooks/useIsMobile";
 import { useNavigate } from "react-router-dom";
+import { articles } from "../../data/articles";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -86,9 +87,10 @@ const MainPage = () => {
           <>
             <div className="company">
               <h1>
-                <span className="bold">JD Global Consulting -</span>
+                <span className="bold">JD Global Consulting –</span>
+                <br />
                 <span className="thin">
-                  Twój partner rozwoju i transformacji biznesu
+                  Twój partner w rozwoju i transformacji biznesu
                 </span>
               </h1>
             </div>
@@ -121,9 +123,10 @@ const MainPage = () => {
             </div>
             <div className="company">
               <h1>
-                <span className="bold">JD Global Consulting -</span>
+                <span className="bold">JD Global Consulting –</span>
+                <br />
                 <span className="thin">
-                  Twój partner rozwoju i transformacji biznesu
+                  Twój partner w rozwoju i transformacji biznesu
                 </span>
               </h1>
             </div>
@@ -533,68 +536,32 @@ const MainPage = () => {
         <h1>Aktualności</h1>
         <hr />
         <div className="articles">
-          <div className="article">
-            <img src="news1.png" alt="articleImg" />
-            <div className="readingTime">
-              <img src="clock.png" alt="icon" />
-              <p>5-10 minut czytania</p>
-            </div>
-            <h3>Jak zgrać zespół w pracy?</h3>
-            <span>
-              Wiesz, co łączy dobrze naoliwiony zespół IT, sprawny dział
-              sprzedaży i kuchnię w restauracji z gwiazdką Michelin? Nie
-              tylko....
-            </span>
-            <div className="author">
-              <img src="elżbieta1.png" alt="author" />
-              <div className="author-info">
-                <p>Katarzyna Wójcik</p>
-                <p>Specjalistka do spraw finansowych</p>
+          {articles.slice(0, 3).map((article) => (
+            <div className="article" key={article.slug}>
+              <div className="image-wrapper">
+                <img
+                  src={
+                    article.img.startsWith("/")
+                      ? article.img.slice(1)
+                      : article.img
+                  }
+                  alt={article.title}
+                />
+                <button
+                  className="read-button"
+                  onClick={() => navigate(`/news/${article.slug}`)}
+                >
+                  Przeczytaj artykuł
+                </button>
               </div>
-            </div>
-          </div>
-          <div className="article">
-            <img src="news2.png" alt="articleImg" />
-            <div className="readingTime">
-              <img src="clock.png" alt="icon" />
-              <p>5-10 minut czytania</p>
-            </div>
-            <h3>
-              Co napędza rozwój IT? 5 trendów, które trzeba znać w 2025 roku
-            </h3>
-            <span>
-              Branża technologiczna to nieustanny ruch, ciągła zmiana i
-              niekończące się innowacje. Jeśli prowadzisz firmę, tworzysz
-              start-up, odpowiadasz za...
-            </span>
-            <div className="author">
-              <img src="krzysztof5.png" alt="author" />
-              <div className="author-info">
-                <p>Krzysztof Iksiński</p>
-                <p>System developer</p>
+              <div className="readingTime">
+                <img src="clock.png" alt="icon" />
+                <p>{article.time}</p>
               </div>
+              <h3>{article.title}</h3>
+              <span>{article.description.slice(0, 100)}...</span>
             </div>
-          </div>
-          <div className="article">
-            <img src="start-up.png" alt="articleImg" />
-            <div className="readingTime">
-              <img src="clock.png" alt="icon" />
-              <p>5-10 minut czytania</p>
-            </div>
-            <h3>5 kluczowych zasad, jak skutecznie rozwijać swój start-up</h3>
-            <span>
-              W erze innowacji i dynamicznych zmian rynkowych, rozwijanie
-              start-upu to nie tylko kwestia dobrego pomysłu – to przede
-              wszystkim...
-            </span>
-            <div className="author">
-              <img src="elżbieta1.png" alt="author" />
-              <div className="author-info">
-                <p>Katarzyna Wójcik</p>
-                <p>Specjalistka do spraw finansowych</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
         <button className="main-news-btn" onClick={() => navigate("/news")}>
           Zobacz wszystkie artykuły
