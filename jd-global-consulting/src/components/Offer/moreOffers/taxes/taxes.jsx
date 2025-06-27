@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "./taxes.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -30,7 +29,11 @@ const Taxes = () => {
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
-        <img src="/logo JD global.png" alt="logo" />
+        <img
+          src="/logo JD global.png"
+          alt="logo"
+          onClick={() => navigate("/")}
+        />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
             <div className="line"></div>
@@ -43,22 +46,19 @@ const Taxes = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/")}>
+          <button className="aboutUs" onClick={() => navigate("/about")}>
             O nas
           </button>
           <button className="specialists" onClick={() => navigate("/")}>
             Specjaliści
           </button>
-          <button className="services" onClick={() => navigate("/")}>
+          <button className="services" onClick={() => navigate("/offer")}>
             Nasze usługi
           </button>
-          <button className="partners" onClick={() => navigate("/")}>
-            Partnerzy
-          </button>
-          <button className="news" onClick={() => navigate("/")}>
+          <button className="news" onClick={() => navigate("/news")}>
             Aktualności
           </button>
-          <button className="contact" onClick={() => navigate("/")}>
+          <button className="contact" onClick={() => navigate("/contact")}>
             Kontakt
           </button>
         </div>
@@ -77,15 +77,20 @@ const Taxes = () => {
               Zarządzanie kwestiami prawnymi i podatkowymi to kluczowy element
               sukcesu każdej firmy. Nasze doradztwo prawno-podatkowe pomoże Ci
               unikać ryzyk, minimalizować koszty i działać zgodnie z
-              obowiązującymi przepisami. Zapewniamy pełne wsparcie, które
-              pozwala skoncentrować się na rozwoju biznesu, a nie na problemach
-              prawnych.
+              obowiązującymi przepisami.{" "}
+              <span className="bolder">
+                Zapewniamy pełne wsparcie, które pozwala skoncentrować się na
+                rozwoju biznesu,
+              </span>{" "}
+              a nie na problemach prawnych.
             </p>
             <p className="ending">
               Z nami zyskujesz pewność, że Twoja firma jest zawsze w zgodzie z
               prawem i optymalizuje obciążenia podatkowe.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -96,29 +101,29 @@ const Taxes = () => {
             <div className="task">
               <img src="bar.png" alt="wykres" />
               <p>
-                ✔ Oferujemy kompleksową pomoc w zakresie doradztwa podatkowego,
-                w tym optymalizacji podatkowej.
+                Oferujemy kompleksową pomoc w zakresie doradztwa podatkowego, w
+                tym optymalizacji podatkowej.
               </p>
             </div>
             <div className="task">
               <img src="Balance.png" alt="waga" />
               <p>
-                ✔ Udzielamy wsparcia prawnego w zakresie umów, transakcji, fuzji
-                i przejęć.
+                Udzielamy wsparcia prawnego w zakresie umów, transakcji, fuzji i
+                przejęć.
               </p>
             </div>
             <div className="task">
               <img src="bank2.png" alt="bank" />
               <p>
-                ✔ Reprezentujemy naszych klientów przed organami podatkowymi i
+                Reprezentujemy naszych klientów przed organami podatkowymi i
                 sądami.
               </p>
             </div>
             <div className="task">
               <img src="money.png" alt="waluta" />
               <p>
-                ✔ Pomagamy w dostosowaniu struktury organizacyjnej i finansowej
-                do zmieniających się przepisów.
+                Pomagamy w dostosowaniu struktury organizacyjnej i finansowej do
+                zmieniających się przepisów.
               </p>
             </div>
           </div>
@@ -132,12 +137,17 @@ const Taxes = () => {
             <p className="description">
               Pracujemy w ścisłej współpracy z Twoją firmą, analizując
               indywidualne potrzeby i wyzwania. Nasze podejście jest dostosowane
-              do branży i specyfiki Twojego biznesu. Dzięki naszej wiedzy
-              prawnej i podatkowej oferujemy praktyczne rozwiązania, które są
-              zgodne z aktualnymi przepisami, ale także skuteczne w obniżeniu
-              obciążeń podatkowych i prawnych.
+              do branży i specyfiki Twojego biznesu. <br /> Dzięki naszej wiedzy
+              prawnej i podatkowej{" "}
+              <span className="bolder">oferujemy praktyczne rozwiązania,</span>{" "}
+              które są zgodne z aktualnymi przepisami, ale także{" "}
+              <span className="bolder">
+                skuteczne w obniżeniu obciążeń podatkowych i prawnych.
+              </span>
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
         <div className="subHeaderRight">
@@ -154,13 +164,21 @@ const Taxes = () => {
             <h2>Dlaczego warto?</h2>
             <p className="description">
               Z nami unikniesz błędów, które mogą prowadzić do kosztownych
-              konsekwencji prawnych lub podatkowych. Nasze wsparcie pozwala
-              zaoszczędzić czas i pieniądze, zapewniając pełną zgodność z
-              przepisami. Dzięki naszym usługom masz pewność, że Twoja firma
-              działa na solidnych fundamentach prawnych i finansowych, co w
-              dłuższej perspektywie przyczynia się do jej stabilności i rozwoju.
+              konsekwencji prawnych lub podatkowych.{" "}
+              <span className="bolder">
+                Nasze wsparcie pozwala zaoszczędzić czas i pieniądze,
+              </span>{" "}
+              zapewniając pełną zgodność z przepisami. <br />{" "}
+              <span className="bolder">
+                Dzięki naszym usługom masz pewność, że Twoja firma działa na
+                solidnych fundamentach prawnych i finansowych,
+              </span>{" "}
+              co w dłuższej perspektywie przyczynia się do jej stabilności i
+              rozwoju.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -197,19 +215,19 @@ const Taxes = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs" onClick={() => navigate("/")}>
+            <button className="aboutUs" onClick={() => navigate("/about")}>
               O nas
             </button>
-            <button className="news" onClick={() => navigate("/")}>
+            <button className="news" onClick={() => navigate("/news")}>
               Aktualności
             </button>
             <button className="specialists" onClick={() => navigate("/")}>
               Specjaliści
             </button>
-            <button className="services" onClick={() => navigate("/")}>
+            <button className="services" onClick={() => navigate("/offer")}>
               Oferta
             </button>
-            <button className="contact" onClick={() => navigate("/")}>
+            <button className="contact" onClick={() => navigate("/contact")}>
               Kontakt
             </button>
           </nav>

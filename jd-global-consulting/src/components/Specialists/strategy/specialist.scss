@@ -1,0 +1,135 @@
+.header {
+  width: 100%;
+  padding: 80px 0 24px 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  h1 {
+    color: #181c5a;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 18px;
+    line-height: 1.15;
+  }
+
+  button {
+    background: #0056f3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    &:hover {
+      background: #003bb5;
+    }
+  }
+}
+
+.specialist-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specialistsTasks {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 24px;
+  background: transparent;
+}
+
+.sTask {
+  background: #f7f7fa;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  padding: 28px 18px 18px 18px;
+  height: 220px;
+  align-items: flex-start;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: box-shadow 0.2s;
+
+  img {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 18px;
+    align-self: center;
+    margin-bottom: 12px;
+    margin-left: 0;
+  }
+
+  span {
+    font-size: 0.88rem;
+    color: #222;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.specImage {
+  width: 100vw;
+  img[alt="specjaliści"] {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0 0 48px 48px;
+    display: block;
+    position: static;
+    transform: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .specialistsTasks {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .sTask {
+    width: 100%;
+    span {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  img[alt="specjaliści"] {
+    height: 180px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+  .specialistsTasks {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .sTask {
+    max-width: 98vw;
+    width: 100%;
+    padding: 20px 10px;
+    height: auto;
+  }
+  img[alt="specjaliści"] {
+    height: 120px;
+    border-radius: 0 0 18px 18px;
+  }
+}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "./cyberSec.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -30,7 +29,11 @@ const CyberSec = () => {
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
-        <img src="/logo JD global.png" alt="logo" />
+        <img
+          src="/logo JD global.png"
+          alt="logo"
+          onClick={() => navigate("/")}
+        />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
             <div className="line"></div>
@@ -43,22 +46,19 @@ const CyberSec = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/")}>
+          <button className="aboutUs" onClick={() => navigate("/about")}>
             O nas
           </button>
           <button className="specialists" onClick={() => navigate("/")}>
             Specjaliści
           </button>
-          <button className="services" onClick={() => navigate("/")}>
+          <button className="services" onClick={() => navigate("/offer")}>
             Nasze usługi
           </button>
-          <button className="partners" onClick={() => navigate("/")}>
-            Partnerzy
-          </button>
-          <button className="news" onClick={() => navigate("/")}>
+          <button className="news" onClick={() => navigate("/news")}>
             Aktualności
           </button>
-          <button className="contact" onClick={() => navigate("/")}>
+          <button className="contact" onClick={() => navigate("/contact")}>
             Kontakt
           </button>
         </div>
@@ -73,16 +73,24 @@ const CyberSec = () => {
             <h1 className="thin">na które możesz liczyć.</h1>
             <p className="description">
               W dobie cyfryzacji zagrożenia w sieci stają się coraz bardziej
-              zaawansowane i powszechne. Ochrona danych, systemów i informacji
-              to nie tylko kwestia technologii, ale przede wszystkim strategii.
-              Dzięki naszym usługom zyskujesz pewność, że Twoja firma jest
-              bezpieczna przed cyberatakami.
+              zaawansowane i powszechne.{" "}
+              <span className="bolder">
+                Ochrona danych, systemów i informacji to nie tylko kwestia
+                technologii,
+              </span>{" "}
+              ale przede wszystkim strategii.
+              <span className="bolder">Dzięki naszym usługom</span> zyskujesz
+              pewność, że{" "}
+              <span className="bolder">Twoja firma jest bezpieczna</span> przed
+              cyberatakami.
             </p>
             <p className="ending">
               Z nami cyberbezpieczeństwo to nie tylko technologia <br /> – to
               strategia obrony Twojej firmy.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -93,28 +101,28 @@ const CyberSec = () => {
             <div className="task">
               <img src="it.png" alt="IT" />
               <p>
-                ✔ Audytujemy infrastrukturę IT, identyfikując potencjalne luki w
+                Audytujemy infrastrukturę IT, identyfikując potencjalne luki w
                 zabezpieczeniach.
               </p>
             </div>
             <div className="task">
               <img src="bank.png" alt="bank" />
               <p>
-                ✔ Opracowujemy kompleksowe strategie ochrony danych i systemów
+                Opracowujemy kompleksowe strategie ochrony danych i systemów
                 przed cyberzagrożeniami.
               </p>
             </div>
             <div className="task">
               <img src="shield.png" alt="tarcza" />
               <p>
-                ✔ Wdrażamy rozwiązania chroniące przed atakami z zewnątrz i
+                Wdrażamy rozwiązania chroniące przed atakami z zewnątrz i
                 wewnętrznymi incydentami.
               </p>
             </div>
             <div className="task">
               <img src="voice.png" alt="dźwięk" />
               <p>
-                ✔ Szkolimy pracowników, zwiększając świadomość zagrożeń i
+                Szkolimy pracowników, zwiększając świadomość zagrożeń i
                 umiejętności reagowania na kryzysowe sytuacje.
               </p>
             </div>
@@ -128,12 +136,17 @@ const CyberSec = () => {
             <h2>Jak działamy?</h2>
             <p className="description">
               Kroczymy z Tobą przez proces ochrony, zaczynając od audytu, przez
-              implementację rozwiązań, aż po stałe monitorowanie. Nasze
-              działania są dostosowane do charakterystyki Twojej działalności i
-              skali organizacji. Współpracujemy z firmami z różnych branż – od
-              małych bprzedsiębiorstw po duże korporacje.
+              implementację rozwiązań, aż po stałe monitorowanie.{" "}
+              <span className="bolder">
+                Nasze działania są dostosowane do charakterystyki Twojej
+                działalności i skali organizacji.
+              </span>{" "}
+              Współpracujemy z firmami z różnych branż – od małych
+              przedsiębiorstw po duże korporacje.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
         <div className="subHeaderRight">
@@ -152,10 +165,15 @@ const CyberSec = () => {
               Ochrona przed cyberzagrożeniami to nie tylko kwestia technologii,
               ale i reputacji firmy. Działając w zgodzie z najlepszymi
               praktykami, minimalizujesz ryzyko utraty danych, finansowych
-              konsekwencji czy uszczerbku na wizerunku. Z nami budujesz cyfrową
-              odporność i zyskujesz zaufanie swoich klientów i partnerów.
+              konsekwencji czy uszczerbku na wizerunku.{" "}
+              <span className="bolder">
+                Z nami budujesz cyfrową odporność i zyskujesz zaufanie swoich
+                klientów i partnerów.
+              </span>
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -192,19 +210,19 @@ const CyberSec = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs" onClick={() => navigate("/")}>
+            <button className="aboutUs" onClick={() => navigate("/about")}>
               O nas
             </button>
-            <button className="news" onClick={() => navigate("/")}>
+            <button className="news" onClick={() => navigate("/news")}>
               Aktualności
             </button>
             <button className="specialists" onClick={() => navigate("/")}>
               Specjaliści
             </button>
-            <button className="services" onClick={() => navigate("/")}>
+            <button className="services" onClick={() => navigate("/offer")}>
               Oferta
             </button>
-            <button className="contact" onClick={() => navigate("/")}>
+            <button className="contact" onClick={() => navigate("/contact")}>
               Kontakt
             </button>
           </nav>

@@ -30,7 +30,11 @@ const UnderControl = () => {
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
-        <img src="/logo JD global.png" alt="logo" />
+        <img
+          src="/logo JD global.png"
+          alt="logo"
+          onClick={() => navigate("/")}
+        />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
             <div className="line"></div>
@@ -43,22 +47,19 @@ const UnderControl = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/")}>
+          <button className="aboutUs" onClick={() => navigate("/about")}>
             O nas
           </button>
           <button className="specialists" onClick={() => navigate("/")}>
             Specjaliści
           </button>
-          <button className="services" onClick={() => navigate("/")}>
+          <button className="services" onClick={() => navigate("/offer")}>
             Nasze usługi
           </button>
-          <button className="partners" onClick={() => navigate("/")}>
-            Partnerzy
-          </button>
-          <button className="news" onClick={() => navigate("/")}>
+          <button className="news" onClick={() => navigate("/news")}>
             Aktualności
           </button>
-          <button className="contact" onClick={() => navigate("/")}>
+          <button className="contact" onClick={() => navigate("/contact")}>
             Kontakt
           </button>
         </div>
@@ -73,15 +74,19 @@ const UnderControl = () => {
             <h1 className="thin">Ryzyko - pod naszą.</h1>
             <p className="description">
               W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad
-              ryzykiem to zbyt duże ryzyko. Dlatego wspieramy firmy w budowaniu
-              stabilnych, bezpiecznych fundamentów – poprzez skuteczny audyt i
-              profesjonalne zarządzanie ryzykiem.
+              ryzykiem to zbyt duże ryzyko. Dlatego{" "}
+              <span className="bolder">
+                wspieramy firmy w budowaniu stabilnych, bezpiecznych fundamentów{" "}
+              </span>{" "}
+              – poprzez skuteczny audyt i profesjonalne zarządzanie ryzykiem.
             </p>
             <p className="ending">
               Z nami audyt to nie kontrola - <br />
               to strategia na przyszłość
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -92,27 +97,27 @@ const UnderControl = () => {
             <div className="task">
               <img src="structure.png" alt="struktura" />
               <p>
-                ✔ Wykrywamy słabe punkty w strukturze, procesach i procedurach.
+                Wykrywamy słabe punkty w strukturze, procesach i procedurach.
               </p>
             </div>
             <div className="task">
               <img src="drop.png" alt="spadek" />
               <p>
-                ✔ Minimalizujemy ryzyka prawne, finansowe i operacyjne, zanim
+                Minimalizujemy ryzyka prawne, finansowe i operacyjne, zanim
                 zaczną generować straty.
               </p>
             </div>
             <div className="task">
               <img src="sort.png" alt="sortowanie" />
               <p>
-                ✔ Uporządkowujemy wewnętrzne procesy i wzmacniamy zgodność z
+                Uporządkowujemy wewnętrzne procesy i wzmacniamy zgodność z
                 regulacjami.
               </p>
             </div>
             <div className="task">
               <img src="Verified.png" alt="zweryfikowane" />
               <p>
-                ✔ Dostarczamy praktyczne, gotowe do wdrożenia rozwiązania, nie
+                Dostarczamy praktyczne, gotowe do wdrożenia rozwiązania, nie
                 tylko raporty.
               </p>
             </div>
@@ -126,11 +131,16 @@ const UnderControl = () => {
             <h2>Jak działamy?</h2>
             <p className="description">
               Stawiamy na jasną komunikację, konkretne dane i partnerskie
-              podejście. Mówimy językiem biznesu, a nie trudnym żargonem. Nasze
-              działania są dostosowane do skali i branży Twojej firmy – <br />
+              podejście. Mówimy językiem biznesu, a nie trudnym żargonem. <br />
+              <span className="bolder">
+                Nasze działania są dostosowane do skali i branży Twojej firmy
+              </span>{" "}
+              – <br />
               od MŚP, po duże organizacje.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
         <div className="subHeaderRight">
@@ -146,11 +156,15 @@ const UnderControl = () => {
           <div className="subRight2-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
-              Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. Chronisz
-              swój biznes przed nieprzewidzianymi zagrożeniami i budujesz
-              zaufanie – klientów, inwestorów i partnerów.
+              Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. <br />{" "}
+              <span className="bolder">Chronisz swój biznes</span> przed
+              nieprzewidzianymi zagrożeniami{" "}
+              <span className="bolder">i budujesz zaufanie </span> – klientów,
+              inwestorów i partnerów.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -187,19 +201,19 @@ const UnderControl = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs" onClick={() => navigate("/")}>
+            <button className="aboutUs" onClick={() => navigate("/about")}>
               O nas
             </button>
-            <button className="news" onClick={() => navigate("/")}>
+            <button className="news" onClick={() => navigate("/news")}>
               Aktualności
             </button>
             <button className="specialists" onClick={() => navigate("/")}>
               Specjaliści
             </button>
-            <button className="services" onClick={() => navigate("/")}>
+            <button className="services" onClick={() => navigate("/offer")}>
               Oferta
             </button>
-            <button className="contact" onClick={() => navigate("/")}>
+            <button className="contact" onClick={() => navigate("/contact")}>
               Kontakt
             </button>
           </nav>

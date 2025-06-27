@@ -30,7 +30,7 @@ const MainPage = () => {
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
-        <img src="/logo JD global.png" alt="logo" />
+        <img src="/logo2.png" alt="logo" onClick={() => navigate("/")} />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
             <div className="line"></div>
@@ -61,12 +61,6 @@ const MainPage = () => {
           >
             Nasze usługi
           </button>
-          <button
-            className="partners"
-            onClick={() => handleSectionClick("companies")}
-          >
-            Partnerzy
-          </button>
           {/*NARAZIE UKRYTE <button
             className="recomendations"
             onClick={() => handleSectionClick("")}
@@ -91,10 +85,12 @@ const MainPage = () => {
         {isMobile ? (
           <>
             <div className="company">
-              <span>
-                <span className="bold">JD Global Consulting -</span> Twój
-                partner rozwoju i transformacji biznesu
-              </span>
+              <h1>
+                <span className="bold">JD Global Consulting -</span>
+                <span className="thin">
+                  Twój partner rozwoju i transformacji biznesu
+                </span>
+              </h1>
             </div>
             <div className="mission">
               <h4>Nasza misja</h4>
@@ -124,10 +120,12 @@ const MainPage = () => {
               </button>
             </div>
             <div className="company">
-              <span>
-                <span className="bold">JD Global Consulting -</span> Twój
-                partner rozwoju i transformacji biznesu
-              </span>
+              <h1>
+                <span className="bold">JD Global Consulting -</span>
+                <span className="thin">
+                  Twój partner rozwoju i transformacji biznesu
+                </span>
+              </h1>
             </div>
           </>
         )}
@@ -167,7 +165,9 @@ const MainPage = () => {
           </div>
         </div>
       </div> */}
-      <img className="building" src="Rectangle 1.png" alt="" />
+      <div className="buildingImage">
+        <img className="building" src="Rectangle 1.png" alt="" />
+      </div>
       <section className={`whatWeDo${isMobile ? " mobile" : ""}`} id="whatWeDo">
         <h2>Zmieniamy wyzwania w możliwości</h2>
         <span>
@@ -319,67 +319,67 @@ const MainPage = () => {
           </div>
           <div className="employee">
             <p>Specjalista ds. Technologii i Cyfrowej Transformacji</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/techSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Finansów</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/financeSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Podatków</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/taxSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Fuzji i Przejęć</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/fusionSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Prawnych</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/lawSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Zarządzania Zasobami Ludzkimi</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/HumanResourcesSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Marketingu</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/marketingSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Rozwoju</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/developmentSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Produkcji</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/productionSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Transportu i Logistyki</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/logisticSpecialist")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Funduszy Unijnych</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/UEfundsSpecialist")}>
               Zobacz więcej
             </button>
           </div>
@@ -391,7 +391,7 @@ const MainPage = () => {
       >
         <div className="contactForm__left">
           <h1>
-            <strong>Porozmawiajmy</strong> o przyszłości
+            <strong>Porozmawiajmy</strong> <br /> o przyszłości
             <br />
             Twojego biznesu
           </h1>
@@ -401,31 +401,7 @@ const MainPage = () => {
           <div className="contactInfo">
             <div className="email">
               <span className="icon">
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="#070046"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <rect
-                    width="20"
-                    height="16"
-                    x="2"
-                    y="4"
-                    rx="4"
-                    stroke="#070046"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                  <path
-                    d="M22 6 12 13 2 6"
-                    stroke="#070046"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                </svg>
+                <img src="mail vector.svg" alt="email" />
               </span>
               <div>
                 <p>Email</p>
@@ -434,20 +410,7 @@ const MainPage = () => {
             </div>
             <div className="phone">
               <span className="icon">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21.97 18.33C21.97 18.69 21.89 19.06 21.72 19.42C21.55 19.78 21.33 20.12 21.04 20.44C20.55 20.98 20.01 21.37 19.4 21.62C18.8 21.87 18.15 22 17.45 22C16.43 22 15.34 21.76 14.19 21.27C13.04 20.78 11.89 20.12 10.75 19.29C9.6 18.45 8.51 17.52 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.27 13.75 11.79 14.24 12.32 14.69C12.84 15.13 13.27 15.43 13.61 15.61C13.66 15.63 13.72 15.66 13.79 15.69C13.87 15.72 13.95 15.73 14.04 15.73C14.21 15.73 14.34 15.67 14.45 15.56L15.21 14.81C15.46 14.56 15.7 14.37 15.93 14.25C16.16 14.11 16.39 14.04 16.64 14.04C16.83 14.04 17.03 14.08 17.25 14.17C17.47 14.26 17.7 14.39 17.95 14.56L21.26 16.91C21.52 17.09 21.7 17.31 21.81 17.55C21.91 17.8 21.97 18.05 21.97 18.33Z"
-                    stroke="#1A1A1A"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                  />
-                </svg>
+                <img src="phone vector.svg" alt="phone" />
               </span>
               <div>
                 <p>Telefon</p>
@@ -487,7 +450,9 @@ const MainPage = () => {
       </section>
       <section className={`newsletter${isMobile ? " mobile" : ""}`}>
         <div className="newsletter-left">
-          <h2>Bądź na bieżąco z rynkiem i innowacjami.</h2>
+          <h2>
+            Bądź na bieżąco z rynkiem <br /> i innowacjami.
+          </h2>
           <p>Zapisz się na nasz newsletter i otrzymuj:</p>
           <div className="benefits">
             <div className="benefit">
@@ -554,7 +519,7 @@ const MainPage = () => {
             <input type="email" name="email" id="email" placeholder="Email" />
             <input type="text" name="imie" id="name" placeholder="Imię" />
             <div className="checkbox-row">
-              <input type="checkbox" name="agreement" id="agreement" />
+              <input type="checkbox" name="agreement" id="agreement" required />
               <label htmlFor="agreement">
                 Akceptuję politykę prywatności i chcę otrzymywać newsletter,
                 czyli informacje handlowe o promocjach
@@ -564,7 +529,7 @@ const MainPage = () => {
           </form>
         </div>
       </section>
-      {/* NARAZIE UKRYTE <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
+      <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
         <h1>Aktualności</h1>
         <hr />
         <div className="articles">
@@ -574,10 +539,11 @@ const MainPage = () => {
               <img src="clock.png" alt="icon" />
               <p>5-10 minut czytania</p>
             </div>
-            <h3>5 kluczowych kroków do skutecznej transformacji biznesowej</h3>
+            <h3>Jak zgrać zespół w pracy?</h3>
             <span>
-              W dynamicznie zmieniającym się świecie transformacja biznesowa to
-              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
+              Wiesz, co łączy dobrze naoliwiony zespół IT, sprawny dział
+              sprzedaży i kuchnię w restauracji z gwiazdką Michelin? Nie
+              tylko....
             </span>
             <div className="author">
               <img src="elżbieta1.png" alt="author" />
@@ -594,11 +560,12 @@ const MainPage = () => {
               <p>5-10 minut czytania</p>
             </div>
             <h3>
-              Cyberbezpieczeństwo w małej i średniej firmie — od czego zacząć?
+              Co napędza rozwój IT? 5 trendów, które trzeba znać w 2025 roku
             </h3>
             <span>
-              W dynamicznie zmieniającym się świecie transformacja biznesowa to
-              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
+              Branża technologiczna to nieustanny ruch, ciągła zmiana i
+              niekończące się innowacje. Jeśli prowadzisz firmę, tworzysz
+              start-up, odpowiadasz za...
             </span>
             <div className="author">
               <img src="krzysztof5.png" alt="author" />
@@ -609,15 +576,16 @@ const MainPage = () => {
             </div>
           </div>
           <div className="article">
-            <img src="news3.png" alt="articleImg" />
+            <img src="start-up.png" alt="articleImg" />
             <div className="readingTime">
               <img src="clock.png" alt="icon" />
               <p>5-10 minut czytania</p>
             </div>
-            <h3>5 kluczowych kroków do skutecznej transformacji biznesowej</h3>
+            <h3>5 kluczowych zasad, jak skutecznie rozwijać swój start-up</h3>
             <span>
-              W dynamicznie zmieniającym się świecie transformacja biznesowa to
-              nie opcja — to konieczność. Jednak bez jasno określonych etapów...
+              W erze innowacji i dynamicznych zmian rynkowych, rozwijanie
+              start-upu to nie tylko kwestia dobrego pomysłu – to przede
+              wszystkim...
             </span>
             <div className="author">
               <img src="elżbieta1.png" alt="author" />
@@ -631,7 +599,7 @@ const MainPage = () => {
         <button className="main-news-btn" onClick={() => navigate("/news")}>
           Zobacz wszystkie artykuły
         </button>
-      </section> */}
+      </section>
       <footer className={`footer${isMobile ? " mobile" : ""}`}>
         <div className="footer-top">
           <div className="footer-left">

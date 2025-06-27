@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "./marketing.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -30,7 +29,11 @@ const Marketing = () => {
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
-        <img src="/logo JD global.png" alt="logo" />
+        <img
+          src="/logo JD global.png"
+          alt="logo"
+          onClick={() => navigate("/")}
+        />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
             <div className="line"></div>
@@ -43,22 +46,19 @@ const Marketing = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/")}>
+          <button className="aboutUs" onClick={() => navigate("/about")}>
             O nas
           </button>
           <button className="specialists" onClick={() => navigate("/")}>
             Specjaliści
           </button>
-          <button className="services" onClick={() => navigate("/")}>
+          <button className="services" onClick={() => navigate("/offer")}>
             Nasze usługi
           </button>
-          <button className="partners" onClick={() => navigate("/")}>
-            Partnerzy
-          </button>
-          <button className="news" onClick={() => navigate("/")}>
+          <button className="news" onClick={() => navigate("/news")}>
             Aktualności
           </button>
-          <button className="contact" onClick={() => navigate("/")}>
+          <button className="contact" onClick={() => navigate("/contact")}>
             Kontakt
           </button>
         </div>
@@ -74,17 +74,22 @@ const Marketing = () => {
               <h1 className="thin">które realnie napędza sprzedaż.</h1>
             </div>
             <p className="description">
-              Silna marka, skuteczna komunikacja i dobrze zaplanowane działania
-              marketingowe to dziś podstawa biznesowego sukcesu. Nasze doradztwo
-              marketingowe łączy strategię z kreatywnością, a dane z
-              doświadczeniem. Dzięki nam Twoje działania marketingowe są spójne,
-              trafne i przede wszystkim – skuteczne.
+              <span className="bolder">
+                Silna marka, skuteczna komunikacja i dobrze zaplanowane
+                działania marketingowe
+              </span>{" "}
+              to dziś podstawa biznesowego sukcesu. Nasze doradztwo marketingowe
+              łączy strategię z kreatywnością, a dane z doświadczeniem. Dzięki
+              nam Twoje działania marketingowe są spójne, trafne i przede
+              wszystkim – skuteczne.
             </p>
             <p className="ending">
               Z nami Twój marketing wreszcie zaczyna działać. Skutecznie.
               Strategicznie. Sprzedażowo.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -95,28 +100,28 @@ const Marketing = () => {
             <div className="task">
               <img src="Data.png" alt="dane" />
               <p>
-                ✔Tworzymy strategie marketingowe dopasowane do Twojego biznesu i
+                Tworzymy strategie marketingowe dopasowane do Twojego biznesu i
                 rynku.
               </p>
             </div>
             <div className="task">
               <img src="settings.png" alt="ustawienia" />
               <p>
-                ✔ Doradzamy w zakresie brandingu, komunikacji, digital
-                marketingu i kampanii reklamowych.
+                Doradzamy w zakresie brandingu, komunikacji, digital marketingu
+                i kampanii reklamowych.
               </p>
             </div>
             <div className="task">
               <img src="dynamicform.png" alt="formularz" />
               <p>
-                ✔Analizujemy efektywność dotychczasowych działań i wskazujemy,
-                co naprawdę działa.
+                Analizujemy efektywność dotychczasowych działań i wskazujemy, co
+                naprawdę działa.
               </p>
             </div>
             <div className="task">
               <img src="document.png" alt="dokument" />
               <p>
-                ✔ Pomagamy w budowie silnej marki, która przyciąga i sprzedaje.
+                Pomagamy w budowie silnej marki, która przyciąga i sprzedaje.
               </p>
             </div>
           </div>
@@ -129,12 +134,18 @@ const Marketing = () => {
             <h2>Jak działamy?</h2>
             <p className="description">
               Zaczynamy od zrozumienia Twojego biznesu, a nie od narzucania
-              gotowych technologii. Doradzamy tak, by technologia była
-              narzędziem realizacji celów – nie kosztem bez efektu.
+              gotowych technologii.{" "}
+              <span className="bolder">
+                Doradzamy tak, by technologia była narzędziem realizacji celów –
+                nie kosztem bez efektu.
+              </span>{" "}
+              <br />
               Współpracujemy z menedżerami, zespołami IT i dostawcami, by całość
               była spójna, opłacalna i przyszłościowa.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
         <div className="subHeaderRight">
@@ -151,12 +162,17 @@ const Marketing = () => {
             <h2>Dlaczego warto?</h2>
             <p className="description">
               Zyskujesz pewność, że inwestujesz w rozwiązania, które faktycznie
-              działają i przynoszą zwrot. Unikasz kosztownych błędów,
-              niepotrzebnych systemów i wdrożeń bez strategii. Dzięki naszej
-              pomocy Twoja firma staje się bardziej nowoczesna, elastyczna i
-              gotowa na wyzwania cyfrowej gospodarki.
+              działają i przynoszą zwrot.{" "}
+              <span className="bolder">
+                Unikasz kosztownych błędów, niepotrzebnych systemów i wdrożeń
+                bez strategii.
+              </span>{" "}
+              <br /> Dzięki naszej pomocy Twoja firma staje się bardziej
+              nowoczesna, elastyczna i gotowa na wyzwania cyfrowej gospodarki.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>

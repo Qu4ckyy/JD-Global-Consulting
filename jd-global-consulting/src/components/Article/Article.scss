@@ -1,0 +1,139 @@
+.article-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  h1 {
+    color: #070046;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    width: 75%;
+    font-size: 0.9rem;
+    color: #444444;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    flex: 0 0 60%;
+    padding-bottom: 30px;
+
+    > span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      color: #888;
+
+      &:not(:last-child) {
+        padding-right: 40px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 1px;
+          height: 100%;
+          background: #e0e0e0;
+        }
+      }
+    }
+
+    .date::before {
+      content: "Data:";
+      font-weight: 500;
+      color: #070046;
+      margin-bottom: 8px;
+    }
+    .authorsName::before {
+      content: "Autor:";
+      font-weight: 500;
+      color: #070046;
+      margin-bottom: 8px;
+    }
+    .time::before {
+      content: "Czas czytania:";
+      font-weight: 500;
+      color: #070046;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  border-radius: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.article-content {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1b1b1b;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    line-height: 1.3;
+    text-align: left;
+    color: #070046;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+}
+
+.back-button {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0053f6;
+  text-decoration: none;
+  text-align: left;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  border-radius: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+}

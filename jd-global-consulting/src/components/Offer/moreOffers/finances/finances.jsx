@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
-import "./finances.scss";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -30,7 +29,11 @@ const Finances = () => {
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
-        <img src="/logo JD global.png" alt="logo" />
+        <img
+          src="/logo JD global.png"
+          alt="logo"
+          onClick={() => navigate("/")}
+        />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
             <div className="line"></div>
@@ -43,22 +46,19 @@ const Finances = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/")}>
+          <button className="aboutUs" onClick={() => navigate("/about")}>
             O nas
           </button>
           <button className="specialists" onClick={() => navigate("/")}>
             Specjaliści
           </button>
-          <button className="services" onClick={() => navigate("/")}>
+          <button className="services" onClick={() => navigate("/offer")}>
             Nasze usługi
           </button>
-          <button className="partners" onClick={() => navigate("/")}>
-            Partnerzy
-          </button>
-          <button className="news" onClick={() => navigate("/")}>
+          <button className="news" onClick={() => navigate("/news")}>
             Aktualności
           </button>
-          <button className="contact" onClick={() => navigate("/")}>
+          <button className="contact" onClick={() => navigate("/contact")}>
             Kontakt
           </button>
         </div>
@@ -75,15 +75,21 @@ const Finances = () => {
             <h1 className="thin">w jednym miejscu.</h1>
             <p className="description">
               Rozwój firmy wymaga solidnych fundamentów finansowych i dostępu do
-              odpowiednich źródeł finansowania. Nasze doradztwo finansowe i
-              wsparcie w pozyskiwaniu funduszy unijnych to konkretna pomoc w
-              planowaniu, zabezpieczaniu i realizacji Twoich celów biznesowych.
+              odpowiednich źródeł finansowania. Nasze{" "}
+              <span className="bolder">
+                doradztwo finansowe i wsparcie w pozyskiwaniu funduszy unijnych
+                to konkretna pomoc
+              </span>{" "}
+              w planowaniu, zabezpieczaniu i realizacji Twoich celów
+              biznesowych.
             </p>
             <p className="ending">
               Z nami pieniądze nie są przeszkodą – <br />
               są narzędziem rozwoju.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -94,28 +100,28 @@ const Finances = () => {
             <div className="task">
               <img src="Addchart.png" alt="struktura" />
               <p>
-                ✔Doradzamy w zakresie finansowania działalności, inwestycji i
+                Doradzamy w zakresie finansowania działalności, inwestycji i
                 rozwoju.
               </p>
             </div>
             <div className="task">
               <img src="euro2.png" alt="euro" />
               <p>
-                ✔ Pomagamy pozyskać dotacje z funduszy unijnych – od pomysłu po
+                Pomagamy pozyskać dotacje z funduszy unijnych – od pomysłu po
                 rozliczenie projektu.
               </p>
             </div>
             <div className="task">
               <img src="Strategy.png" alt="strategia" />
               <p>
-                ✔Opracowujemy strategie finansowe i modele biznesowe oparte na
+                Opracowujemy strategie finansowe i modele biznesowe oparte na
                 danych.
               </p>
             </div>
             <div className="task">
               <img src="Analytics.png" alt="analiza" />
               <p>
-                ✔ Analizujemy ryzyka i pomagamy podejmować bezpieczne decyzje
+                Analizujemy ryzyka i pomagamy podejmować bezpieczne decyzje
                 finansowe.
               </p>
             </div>
@@ -130,10 +136,15 @@ const Finances = () => {
             <p className="description">
               Działamy kompleksowo – od identyfikacji możliwości finansowania,
               przez przygotowanie dokumentacji, aż po wsparcie w realizacji i
-              rozliczeniu projektów. Pracujemy w oparciu o aktualne programy
-              unijne i krajowe oraz najlepsze praktyki finansowe.
+              rozliczeniu projektów. <br />{" "}
+              <span className="bolder">
+                Pracujemy w oparciu o aktualne programy unijne i krajowe oraz
+                najlepsze praktyki finansowe.
+              </span>
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
         <div className="subHeaderRight">
@@ -150,12 +161,18 @@ const Finances = () => {
             <h2>Dlaczego warto?</h2>
             <p className="description">
               Zyskujesz dostęp do dodatkowych środków bez ryzyka przepaleń czy
-              błędów formalnych. Unikasz biurokracji, zyskujesz czas i partnera,
-              który przeprowadzi Cię przez cały proces finansowania. Pomagamy
-              firmom rosnąć mądrze – na solidnych, dobrze zaplanowanych
+              błędów formalnych.{" "}
+              <span className="bolder">
+                Unikasz biurokracji, zyskujesz czas i partnera, który
+                przeprowadzi Cię przez cały proces finansowania.
+              </span>{" "}
+              <br />
+              Pomagamy firmom rosnąć mądrze – na solidnych, dobrze zaplanowanych
               fundamentach finansowych.
             </p>
-            <button className="visitation">Umów się na konsultacje</button>
+            <button className="visitation" onClick={() => navigate("/contact")}>
+              Umów się na konsultacje
+            </button>
           </div>
         </div>
       </section>
@@ -192,19 +209,19 @@ const Finances = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs" onClick={() => navigate("/")}>
+            <button className="aboutUs" onClick={() => navigate("/about")}>
               O nas
             </button>
-            <button className="news" onClick={() => navigate("/")}>
+            <button className="news" onClick={() => navigate("/news")}>
               Aktualności
             </button>
             <button className="specialists" onClick={() => navigate("/")}>
               Specjaliści
             </button>
-            <button className="services" onClick={() => navigate("/")}>
+            <button className="services" onClick={() => navigate("/offer")}>
               Oferta
             </button>
-            <button className="contact" onClick={() => navigate("/")}>
+            <button className="contact" onClick={() => navigate("/contact")}>
               Kontakt
             </button>
           </nav>
