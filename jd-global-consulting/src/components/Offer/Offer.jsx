@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 const servicesData = [
   {
-    img: "twójBiznes.png",
+    img: "twójbiznes.png",
     title: "Twój biznes pod kontrolą. \nRyzyko – pod naszą.",
     description:
       "W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad ryzykiem to zbyt duże ryzyko....",

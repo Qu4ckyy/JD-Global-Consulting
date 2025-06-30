@@ -69,7 +69,7 @@ const FusionSpecialist = () => {
             </span>
           </div>
           <div className="sTask">
-            <img src="balance.png" alt="analiza" />
+            <img src="Balance.png" alt="analiza" />
             <span>
               Koordynowanie procesu integracji przedsiębiorstw po przejęciu, w
               tym harmonizacja procesów operacyjnych.

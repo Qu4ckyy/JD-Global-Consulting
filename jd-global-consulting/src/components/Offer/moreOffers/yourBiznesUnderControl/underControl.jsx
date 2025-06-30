@@ -131,7 +131,8 @@ const UnderControl = () => {
             <h2>Jak działamy?</h2>
             <p className="description">
               Stawiamy na jasną komunikację, konkretne dane i partnerskie
-              podejście. Mówimy językiem biznesu, a nie trudnym żargonem. <br />
+              podejście. <br /> Mówimy językiem biznesu, a nie trudnym żargonem.{" "}
+              <br />
               <span className="bolder">
                 Nasze działania są dostosowane do skali i branży Twojej firmy
               </span>{" "}
@@ -147,12 +148,12 @@ const UnderControl = () => {
         </div>
       </section>
       <hr />
-      <section className="subHeader">
-        <div className="subHeaderRight">
+      <section className="subHeader2">
+        <div className="subLeft2">
           <img src="duo.png" alt="praca" />
         </div>
-        <div className="subHeaderLeft">
-          <div className="subHeaderLeft-content">
+        <div className="subRight2">
+          <div className="subRight2-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
               Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. <br />{" "}

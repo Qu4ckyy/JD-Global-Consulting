@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 24px 48px 24px;
+  padding: 100px 0 48px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,16 +22,16 @@
   }
 }
 
-.aboutMission {
-  display: flex;
+.aboutMission,
+.vision,
+.whoAreWe {
   width: 100vw;
-  flex-direction: row;
-  align-items: center;
-  gap: 48px;
-  background-color: #f7f7fa;
-  padding: 48px;
-  border-radius: 24px;
+  margin-left: calc(50% - 50vw - 20px);
+  margin-right: calc(50% - 50vw - 20px);
+  background: #f6f6f6;
+}
 
+.aboutMission {
   .missionLeft {
     flex: 1;
     img {
@@ -39,6 +39,9 @@
       height: auto;
       border-radius: 16px;
       display: block;
+      margin-left: 0;
+      margin-right: auto;
+      align-self: flex-start;
     }
   }
 
@@ -73,15 +76,6 @@
 }
 
 .vision {
-  display: flex;
-  width: 100vw;
-  flex-direction: row;
-  align-items: center;
-  gap: 48px;
-  background-color: #f7f7fa;
-  padding: 48px;
-  border-radius: 24px;
-
   .visionLeft {
     flex: 1;
     display: flex;
@@ -118,20 +112,14 @@
       height: auto;
       border-radius: 16px;
       display: block;
+      margin-right: 0;
+      margin-left: auto;
+      align-self: flex-end;
     }
   }
 }
 
 .whoAreWe {
-  display: flex;
-  width: 100vw;
-  flex-direction: row;
-  align-items: center;
-  gap: 48px;
-  background-color: #f7f7fa;
-  padding: 48px;
-  border-radius: 24px;
-
   .whoLeft {
     flex: 1;
     img {
@@ -139,6 +127,9 @@
       height: auto;
       border-radius: 16px;
       display: block;
+      margin-left: 0;
+      margin-right: auto;
+      align-self: flex-start;
     }
   }
 
@@ -252,4 +243,25 @@
   .whyUs-cards .why {
     max-width: 100%;
   }
+}
+
+.aboutSection-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.aboutMission .aboutSection-inner,
+.vision .aboutSection-inner,
+.whoAreWe .aboutSection-inner {
+  max-width: none;
+  margin: 0;
+  width: 100%;
+  padding: 40px 20px;
 }

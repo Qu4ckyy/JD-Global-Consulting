@@ -66,51 +66,58 @@ const AboutUs = () => {
       <h1 className="title">O Nas</h1>
       <div className="aboutUsPage-content">
         <section className="aboutMission">
-          <div className="missionLeft">
-            <img src="mission.png" alt="misja" />
-          </div>
-          <div className="missionRight">
-            <h1>Misja</h1>
-            <span>
-              Naszą misją jest wspieranie przedsiębiorstw w opracowywaniu i
-              wdrażaniu strategii, które umożliwiają fundamentalne zmiany,
-              podnoszą efektywność oraz prowadzą do osiągnięcia wyższych
-              poziomów dojrzałości biznesowej. <br /> <br />
-              Pomagamy organizacjom nie tylko rozwiązywać bieżące problemy, ale
-              również budować trwałe fundamenty dla długoterminowego rozwoju.
-            </span>
+          <div className="aboutSection-inner">
+            <div className="missionLeft">
+              <img src="mission.png" alt="misja" />
+            </div>
+            <div className="missionRight">
+              <h1>Misja</h1>
+              <span>
+                Naszą misją jest wspieranie przedsiębiorstw w opracowywaniu i
+                wdrażaniu strategii, które umożliwiają fundamentalne zmiany,
+                podnoszą efektywność oraz prowadzą do osiągnięcia wyższych
+                poziomów dojrzałości biznesowej. <br /> <br />
+                Pomagamy organizacjom nie tylko rozwiązywać bieżące problemy,
+                ale również budować trwałe fundamenty dla długoterminowego
+                rozwoju.
+              </span>
+            </div>
           </div>
         </section>
         <section className="vision">
-          <div className="visionLeft">
-            <h1>Wizja</h1>
-            <span>
-              Chcemy być pierwszym wyborem dla firm poszukujących przełomowych
-              rozwiązań, niezależnie od skali czy branży. <br /> <br /> Dążymy
-              do tego, by dzięki naszemu wsparciu przedsiębiorstwa skutecznie
-              reagowały na zmieniające się warunki rynkowe, rozwijały się
-              dynamicznie i osiągały trwałą przewagę konkurencyjną.
-            </span>
-          </div>
-          <div className="visionRight">
-            <img src="vision.png" alt="wizja" />
+          <div className="aboutSection-inner">
+            <div className="visionLeft">
+              <h1>Wizja</h1>
+              <span>
+                Chcemy być pierwszym wyborem dla firm poszukujących przełomowych
+                rozwiązań, niezależnie od skali czy branży. <br /> <br /> Dążymy
+                do tego, by dzięki naszemu wsparciu przedsiębiorstwa skutecznie
+                reagowały na zmieniające się warunki rynkowe, rozwijały się
+                dynamicznie i osiągały trwałą przewagę konkurencyjną.
+              </span>
+            </div>
+            <div className="visionRight">
+              <img src="vision.png" alt="wizja" />
+            </div>
           </div>
         </section>
         <section className="whoAreWe">
-          <div className="whoLeft">
-            <img src="aboutUs.png" alt="kim jesteśmy?" />
-          </div>
-          <div className="whoRight">
-            <h1>Kim jesteśmy ?</h1>
-            <span>
-              JD Global Consulting to zaufany partner biznesowy, który łączy
-              doświadczenie, wiedzę i innowacyjność. <br />
-              <br />
-              Tworzymy zespół ekspertów oraz praktyków, którzy zdobywali
-              doświadczenie na strategicznych stanowiskach w różnych sektorach
-              gospodarki. Dzięki temu oferujemy nie tylko doradztwo, ale również
-              realne, wdrażalne rozwiązania.
-            </span>
+          <div className="aboutSection-inner">
+            <div className="whoLeft">
+              <img src="aboutUs.png" alt="kim jesteśmy?" />
+            </div>
+            <div className="whoRight">
+              <h1>Kim jesteśmy ?</h1>
+              <span>
+                JD Global Consulting to zaufany partner biznesowy, który łączy
+                doświadczenie, wiedzę i innowacyjność. <br />
+                <br />
+                Tworzymy zespół ekspertów oraz praktyków, którzy zdobywali
+                doświadczenie na strategicznych stanowiskach w różnych sektorach
+                gospodarki. Dzięki temu oferujemy nie tylko doradztwo, ale
+                również realne, wdrażalne rozwiązania.
+              </span>
+            </div>
           </div>
         </section>
         <section className="whyUs">

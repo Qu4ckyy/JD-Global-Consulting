@@ -130,7 +130,7 @@ const CyberSec = () => {
         </div>
       </section>
       <hr />
-      <section className="subHeader">
+      <section className="subHeader subHeader--reversed-on-mobile">
         <div className="subHeaderLeft">
           <div className="subHeaderLeft-content">
             <h2>Jak działamy?</h2>
