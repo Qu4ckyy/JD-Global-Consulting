@@ -125,7 +125,7 @@ const UnderControl = () => {
         </div>
       </section>
       <hr />
-      <section className="subHeader">
+      <section className="subHeader subHeader--reversed-on-mobile">
         <div className="subHeaderLeft">
           <div className="subHeaderLeft-content">
             <h2>Jak działamy?</h2>
@@ -135,7 +135,6 @@ const UnderControl = () => {
               <span className="bolder">
                 Nasze działania są dostosowane do skali i branży Twojej firmy
               </span>{" "}
-              – <br />
               od MŚP, po duże organizacje.
             </p>
             <button className="visitation" onClick={() => navigate("/contact")}>
@@ -148,12 +147,12 @@ const UnderControl = () => {
         </div>
       </section>
       <hr />
-      <section className="subHeader2">
-        <div className="subLeft2">
+      <section className="subHeader">
+        <div className="subHeaderRight">
           <img src="duo.png" alt="praca" />
         </div>
-        <div className="subRight2">
-          <div className="subRight2-content">
+        <div className="subHeaderLeft">
+          <div className="subHeaderLeft-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
               Zyskujesz spokój, przejrzystość i przewagę konkurencyjną. <br />{" "}

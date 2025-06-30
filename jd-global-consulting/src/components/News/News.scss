@@ -1,5 +1,5 @@
 .newsTitle {
-  text-align: left;
+  text-align: center;
   color: #070046;
   font-weight: 400;
   padding-left: 80px;
@@ -8,8 +8,8 @@
 .articles {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
-  justify-content: space-between;
+  gap: 24px;
+  justify-content: center;
   padding: 40px 20px;
   max-width: 1400px;
   margin: 0 auto;
@@ -17,11 +17,11 @@
 }
 
 .article {
-  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1 1 calc((100% - 2 * 32px) / 3);
   min-width: 280px;
+  height: auto;
   background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
@@ -113,18 +113,17 @@
 
   h3 {
     margin: 8px 20px 0;
-    font-size: 1.25rem;
+    font-size: 22px;
     font-weight: 700;
-    color: #1b1b1b;
+    color: #070046;
     text-align: left;
   }
   .description {
     margin: 8px 20px 0;
-    font-size: 1rem;
+    font-size: 16px;
     color: #444444;
     line-height: 1.6;
     text-align: left;
-    flex-grow: 1;
   }
 
   .authorData {

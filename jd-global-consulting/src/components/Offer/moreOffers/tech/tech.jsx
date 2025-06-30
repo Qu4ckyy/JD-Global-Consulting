@@ -72,9 +72,7 @@ const Tech = () => {
             <h1 className="bold">
               Doradztwo <br /> technologiczne,
             </h1>{" "}
-            <h1 className="thin">
-              które <br /> napędza innowacje.
-            </h1>
+            <h1 className="thin">które napędza innowacje.</h1>
             <p className="description">
               Technologia to dziś nie dodatek – to fundament konkurencyjnego
               biznesu. W świecie, gdzie zmiana jest stałą, pomagamy firmom

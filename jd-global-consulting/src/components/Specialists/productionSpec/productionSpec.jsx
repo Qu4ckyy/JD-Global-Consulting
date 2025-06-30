@@ -66,6 +66,13 @@ const ProductionSpecialist = () => {
               kosztów.{" "}
             </span>
           </div>
+          <div className="sTask">
+            <img src="exchange.png" alt="" />
+            <span>
+              Współpraca z działem technologicznym i kontrolą jakości w celu
+              zapewnienia ciągłości produkcji i wdrażania usprawnień.
+            </span>
+          </div>
         </section>
         <div className="specImage">
           <img src="specialists.png" alt="specjaliści" />

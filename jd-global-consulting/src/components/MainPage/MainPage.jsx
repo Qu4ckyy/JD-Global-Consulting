@@ -44,10 +44,7 @@ const MainPage = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button
-            className="aboutUs"
-            onClick={() => handleSectionClick("whatWeDo")}
-          >
+          <button className="aboutUs" onClick={() => navigate("/about")}>
             O nas
           </button>
           <button
@@ -222,7 +219,9 @@ const MainPage = () => {
             </button>
           </div>
           <div className="service">
-            <p>Cyberbezpieczeństwo, na które możesz liczyć.</p>
+            <p>
+              Cyberbezpieczeństwo, <br /> na które możesz liczyć.
+            </p>
             <span>
               W dobie cyfryzacji zagrożenia w sieci stają się coraz bardziej
               zaawansowane i powszechne. Ochrona danych, systemów i informacji
@@ -238,7 +237,8 @@ const MainPage = () => {
           </div>
           <div className="service">
             <p>
-              Doradztwo prawno-podatkowe, które chroni i wspiera Twój biznes.
+              Doradztwo prawno-podatkowe, <br /> które chroni i wspiera Twój
+              biznes.
             </p>
             <span>
               Zarządzanie kwestiami prawnymi i podatkowymi to kluczowy element
@@ -255,7 +255,9 @@ const MainPage = () => {
             <button onClick={() => navigate("/taxes")}>Zobacz więcej</button>
           </div>
           <div className="service">
-            <p>Doradztwo technologiczne, które napędza innowacje.</p>
+            <p>
+              Doradztwo technologiczne, <br /> które napędza innowacje.
+            </p>
             <span>
               Technologia to dziś nie dodatek – to fundament konkurencyjnego
               biznesu. W świecie, gdzie zmiana jest stałą, pomagamy firmom
@@ -295,7 +297,9 @@ const MainPage = () => {
               wsparcie w pozyskiwaniu funduszy unijnych to konkretna pomoc w
               planowaniu, zabezpieczaniu i realizacji Twoich celów biznesowych.
             </span>
-            <p>Z nami pieniądze nie są przeszkodą – są narzędziem rozwoju.</p>
+            <p>
+              Z nami pieniądze <br /> nie są przeszkodą – są narzędziem rozwoju.
+            </p>
             <button onClick={() => navigate("/finances")}>Zobacz więcej</button>
           </div>
         </div>
@@ -554,12 +558,14 @@ const MainPage = () => {
                   Przeczytaj artykuł
                 </button>
               </div>
-              <div className="readingTime">
-                <img src="clock.png" alt="icon" />
-                <p>{article.time}</p>
+              <div className="content">
+                <div className="readingTime">
+                  <img src="clock.png" alt="clock" />
+                  <p>{article.time}</p>
+                </div>
+                <h3>{article.title}</h3>
+                <span>{article.description.slice(0, 100)}...</span>
               </div>
-              <h3>{article.title}</h3>
-              <span>{article.description.slice(0, 100)}...</span>
             </div>
           ))}
         </div>

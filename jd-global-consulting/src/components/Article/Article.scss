@@ -6,13 +6,15 @@
 
   h1 {
     color: #070046;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
   }
 
   .subtitle {
     width: 75%;
-    font-size: 0.9rem;
-    color: #444444;
+    max-width: 886px;
+    font-size: 22px;
+    color: #555;
     line-height: 1.6;
     margin: 0;
     white-space: pre-wrap;
