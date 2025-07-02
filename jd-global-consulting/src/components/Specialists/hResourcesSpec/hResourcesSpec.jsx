@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useIsMobile from "../../../hooks/useIsMobile";
 
 const HResourcesSpecialist = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const isMobile = false;
+  const isMobile = useIsMobile(825);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -75,9 +76,9 @@ const HResourcesSpecialist = () => {
             </span>
           </div>
         </section>
-        <div className="specImage">
-          <img src="specialists.png" alt="specjaliści" />
-        </div>
+      </div>
+      <div className="specImage">
+        <img src="specialists.png" alt="specjaliści" />
       </div>
       <hr />
       <footer className={`footer${isMobile ? " mobile" : ""}`}>

@@ -10,7 +10,8 @@ const scrollToSection = (id) => {
 };
 
 const Logistic = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -85,7 +86,7 @@ const Logistic = () => {
               logistyka pracowała na Twój wynik.
             </p>
             <p className="ending">
-              Z nami logistyka staje się Twoim atutem, a nie kosztem.
+              Z nami logistyka staje się Twoim atutem, <br /> a nie kosztem.
             </p>
             <button className="visitation" onClick={() => navigate("/contact")}>
               Umów się na konsultacje

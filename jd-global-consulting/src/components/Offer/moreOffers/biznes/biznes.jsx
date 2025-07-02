@@ -10,7 +10,8 @@ const scrollToSection = (id) => {
 };
 
 const Biznes = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -78,8 +79,8 @@ const Biznes = () => {
               organizacji.
             </p>
             <p className="ending">
-              Z nami Twoja firma zyska nową jakość – osiągnij sukces z pewnością
-              i precyzją.
+              Z nami Twoja firma zyska nową jakość – <br /> osiągnij sukces z
+              pewnością i precyzją.
             </p>
             <button className="visitation">Umów się na konsultacje</button>
           </div>

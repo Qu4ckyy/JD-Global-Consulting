@@ -10,7 +10,8 @@ const scrollToSection = (id) => {
 };
 
 const Tech = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -84,7 +85,8 @@ const Tech = () => {
               do transformacji cyfrowej.
             </p>
             <p className="ending">
-              Z nami technologia staje się Twoją przewagą – nie przeszkodą.
+              Z nami technologia staje się Twoją przewagą – <br /> nie
+              przeszkodą.
             </p>
             <button className="visitation" onClick={() => navigate("/contact")}>
               Umów się na konsultacje

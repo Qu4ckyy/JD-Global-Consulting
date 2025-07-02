@@ -134,7 +134,7 @@
 }
 
 .headerRight .ending {
-  font-size: 16px;
+  font-size: 20px;
   color: #0a1970;
   font-weight: 700;
   margin: 0 0 1.8rem 0;
@@ -199,7 +199,7 @@
 }
 
 .ourJob > h1 {
-  font-size: 2.2rem;
+  font-size: 40px;
   font-weight: 500;
   color: #0a1970;
   margin-bottom: 32px;
@@ -228,6 +228,12 @@
     flex-direction: column;
     align-items: center;
   }
+
+  @media (max-width: 1475px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
 }
 
 .task {
@@ -253,6 +259,12 @@
     height: auto;
     padding: 24px 16px;
   }
+
+  @media (max-width: 1475px) {
+    flex: 1 1 320px;
+    max-width: 400px;
+    min-width: 280px;
+  }
 }
 
 .task:hover {
@@ -262,14 +274,14 @@
 }
 
 .task img {
-  width: 88px;
-  height: 88px;
+  width: 81px;
+  height: 81px;
   margin-bottom: 18px;
   align-self: center;
 }
 
 .task p {
-  font-size: 1.12rem;
+  font-size: 16px;
   color: #222;
   margin: 0;
   line-height: 1.5;

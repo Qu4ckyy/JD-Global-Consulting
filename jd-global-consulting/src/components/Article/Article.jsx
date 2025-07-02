@@ -8,7 +8,8 @@ import useIsMobile from "../../hooks/useIsMobile";
 const Article = () => {
   const { slug } = useParams();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const navigate = useNavigate();
 
   const [articles, setArticles] = useState(defaultArticles);
@@ -102,6 +103,54 @@ const Article = () => {
             <p key={i}>{block.text}</p>
           )
         )}
+      </section>
+
+      {/* Sekcja Zobacz również */}
+      <section className="also-see-section">
+        <h2 className="also-see-title">Zobacz również</h2>
+        <hr />
+        <div className="also-see-articles">
+          {articles
+            .filter((a) => a.slug !== article.slug)
+            .slice(0, 3)
+            .map((a) => (
+              <div
+                className="also-see-article"
+                key={a.slug}
+                onClick={() => navigate(`/news/${a.slug}`)}
+              >
+                <div className="also-see-image-wrapper">
+                  <img src={a.img} alt={a.title} />
+                  <button className="also-see-read-button">
+                    Przeczytaj artykuł
+                  </button>
+                </div>
+                <div className="also-see-meta">
+                  <div className="also-see-readingTime">
+                    <img src="/clock.png" alt="czas czytania" />
+                    <span>{a.time}</span>
+                  </div>
+                  <h3>{a.title}</h3>
+                  <p className="also-see-description">
+                    {a.description.length > 120
+                      ? a.description.slice(0, 120).trim() + "..."
+                      : a.description}
+                  </p>
+                  {/* <div className="also-see-author">
+                    <img src={a.authorImg} alt={a.authorName} />
+                    <div>
+                      <span className="also-see-authorName">
+                        {a.authorName}
+                      </span>
+                      <span className="also-see-authorRole">
+                        {a.authorRole}
+                      </span>
+                    </div>
+                  </div> */}
+                </div>
+              </div>
+            ))}
+        </div>
       </section>
 
       <Link to="/news" className="back-button">

@@ -10,7 +10,8 @@ const scrollToSection = (id) => {
 };
 
 const Taxes = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -85,8 +86,8 @@ const Taxes = () => {
               a nie na problemach prawnych.
             </p>
             <p className="ending">
-              Z nami zyskujesz pewność, że Twoja firma jest zawsze w zgodzie z
-              prawem i optymalizuje obciążenia podatkowe.
+              Z nami zyskujesz pewność, że Twoja firma jest <br /> zawsze w
+              zgodzie z prawem i optymalizuje <br /> obciążenia podatkowe.
             </p>
             <button className="visitation" onClick={() => navigate("/contact")}>
               Umów się na konsultacje

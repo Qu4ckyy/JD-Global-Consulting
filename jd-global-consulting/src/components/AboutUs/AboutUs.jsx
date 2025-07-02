@@ -4,7 +4,8 @@ import useIsMobile from "../../hooks/useIsMobile";
 import "./AboutUs.scss";
 
 const AboutUs = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -63,9 +64,10 @@ const AboutUs = () => {
           </button>
         </div>
       </header>
-      <h1 className="title">O Nas</h1>
       <div className="aboutUsPage-content">
+        <h1 className="title">O Nas</h1>
         <section className="aboutMission">
+          <hr />
           <div className="aboutSection-inner">
             <div className="missionLeft">
               <img src="mission.png" alt="misja" />

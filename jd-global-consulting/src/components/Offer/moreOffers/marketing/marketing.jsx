@@ -10,7 +10,8 @@ const scrollToSection = (id) => {
 };
 
 const Marketing = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -84,7 +85,7 @@ const Marketing = () => {
               wszystkim – skuteczne.
             </p>
             <p className="ending">
-              Z nami Twój marketing wreszcie zaczyna działać. Skutecznie.
+              Z nami Twój marketing wreszcie zaczyna działać. <br /> Skutecznie.
               Strategicznie. Sprzedażowo.
             </p>
             <button className="visitation" onClick={() => navigate("/contact")}>

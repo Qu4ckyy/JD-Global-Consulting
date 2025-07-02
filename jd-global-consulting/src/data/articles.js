@@ -9,7 +9,7 @@ export const articles = [
     authorName: "Katarzyna Wójcik",
     authorRole: "Specjalistka do spraw finansowych",
     authorImg: "elżbieta1.png",
-    img: "/news1.png",
+    img: "/Rectangle 142.png",
     heroImg: "/Rectangle 142.png",
     time: "5–10 minut czytania",
     content: [
@@ -97,7 +97,8 @@ export const articles = [
     authorName: "Katarzyna Wójcik",
     authorRole: "Specjalistka do spraw finansowych",
     authorImg: "elżbieta1.png",
-    img: "/start-up.png",
+    img: "/5kluczowychZasad.jpg",
+    heroImg: "/5kluczowychZasad.jpg",
     time: "5–10 minut czytania",
     content: [
       {
@@ -160,7 +161,8 @@ export const articles = [
     authorName: "Krzysztof Iksiński",
     authorRole: "System Developer",
     authorImg: "krzysztof5.png",
-    img: "/news2.png",
+    img: "/coNapędzaRozwoj.png",
+    heroImg: "/coNapedzaRozwoj.png",
     time: "5–10 minut czytania",
     content: [
       {

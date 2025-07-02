@@ -10,7 +10,6 @@ const CMS = () => {
     return saved ? JSON.parse(saved) : initialArticles;
   });
 
-  // Jeśli edytujemy, trzyma slug oryginału
   const [editingSlug, setEditingSlug] = useState(null);
 
   const [newArticle, setNewArticle] = useState({

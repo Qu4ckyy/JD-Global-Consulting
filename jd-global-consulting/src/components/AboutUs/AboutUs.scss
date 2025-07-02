@@ -1,12 +1,19 @@
 .aboutUsPage-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100vw;
   margin: 0 auto;
   padding: 100px 0 48px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 48px;
+}
+
+.aboutUsInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
 }
 
 .title {
@@ -14,8 +21,8 @@
   color: #181c5a;
   font-weight: 400;
   text-align: left;
-  margin-left: 90px;
   margin-top: 70px;
+  padding-left: 40px;
 
   @media (max-width: 1024px) {
     text-align: center;
@@ -33,9 +40,9 @@
 
 .aboutMission {
   .missionLeft {
-    flex: 1;
+    flex: 1.1;
     img {
-      width: 80%;
+      width: 95%;
       height: auto;
       border-radius: 16px;
       display: block;
@@ -46,14 +53,14 @@
   }
 
   .missionRight {
-    flex: 1;
+    flex: 1.1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 40px;
       color: #181c5a;
       font-weight: 400;
       margin-bottom: 16px;
@@ -61,7 +68,7 @@
     }
 
     span {
-      font-size: 22px;
+      font-size: 16px;
       line-height: 1.6;
       color: #333;
       width: 60%;
@@ -77,15 +84,16 @@
 
 .vision {
   .visionLeft {
-    flex: 1;
+    flex: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     text-align: left;
     margin-left: 90px;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 40px;
       color: #181c5a;
       font-weight: 400;
       margin-bottom: 16px;
@@ -93,7 +101,7 @@
     }
 
     span {
-      font-size: 22px;
+      font-size: 16px;
       line-height: 1.6;
       color: #333;
       width: 60%;
@@ -108,22 +116,21 @@
   .visionRight {
     flex: 1;
     img {
-      width: 80%;
-      height: auto;
-      border-radius: 16px;
-      display: block;
-      margin-right: 0;
-      margin-left: auto;
-      align-self: flex-end;
+      width: 100%;
+      max-width: 100%;
     }
   }
 }
 
+.vision .aboutSection-inner {
+  gap: 32px;
+}
+
 .whoAreWe {
   .whoLeft {
-    flex: 1;
+    flex: 1.1;
     img {
-      width: 80%;
+      width: 95%;
       height: auto;
       border-radius: 16px;
       display: block;
@@ -134,14 +141,14 @@
   }
 
   .whoRight {
-    flex: 1;
+    flex: 1.1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 40px;
       color: #181c5a;
       font-weight: 400;
       margin-bottom: 16px;
@@ -149,7 +156,7 @@
     }
 
     span {
-      font-size: 22px;
+      font-size: 16px;
       line-height: 1.6;
       color: #333;
       width: 60%;

@@ -10,7 +10,8 @@ const scrollToSection = (id) => {
 };
 
 const Economic = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -84,8 +85,8 @@ const Economic = () => {
               które dają Ci przewagę negocjacyjną i bezpieczeństwo działania.
             </p>
             <p className="ending">
-              Z nami rozwój to coś więcej niż hasło. To konkretny plan i trwały
-              efekt.
+              Z nami rozwój to coś więcej niż hasło. <br /> To konkretny plan i
+              trwały efekt.
             </p>
             <button className="visitation" onClick={() => navigate("/contact")}>
               Umów się na konsultacje

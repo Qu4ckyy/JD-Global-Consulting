@@ -10,7 +10,8 @@ const scrollToSection = (id) => {
 };
 
 const Finances = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 

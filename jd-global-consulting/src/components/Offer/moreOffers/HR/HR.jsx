@@ -10,7 +10,8 @@ const scrollToSection = (id) => {
 };
 
 const HR = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -84,8 +85,8 @@ const HR = () => {
               – bo wiemy, że za każdą strategią stoją konkretni ludzie.
             </p>
             <p className="ending">
-              Z nami HR przestaje być działem – staje się siłą napędową Twojej
-              firmy.
+              Z nami HR przestaje być działem – <br /> staje się siłą napędową
+              Twojej firmy.
             </p>
             <button className="visitation" onClick={() => navigate("/contact")}>
               Umów się na konsultacje

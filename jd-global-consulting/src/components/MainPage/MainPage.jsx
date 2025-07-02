@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MainPage.scss";
 import useIsMobile from "../../hooks/useIsMobile";
 import { useNavigate } from "react-router-dom";
@@ -11,8 +11,20 @@ const scrollToSection = (id) => {
   }
 };
 
+const useWindowWidth = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return width;
+};
+
 const MainPage = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
+  const width = useWindowWidth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -80,7 +92,7 @@ const MainPage = () => {
         </div>
       </header>
       <section className={`info${isMobile ? " mobile" : ""}`}>
-        {isMobile ? (
+        {isMobile || (width >= 825 && width <= 1024) ? (
           <>
             <div className="company">
               <h1>
@@ -558,14 +570,16 @@ const MainPage = () => {
                   Przeczytaj artykuł
                 </button>
               </div>
-              <div className="content">
-                <div className="readingTime">
-                  <img src="clock.png" alt="clock" />
-                  <p>{article.time}</p>
-                </div>
-                <h3>{article.title}</h3>
-                <span>{article.description.slice(0, 100)}...</span>
+              <div className="readingTime">
+                <img src="clock.png" alt="clock" />
+                <p>{article.time}</p>
               </div>
+              <h3>{article.title}</h3>
+              <p className="description">
+                {article.description.length > 120
+                  ? article.description.slice(0, 120).trim() + "..."
+                  : article.description}
+              </p>
             </div>
           ))}
         </div>

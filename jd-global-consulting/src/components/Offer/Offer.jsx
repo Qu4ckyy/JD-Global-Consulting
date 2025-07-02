@@ -84,7 +84,8 @@ const servicesData = [
 ];
 
 const Offer = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -145,21 +146,23 @@ const Offer = () => {
       </header>
 
       <section className="offerContent">
-        <h1>Nasze usługi</h1>
-        <hr />
-        <div className="ourServices">
-          {servicesData.map((service, index) => (
-            <div className="ourService" key={index}>
-              <img src={service.img} alt="" />
-              <div className="boxContent">
-                <h5 className="bold">{service.title}</h5>
-                <p>{service.description}</p>
-                <button onClick={() => navigate(service.href)}>
-                  Zobacz więcej
-                </button>
+        <div className="offerInner">
+          <h1>Nasze usługi</h1>
+          <hr />
+          <div className="ourServices">
+            {servicesData.map((service, index) => (
+              <div className="ourService" key={index}>
+                <img src={service.img} alt="" />
+                <div className="boxContent">
+                  <h5 className="bold">{service.title}</h5>
+                  <p>{service.description}</p>
+                  <button onClick={() => navigate(service.href)}>
+                    Zobacz więcej
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

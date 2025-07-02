@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 const Contact = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 

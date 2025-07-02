@@ -11,7 +11,8 @@ const scrollToSection = (id) => {
 };
 
 const UnderControl = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(825);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -81,8 +82,7 @@ const UnderControl = () => {
               – poprzez skuteczny audyt i profesjonalne zarządzanie ryzykiem.
             </p>
             <p className="ending">
-              Z nami audyt to nie kontrola - <br />
-              to strategia na przyszłość
+              Z nami audyt to nie kontrola - <br /> to strategia na przyszłość
             </p>
             <button className="visitation" onClick={() => navigate("/contact")}>
               Umów się na konsultacje
