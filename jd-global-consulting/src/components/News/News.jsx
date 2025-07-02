@@ -113,7 +113,10 @@ const News = () => {
 
       <div className="newsInner">
         <div className="newsfeed-header">
-          <h1>Aktualności</h1>
+          <div className="newsfeed-title-block">
+            <h1>Aktualności</h1>
+            <hr className="newsfeed-hr" />
+          </div>
           <div className="sort-wrapper">
             <button className="sort-btn" onClick={() => setShowSort((v) => !v)}>
               Sortuj według
@@ -138,7 +141,6 @@ const News = () => {
               </div>
             )}
           </div>
-          <hr />
         </div>
         <section className="articles">
           {paginateArticles().map((article) => (
@@ -266,6 +268,18 @@ const News = () => {
             </button>
             <button className="contact" onClick={() => navigate("/contact")}>
               Kontakt
+            </button>
+            <button
+              className="privacy-policy"
+              onClick={() =>
+                window.open(
+                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.docx",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Polityka prywatności
             </button>
           </nav>
         </div>

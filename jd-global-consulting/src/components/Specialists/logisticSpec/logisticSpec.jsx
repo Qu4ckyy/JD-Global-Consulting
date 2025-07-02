@@ -130,6 +130,18 @@ const LogisticSpecialist = () => {
             <button className="contact" onClick={() => navigate("/contact")}>
               Kontakt
             </button>
+            <button
+              className="privacy-policy"
+              onClick={() =>
+                window.open(
+                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.docx",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Polityka prywatności
+            </button>
           </nav>
         </div>
       </footer>

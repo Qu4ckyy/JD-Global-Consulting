@@ -195,36 +195,36 @@ const Offer = () => {
         <hr />
         <div className="footer-bottom">
           <div className="footer-logo">
-            <img src="logo JD global.png" alt="logo" />
+            <img src="/logo JD global.png" alt="logo" />
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button
-              className="aboutUs"
-              onClick={() => handleNavigation("/about")}
-            >
+            <button className="aboutUs" onClick={() => navigate("/about")}>
               O nas
             </button>
-            <button className="news" onClick={() => handleNavigation("/news")}>
+            <button className="news" onClick={() => navigate("/news")}>
               Aktualności
             </button>
-            <button
-              className="specialists"
-              onClick={() => handleNavigation("/")}
-            >
+            <button className="specialists" onClick={() => navigate("/")}>
               Specjaliści
             </button>
-            <button
-              className="services"
-              onClick={() => handleNavigation("/offer")}
-            >
+            <button className="services" onClick={() => navigate("/offer")}>
               Oferta
             </button>
-            <button
-              className="contact"
-              onClick={() => handleNavigation("/contact")}
-            >
+            <button className="contact" onClick={() => navigate("/contact")}>
               Kontakt
+            </button>
+            <button
+              className="privacy-policy"
+              onClick={() =>
+                window.open(
+                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.docx",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Polityka prywatności
             </button>
           </nav>
         </div>

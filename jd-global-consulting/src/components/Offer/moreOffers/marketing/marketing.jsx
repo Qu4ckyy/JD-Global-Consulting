@@ -210,20 +210,32 @@ const Marketing = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs" onClick={() => navigate("/")}>
+            <button className="aboutUs" onClick={() => navigate("/about")}>
               O nas
             </button>
-            <button className="news" onClick={() => navigate("/")}>
+            <button className="news" onClick={() => navigate("/news")}>
               Aktualności
             </button>
             <button className="specialists" onClick={() => navigate("/")}>
               Specjaliści
             </button>
-            <button className="services" onClick={() => navigate("/")}>
+            <button className="services" onClick={() => navigate("/offer")}>
               Oferta
             </button>
-            <button className="contact" onClick={() => navigate("/")}>
+            <button className="contact" onClick={() => navigate("/contact")}>
               Kontakt
+            </button>
+            <button
+              className="privacy-policy"
+              onClick={() =>
+                window.open(
+                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.docx",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Polityka prywatności
             </button>
           </nav>
         </div>
