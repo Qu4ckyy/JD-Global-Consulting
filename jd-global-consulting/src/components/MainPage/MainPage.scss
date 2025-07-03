@@ -184,15 +184,15 @@ html {
         border: none;
         color: white;
         background-color: #0041d8;
-        width: 220px;
-        height: 50px;
+        width: 280px;
+        height: 60px;
         padding-left: 25px;
         padding-right: 25px;
         padding-top: 16px;
         padding-bottom: 16px;
         text-align: center;
         border-radius: 6px;
-        font-size: 14px;
+        font-size: 16px;
         cursor: pointer;
         transition: background 0.2s;
       }
@@ -447,6 +447,7 @@ html {
     h2 {
       font-weight: 400;
       color: #070046;
+      font-size: 40px;
     }
     span {
       display: flex;
@@ -456,6 +457,7 @@ html {
       max-width: 950px;
       margin-left: auto;
       margin-right: auto;
+      font-size: 16px;
       .bold {
         font-weight: 600;
       }
@@ -487,6 +489,7 @@ html {
           margin: 0;
           text-align: center;
           display: block !important;
+          font-size: 20px;
         }
       }
       .image2 {
@@ -509,6 +512,7 @@ html {
           margin: 0;
           text-align: center;
           display: block !important;
+          font-size: 20px;
         }
       }
       .image3 {
@@ -530,6 +534,7 @@ html {
           margin: 0;
           text-align: center;
           display: block !important;
+          font-size: 20px;
         }
       }
       .image4 {
@@ -552,6 +557,7 @@ html {
           margin: 0;
           text-align: center;
           display: block !important;
+          font-size: 20px;
         }
       }
     }
@@ -670,6 +676,7 @@ html {
     h2 {
       margin-bottom: 8px;
       font-weight: 400;
+      font-size: 40px;
     }
 
     > p {

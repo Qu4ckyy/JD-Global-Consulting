@@ -92,8 +92,8 @@
 }
 
 .headerRight .bold {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 44px;
+  font-weight: 600;
   color: #0a1970;
   margin: 0 0 10px 0;
   line-height: 135%;
@@ -109,7 +109,7 @@
 }
 
 .headerRight .thin {
-  font-size: 2rem;
+  font-size: 44px;
   font-weight: 400;
   color: #0a1970;
   margin: 0 0 1.2rem 0;
@@ -151,10 +151,10 @@
   border: none;
   border-radius: 8px;
   padding: 16px 0;
-  font-size: 0.88rem;
-  font-weight: 600;
-  width: 360px;
-  height: 80px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 300px;
+  height: 60px;
   cursor: pointer;
   text-align: center;
   transition: background 0.2s;
@@ -200,7 +200,7 @@
 
 .ourJob > h1 {
   font-size: 40px;
-  font-weight: 500;
+  font-weight: 400;
   color: #0a1970;
   margin-bottom: 32px;
   text-align: center;
@@ -355,7 +355,7 @@
 }
 
 .subHeaderLeft h2 {
-  font-size: 1.9rem;
+  font-size: 40px;
   font-weight: 400;
   color: #0a1970;
   margin: 0 0 1.2rem 0;
@@ -385,10 +385,10 @@
   border: none;
   border-radius: 8px;
   padding: 16px 0;
-  font-size: 0.88rem;
-  font-weight: 600;
-  width: 360px;
-  height: 80px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 300px;
+  height: 60px;
   cursor: pointer;
   text-align: center;
   transition: background 0.2s;
@@ -526,7 +526,7 @@
 }
 
 .subRight2-content h2 {
-  font-size: 1.9rem;
+  font-size: 40px;
   font-weight: 400;
   color: #0a1970;
   line-height: 1.1;
@@ -561,15 +561,15 @@
   border: none;
   border-radius: 8px;
   padding: 16px 0;
-  font-size: 1rem;
-  font-weight: 600;
-  width: 320px;
-  height: auto;
+  font-size: 16px;
+  font-weight: 400;
+  width: 300px;
+  height: 60px;
   cursor: pointer;
   text-align: center;
   transition: background 0.2s;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  margin-top: 8px;
+  margin-right: 0;
 
   @media (max-width: 768px) {
     width: 100%;
