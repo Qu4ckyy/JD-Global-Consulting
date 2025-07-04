@@ -192,7 +192,9 @@ const MainPage = () => {
         </span>
         <div className="images">
           <div className="image1">
-            <p>Łączymy doradztwo strategiczne z operacyjnym wsparciem</p>
+            <p>
+              Łączymy doradztwo strategiczne <br /> z operacyjnym wsparciem
+            </p>
           </div>
           <div className="image2">
             <p>Wdrażamy innowacyjne technologie</p>
@@ -467,6 +469,45 @@ const MainPage = () => {
           </form>
         </div>
       </section>
+      <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
+        <h1>Aktualności</h1>
+        <hr />
+        <div className="articles">
+          {articles.slice(0, 3).map((article) => (
+            <div className="article" key={article.slug}>
+              <div className="image-wrapper">
+                <img
+                  src={
+                    article.img.startsWith("/")
+                      ? article.img.slice(1)
+                      : article.img
+                  }
+                  alt={article.title}
+                />
+                <button
+                  className="read-button"
+                  onClick={() => navigate(`/news/${article.slug}`)}
+                >
+                  Przeczytaj artykuł
+                </button>
+              </div>
+              <div className="readingTime">
+                <img src="clock.png" alt="clock" />
+                <p>{article.time}</p>
+              </div>
+              <h3>{article.title}</h3>
+              <p className="description">
+                {article.description.length > 120
+                  ? article.description.slice(0, 120).trim() + "..."
+                  : article.description}
+              </p>
+            </div>
+          ))}
+        </div>
+        <button className="main-news-btn" onClick={() => navigate("/news")}>
+          Zobacz wszystkie artykuły
+        </button>
+      </section>
       <section className={`newsletter${isMobile ? " mobile" : ""}`}>
         <div className="newsletter-left">
           <h2>
@@ -547,45 +588,6 @@ const MainPage = () => {
             <button type="submit">Zapisz się do newslettera</button>
           </form>
         </div>
-      </section>
-      <section className={`newsfeed${isMobile ? " mobile" : ""}`} id="newsFeed">
-        <h1>Aktualności</h1>
-        <hr />
-        <div className="articles">
-          {articles.slice(0, 3).map((article) => (
-            <div className="article" key={article.slug}>
-              <div className="image-wrapper">
-                <img
-                  src={
-                    article.img.startsWith("/")
-                      ? article.img.slice(1)
-                      : article.img
-                  }
-                  alt={article.title}
-                />
-                <button
-                  className="read-button"
-                  onClick={() => navigate(`/news/${article.slug}`)}
-                >
-                  Przeczytaj artykuł
-                </button>
-              </div>
-              <div className="readingTime">
-                <img src="clock.png" alt="clock" />
-                <p>{article.time}</p>
-              </div>
-              <h3>{article.title}</h3>
-              <p className="description">
-                {article.description.length > 120
-                  ? article.description.slice(0, 120).trim() + "..."
-                  : article.description}
-              </p>
-            </div>
-          ))}
-        </div>
-        <button className="main-news-btn" onClick={() => navigate("/news")}>
-          Zobacz wszystkie artykuły
-        </button>
       </section>
       <footer className={`footer${isMobile ? " mobile" : ""}`}>
         <div className="footer-top">
