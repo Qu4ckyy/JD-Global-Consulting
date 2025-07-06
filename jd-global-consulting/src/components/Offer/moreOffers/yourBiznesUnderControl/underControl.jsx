@@ -131,10 +131,10 @@ const UnderControl = () => {
             <h2>Jak działamy?</h2>
             <p className="description">
               Stawiamy na jasną komunikację, konkretne dane i partnerskie
-              podejście. <br /> Mówimy językiem biznesu, a nie trudnym żargonem.{" "}
-              <br />
+              podejście. Mówimy językiem biznesu, a nie trudnym żargonem.{" "}
               <span className="bolder">
-                Nasze działania są dostosowane do skali i branży Twojej firmy
+                Nasze działania są dostosowane do skali i branży Twojej firmy -{" "}
+                <br />
               </span>{" "}
               od MŚP, po duże organizacje.
             </p>

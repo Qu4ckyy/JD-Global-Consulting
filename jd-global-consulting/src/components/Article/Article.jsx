@@ -18,6 +18,11 @@ const Article = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const heroCrop = {
+    "5-kluczowych-zasad-jak-skutecznie-rozwijac": "center bottom",
+    "co-napedza-rozwoj-it-5-trendow-ktore-trzeba-znać": "center center",
+  };
+
   useEffect(() => {
     const saved = localStorage.getItem("cms_articles");
     if (saved) {
@@ -92,7 +97,13 @@ const Article = () => {
       </section>
 
       <figure className="hero">
-        <img src={article.heroImg || article.img} alt={article.title} />
+        <img
+          src={article.heroImg || article.img}
+          alt={article.title}
+          style={{
+            objectPosition: heroCrop[slug] || "center center",
+          }}
+        />
       </figure>
 
       <section className="article-content">

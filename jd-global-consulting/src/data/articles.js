@@ -162,7 +162,7 @@ export const articles = [
     authorRole: "System Developer",
     authorImg: "krzysztof5.png",
     img: "/coNapędzaRozwoj.png",
-    heroImg: "/coNapedzaRozwoj.png",
+    heroImg: "/coNapędzaRozwoj.png",
     time: "5–10 minut czytania",
     content: [
       {

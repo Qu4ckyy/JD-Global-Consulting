@@ -17,8 +17,8 @@
 }
 
 .title {
-  font-size: 2rem;
-  color: #181c5a;
+  font-size: 40px;
+  color: #070046;
   font-weight: 400;
   text-align: left;
   margin-top: 70px;
@@ -61,7 +61,7 @@
 
     h1 {
       font-size: 40px;
-      color: #181c5a;
+      color: #060041;
       font-weight: 400;
       margin-bottom: 16px;
       margin-left: 0;
@@ -70,7 +70,7 @@
     span {
       font-size: 16px;
       line-height: 1.6;
-      color: #333;
+      color: #151515cc;
       width: 60%;
     }
 
@@ -94,7 +94,7 @@
 
     h1 {
       font-size: 40px;
-      color: #181c5a;
+      color: #060041;
       font-weight: 400;
       margin-bottom: 16px;
       margin-left: 0;
@@ -103,7 +103,7 @@
     span {
       font-size: 16px;
       line-height: 1.6;
-      color: #333;
+      color: #151515cc;
       width: 60%;
     }
     @media (max-width: 1024px) {
@@ -149,7 +149,7 @@
 
     h1 {
       font-size: 40px;
-      color: #181c5a;
+      color: #060041;
       font-weight: 400;
       margin-bottom: 16px;
       margin-left: 0;
@@ -158,7 +158,7 @@
     span {
       font-size: 16px;
       line-height: 1.6;
-      color: #333;
+      color: #151515cc;
       width: 60%;
     }
     @media (max-width: 1024px) {
@@ -332,4 +332,11 @@
   margin: 0;
   width: 100%;
   padding: 40px 20px;
+}
+
+.aboutMission .aboutSection-inner {
+  align-items: stretch;
+  gap: 131px;
+  min-height: 400px;
+  height: 100%;
 }

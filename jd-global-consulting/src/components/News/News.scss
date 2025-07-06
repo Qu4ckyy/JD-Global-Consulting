@@ -6,7 +6,7 @@
 
 .newsfeed-header {
   display: flex;
-  align-items: flex-end;
+  align-items: baseline;
   justify-content: space-between;
   position: relative;
   text-align: left;
@@ -14,9 +14,9 @@
   padding: 0;
   h1 {
     color: #070046;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 135%;
     margin-bottom: 0;
     text-align: left;
     padding-left: 0;
@@ -28,9 +28,8 @@
     width: 100%;
   }
   .sort-wrapper {
-    position: absolute;
-    right: 0;
-    top: 8px;
+    position: static;
+    margin-top: 0.2em;
     z-index: 2;
   }
   .sort-btn {
@@ -43,6 +42,7 @@
     font-family: inherit;
     padding: 0;
     transition: color 0.2s;
+    white-space: nowrap;
   }
   .sort-btn:hover {
     color: #070046;
@@ -263,9 +263,10 @@
 
 .pagination-label {
   margin: 0 8px;
-  font-size: 20px;
-  color: #222;
+  font-size: 16px;
+  color: #2a2a2a;
   font-family: inherit;
+  font-weight: 300;
 }
 
 .pagination-arrow {
@@ -285,8 +286,9 @@
 .pagination-page {
   background: none;
   border: none;
-  font-size: 20px;
-  color: #888;
+  font-size: 16px;
+  font-weight: 300;
+  color: #2a2a2a;
   cursor: pointer;
   margin: 0 2px;
   border-radius: 50%;
@@ -298,14 +300,15 @@
 .pagination-page.active,
 .pagination-page:disabled {
   background: none;
-  color: #222;
-  font-weight: 700;
+  color: #2a2a2a;
+  font-weight: 300;
   cursor: default;
 }
 
 .pagination-dots {
-  color: #888;
-  font-size: 20px;
+  color: #2a2a2a99;
+  font-size: 16px;
+  font-weight: 300;
   margin: 0 4px;
   user-select: none;
 }

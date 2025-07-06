@@ -303,6 +303,7 @@
   overflow: hidden;
   margin: 100px auto 100px auto;
   padding: 0;
+  gap: 162px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -372,7 +373,7 @@
   color: #222;
   line-height: 1.5;
   margin-bottom: 32px;
-  max-width: 750px;
+  max-width: 407px;
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -450,6 +451,7 @@
   overflow: hidden;
   margin: 100px auto 100px auto;
   padding: 0;
+  gap: 162px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -545,7 +547,7 @@
   color: #222;
   line-height: 1.5;
   margin-bottom: 32px;
-  max-width: 750px;
+  max-width: 407px;
   text-align: left;
 
   @media (max-width: 768px) {
