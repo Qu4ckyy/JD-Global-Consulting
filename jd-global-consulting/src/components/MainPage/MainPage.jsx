@@ -108,8 +108,8 @@ const MainPage = () => {
               <span>
                 W świecie dynamicznych zmian pomagamy firmom osiągać stabilny
                 wzrost,
-                <br />
-                wdrażać innowacyjne strategie i zdobywać przewagę konkurencyjną.
+                <wbr /> wdrażać innowacyjne strategie i zdobywać przewagę
+                konkurencyjną.
               </span>
               <button className="learnMore" onClick={() => navigate("/about")}>
                 Dowiedz się więcej
@@ -123,8 +123,8 @@ const MainPage = () => {
               <span>
                 W świecie dynamicznych zmian pomagamy firmom osiągać stabilny
                 wzrost,
-                <br />
-                wdrażać innowacyjne strategie i zdobywać przewagę konkurencyjną.
+                <wbr /> wdrażać innowacyjne strategie i zdobywać przewagę
+                konkurencyjną.
               </span>
               <button className="learnMore" onClick={() => navigate("/about")}>
                 Dowiedz się więcej

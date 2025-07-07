@@ -109,7 +109,7 @@ const AboutUs = () => {
               <img src="aboutUs.png" alt="kim jesteśmy?" />
             </div>
             <div className="whoRight">
-              <h1>Kim jesteśmy ?</h1>
+              <h1>Kim jesteśmy?</h1>
               <span>
                 JD Global Consulting to zaufany partner biznesowy, który łączy
                 doświadczenie, wiedzę i innowacyjność. <br />
@@ -123,7 +123,7 @@ const AboutUs = () => {
           </div>
         </section>
         <section className="whyUs">
-          <h2 className="whyUs-title">Dlaczego my ?</h2>
+          <h2 className="whyUs-title">Dlaczego my?</h2>
           <div className="whyUs-cards">
             <div className="why">
               <img src="statistics.png" alt="" />

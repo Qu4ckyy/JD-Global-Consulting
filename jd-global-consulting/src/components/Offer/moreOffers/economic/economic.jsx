@@ -161,7 +161,7 @@ const Economic = () => {
           <div className="subRight2-content">
             <h2>Dlaczego warto?</h2>
             <p className="description">
-              Zyskujesz pewność, że podejmujesz świadome decyzje biznesowe.
+              Zyskujesz pewność, że podejmujesz świadome decyzje biznesowe.{" "}
               <span className="bolder">
                 Ograniczasz ryzyko strat finansowych, opóźnień i nieudanych
                 inwestycji.
