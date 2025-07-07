@@ -508,7 +508,7 @@ const MainPage = () => {
           Zobacz wszystkie artykuły
         </button>
       </section>
-      <section className={`newsletter${isMobile ? " mobile" : ""}`}>
+      {/* NARAZIE UKRYTE  <section className={`newsletter${isMobile ? " mobile" : ""}`}>
         <div className="newsletter-left">
           <h2>
             Bądź na bieżąco z rynkiem <br /> i innowacjami.
@@ -588,7 +588,7 @@ const MainPage = () => {
             <button type="submit">Zapisz się do newslettera</button>
           </form>
         </div>
-      </section>
+      </section> */}
       <footer className={`footer${isMobile ? " mobile" : ""}`}>
         <div className="footer-top">
           <div className="footer-left">
@@ -599,7 +599,7 @@ const MainPage = () => {
               Skontaktuj się z nami.
             </p>
           </div>
-          <form className="footer-newsletter">
+          {/* NARAZIE UKRYTE  {/* NARAZIE UKRYTE <form className="footer-newsletter">
             <label htmlFor="footer-email">Dołącz do newslettera</label>
             <input
               type="email"
@@ -613,7 +613,7 @@ const MainPage = () => {
                 czyli informacje handlowe o promocjach.
               </label>
             </div>
-          </form>
+          </form> */}
         </div>
         <hr />
         <div className="footer-bottom">

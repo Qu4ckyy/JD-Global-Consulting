@@ -187,7 +187,7 @@ const Finances = () => {
               Skontaktuj się z nami.
             </p>
           </div>
-          <form className="footer-newsletter">
+          {/* NARAZIE UKRYTE {/* NARAZIE UKRYTE <form className="footer-newsletter">
             <label htmlFor="footer-email">Dołącz do newslettera</label>
             <input
               type="email"
@@ -201,7 +201,7 @@ const Finances = () => {
                 czyli informacje handlowe o promocjach.
               </label>
             </div>
-          </form>
+          </form> */}
         </div>
         <hr />
         <div className="footer-bottom">
