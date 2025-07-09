@@ -3,8 +3,8 @@ export const articles = [
     slug: "zgrac-zespol-w-pracy",
     title: "Jak zgrać zespół w pracy?",
     description:
-      "Wiesz, co łączy dobrze naoliwiony zespół IT, sprawny dział sprzedaży i kuchnię w restauracji z gwiazdką Michelin? Nie tylko wyniki. Przede wszystkim zgranie. To coś, co czujesz od wejścia: ludzie się lubią, szanują i – co najważniejsze – grają do jednej bramki.\n\n" +
-      "Ale zgranie to nie przypadek. To efekt mądrego zarządzania, codziennej komunikacji i… zwykłej ludzkiej uważności. Jak więc zbudować zespół, który się nie tylko zna z maila, ale naprawdę chce ze sobą współpracować?",
+      "Wiesz, co łączy dobrze naoliwiony zespół IT, sprawny dział sprzedaży\ni kuchnię w restauracji z gwiazdką Michelin? Nie tylko wyniki. Przede wszystkim zgranie. To coś, co czujesz od wejścia: ludzie się lubią, szanują\ni – co najważniejsze – grają do jednej bramki.\n\n" +
+      "Ale zgranie to nie przypadek. To efekt mądrego zarządzania, codziennej komunikacji\ni… zwykłej ludzkiej uważności. Jak więc zbudować zespół, który się nie tylko zna z maila, ale naprawdę chce ze sobą współpracować?",
     date: "04.05.2025",
     authorName: "Katarzyna Wójcik",
     authorRole: "Specjalistka do spraw finansowych",
@@ -92,7 +92,7 @@ export const articles = [
     slug: "5-kluczowych-zasad-jak-skutecznie-rozwijac-swoj-start-up",
     title: "5 kluczowych zasad, jak skutecznie rozwijać swój start-up",
     description:
-      "W erze innowacji i dynamicznych zmian rynkowych, rozwijanie start-upu to nie tylko kwestia dobrego pomysłu – to przede wszystkim sztuka podejmowania decyzji, zarządzania energią i budowania wartości. Jeśli jesteś na początku swojej przedsiębiorczej drogi albo stoisz przed kolejnym etapem skalowania – te 5 zasad pomoże Ci przejść z trybu przetrwania w tryb rozwoju.",
+      "W erze innowacji\ni dynamicznych zmian rynkowych, rozwijanie start-upu to nie tylko kwestia dobrego pomysłu – to przede wszystkim sztuka podejmowania decyzji, zarządzania energią\ni budowania wartości. Jeśli jesteś na początku swojej przedsiębiorczej drogi albo stoisz przed kolejnym etapem skalowania – te 5 zasad pomoże Ci przejść z trybu przetrwania w tryb rozwoju.",
     date: "18.05.2025",
     authorName: "Katarzyna Wójcik",
     authorRole: "Specjalistka do spraw finansowych",
@@ -153,10 +153,10 @@ export const articles = [
 
   {
     slug: "co-napedza-rozwoj-it-5-trendow-ktore-trzeba-znac-w-2025-roku",
-    title: "Co napędza rozwój IT? 5 trendów, które trzeba znać w 2025 roku",
+    title: "Co napędza rozwój IT? 5 trendów, \nktóre trzeba znać w 2025 roku",
     description:
-      "Branża technologiczna to nieustanny ruch, ciągła zmiana i niekończące się innowacje. Jeśli prowadzisz firmę, tworzysz start-up, odpowiadasz za strategię lub rozwój – technologia nie może być dla Ciebie „opcją”. Musi stać się naturalnym komponentem myślenia o przyszłości.\n\n" +
-      "Na co dziś warto zwrócić uwagę? Oto 5 dominujących trendów, które kształtują przyszłość IT – i które mogą zadecydować o sukcesie Twojej firmy.",
+      "Branża technologiczna to nieustanny ruch, ciągła zmiana\ni niekończące się innowacje. Jeśli prowadzisz firmę, tworzysz start-up, odpowiadasz za strategię lub rozwój – technologia nie może być dla Ciebie „opcją”. Musi stać się naturalnym komponentem myślenia o przyszłości.\n\n" +
+      "Na co dziś warto zwrócić uwagę? Oto 5 dominujących trendów, które kształtują przyszłość IT\n– i które mogą zadecydować o sukcesie Twojej firmy.",
     date: "01.06.2025",
     authorName: "Krzysztof Iksiński",
     authorRole: "System Developer",
@@ -183,7 +183,7 @@ export const articles = [
         type: "p",
         text:
           "Dane są nową walutą – i nic dziwnego, że stają się też celem ataków. Cyberbezpieczeństwo w 2025 roku to coś więcej niż firewalle – to strategie „zero trust”, szyfrowanie danych i nowoczesne podejście do ochrony tożsamości cyfrowej.\n\n" +
-          "Dlaczego to ważne?\nFirmy, które nie inwestują w bezpieczeństwo, nie tylko ryzykują utratą danych – ryzykują utratę zaufania klientów. A tego nie da się odbudować łatwo.",
+          "Dlaczego to ważne?\nFirmy, które nie inwestują w bezpieczeństwo, nie tylko ryzykują utratę danych – ryzykują utratę zaufania klientów. A tego nie da się odbudować łatwo.",
       },
       {
         type: "h2",
