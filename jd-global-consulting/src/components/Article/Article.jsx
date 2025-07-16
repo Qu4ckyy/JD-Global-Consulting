@@ -1,19 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { articles as defaultArticles } from "../../data/articles";
-import "./Article.scss";
-import { useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import useIsMobile from "../../hooks/useIsMobile";
+import "./Article.scss";
+
+const COCKPIT_URL =
+  process.env.REACT_APP_COCKPIT_URL || "http://localhost/cockpit";
+const COCKPIT_TOKEN =
+  process.env.REACT_APP_COCKPIT_TOKEN ||
+  "API-920e6ce6751e922bf7fc2700b936c98b4526aa10";
+
+function stripHTML(html = "") {
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || "";
+}
+
+function makeUrl(input, baseUrl) {
+  if (Array.isArray(input) && input[0]?.path) {
+    const p = input[0].path;
+    return p.startsWith("http") ? p : `${baseUrl}/storage/uploads${p}`;
+  }
+  if (input?.path) {
+    const p = input.path;
+    return p.startsWith("http") ? p : `${baseUrl}/storage/uploads${p}`;
+  }
+  return "";
+}
 
 const Article = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile(825);
-
-  const navigate = useNavigate();
-
-  const [articles, setArticles] = useState(defaultArticles);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -22,21 +40,89 @@ const Article = () => {
     "5-kluczowych-zasad-jak-skutecznie-rozwijac": "center bottom",
     "co-napedza-rozwoj-it-5-trendow-ktore-trzeba-znać": "center center",
   };
+  const [article, setArticle] = useState(null);
+  const [alsoSee, setAlsoSee] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("cms_articles");
-    if (saved) {
-      try {
-        setArticles(JSON.parse(saved));
-      } catch (err) {
-        console.error("Nie udało się sparsować cms_articles", err);
+    const baseUrl = COCKPIT_URL.replace(/\/api$/, "");
+    const headers = { "api-key": COCKPIT_TOKEN };
+
+    async function fetchArticle() {
+      const res = await fetch(
+        `${COCKPIT_URL}/api/content/items/article?filter[slug]=${encodeURIComponent(
+          slug
+        )}`,
+        { headers }
+      );
+      const json = await res.json();
+      const list = Array.isArray(json)
+        ? json
+        : Array.isArray(json.items)
+        ? json.items
+        : [];
+
+      if (list.length === 0) {
+        setNotFound(true);
+        setLoading(false);
+        return;
       }
+
+      const it = list[0];
+      const blocks = (Array.isArray(it.content) ? it.content : []).flatMap(
+        (entry) => [
+          { type: "h2", text: entry.heading },
+          { type: "p", text: entry.text },
+        ]
+      );
+
+      setArticle({
+        slug: it.slug,
+        title: it.title,
+        description: stripHTML(it.description),
+        date: it.date,
+        time: it.time,
+        img: makeUrl(it.img, baseUrl),
+        heroImg: makeUrl(it.heroImg, baseUrl),
+        content: blocks,
+      });
+      setLoading(false);
     }
-  }, []);
 
-  const article = articles.find((a) => a.slug === slug);
+    async function fetchAlsoSee() {
+      const res = await fetch(
+        `${COCKPIT_URL}/api/content/items/article?limit=4`,
+        { headers }
+      );
+      const json = await res.json();
+      const list = Array.isArray(json)
+        ? json
+        : Array.isArray(json.items)
+        ? json.items
+        : [];
+      const others = list
+        .filter((it) => it.slug !== slug)
+        .slice(0, 3)
+        .map((it) => ({
+          slug: it.slug,
+          title: it.title,
+          time: it.time,
+          img: makeUrl(it.img, baseUrl),
+          description: stripHTML(it.description),
+        }));
+      setAlsoSee(others);
+    }
 
-  if (!article) {
+    fetchArticle();
+    fetchAlsoSee();
+  }, [slug]);
+
+  if (loading) {
+    return <p>Ładowanie…</p>;
+  }
+
+  if (notFound || !article) {
     return (
       <div className="article-page">
         <p>Nie znaleziono artykułu.</p>
@@ -116,51 +202,36 @@ const Article = () => {
         )}
       </section>
 
-      {/* Sekcja Zobacz również */}
       <section className="also-see-section">
         <h2 className="also-see-title">Zobacz również</h2>
         <hr />
         <div className="also-see-articles">
-          {articles
-            .filter((a) => a.slug !== article.slug)
-            .slice(0, 3)
-            .map((a) => (
-              <div
-                className="also-see-article"
-                key={a.slug}
-                onClick={() => navigate(`/news/${a.slug}`)}
-              >
-                <div className="also-see-image-wrapper">
-                  <img src={a.img} alt={a.title} />
-                  <button className="also-see-read-button">
-                    Przeczytaj artykuł
-                  </button>
-                </div>
-                <div className="also-see-meta">
-                  <div className="also-see-readingTime">
-                    <img src="/clock.png" alt="czas czytania" />
-                    <span>{a.time}</span>
-                  </div>
-                  <h3>{a.title}</h3>
-                  <p className="also-see-description">
-                    {a.description.length > 120
-                      ? a.description.slice(0, 120).trim() + "..."
-                      : a.description}
-                  </p>
-                  {/* <div className="also-see-author">
-                    <img src={a.authorImg} alt={a.authorName} />
-                    <div>
-                      <span className="also-see-authorName">
-                        {a.authorName}
-                      </span>
-                      <span className="also-see-authorRole">
-                        {a.authorRole}
-                      </span>
-                    </div>
-                  </div> */}
-                </div>
+          {alsoSee.map((a) => (
+            <div
+              className="also-see-article"
+              key={a.slug}
+              onClick={() => navigate(`/news/${a.slug}`)}
+            >
+              <div className="also-see-image-wrapper">
+                <img src={a.img} alt={a.title} />
+                <button className="also-see-read-button">
+                  Przeczytaj artykuł
+                </button>
               </div>
-            ))}
+              <div className="also-see-meta">
+                <div className="also-see-readingTime">
+                  <img src="/clock.png" alt="czas czytania" />
+                  <span>{a.time}</span>
+                </div>
+                <h3>{a.title}</h3>
+                <p className="also-see-description">
+                  {a.description.length > 120
+                    ? a.description.slice(0, 120).trim() + "..."
+                    : a.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

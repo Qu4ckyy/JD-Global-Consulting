@@ -2,37 +2,100 @@ import "./News.scss";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../hooks/useIsMobile";
-import { articles as defaultArticles } from "../../data/articles";
+
+const COCKPIT_URL =
+  process.env.REACT_APP_COCKPIT_URL || "http://localhost/cockpit";
+const COCKPIT_TOKEN =
+  process.env.REACT_APP_COCKPIT_TOKEN ||
+  "API-920e6ce6751e922bf7fc2700b936c98b4526aa10";
+
+function stripHTML(html = "") {
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || "";
+}
 
 const News = () => {
   const isMobile = useIsMobile(825);
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const truncate = (text, maxLength = 100) => {
-    if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength).trim() + "...";
-  };
-
-  const [articles, setArticles] = useState(defaultArticles);
+  const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 9;
   const totalPages = Math.ceil(articles.length / articlesPerPage);
 
   const [sortType, setSortType] = useState("najnowsze");
   const [showSort, setShowSort] = useState(false);
-
   const sortOptions = [
     { value: "najnowsze", label: "Najnowsze" },
     { value: "najstarsze", label: "Najstarsze" },
     { value: "az", label: "A-Z" },
     { value: "za", label: "Z-A" },
   ];
+
+  const toggleMenu = () => setIsMenuOpen((v) => !v);
+
+  const truncate = (text, maxLength = 120) => {
+    if (!text) return "";
+    return text.length <= maxLength
+      ? text
+      : text.slice(0, maxLength).trim() + "...";
+  };
+
+  useEffect(() => {
+    async function loadArticles() {
+      try {
+        const res = await fetch(`${COCKPIT_URL}/api/content/items/article`, {
+          headers: { "api-key": COCKPIT_TOKEN },
+        });
+        const json = await res.json();
+        console.log("cockpit raw json:", json);
+
+        const list = Array.isArray(json)
+          ? json
+          : Array.isArray(json.entries)
+          ? json.entries
+          : Array.isArray(json.items)
+          ? json.items
+          : [];
+
+        const baseUrl = COCKPIT_URL.replace(/\/api$/, "");
+
+        const makeUrl = (assetOrArray) => {
+          let asset = null;
+          if (Array.isArray(assetOrArray)) {
+            asset = assetOrArray[0];
+          } else if (
+            typeof assetOrArray === "object" &&
+            assetOrArray !== null
+          ) {
+            asset = assetOrArray;
+          }
+          if (!asset || !asset.path) return "";
+          const p = asset.path;
+          if (p.startsWith("http")) return p;
+          return `${baseUrl}/storage/uploads${p}`;
+        };
+
+        const formatted = list.map((item) => ({
+          slug: item.slug,
+          title: item.title,
+          description: stripHTML(item.description),
+          date: item.date,
+          time: item.time,
+          img: makeUrl(item.img),
+          heroImg: makeUrl(item.heroImg),
+          content: item.content || [],
+        }));
+
+        setArticles(formatted);
+      } catch (err) {
+        console.error("Błąd ładowania artykułów:", err);
+      }
+    }
+
+    loadArticles();
+  }, []);
 
   const sortedArticles = React.useMemo(() => {
     let sorted = [...articles];
@@ -60,18 +123,6 @@ const News = () => {
     }
   };
 
-  useEffect(() => {
-    const saved = localStorage.getItem("cms_articles");
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        setArticles(parsed);
-      } catch (e) {
-        console.error("Błąd parsowania CMS articles z localStorage", e);
-      }
-    }
-  }, []);
-
   return (
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -83,9 +134,9 @@ const News = () => {
         />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
           </button>
         )}
         <div
@@ -93,21 +144,11 @@ const News = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/about")}>
-            O nas
-          </button>
-          <button className="specialists" onClick={() => navigate("/")}>
-            Specjaliści
-          </button>
-          <button className="services" onClick={() => navigate("/offer")}>
-            Nasze usługi
-          </button>
-          <button className="news" onClick={() => navigate("/news")}>
-            Aktualności
-          </button>
-          <button className="contact" onClick={() => navigate("/contact")}>
-            Kontakt
-          </button>
+          <button onClick={() => navigate("/about")}>O nas</button>
+          <button onClick={() => navigate("/")}>Specjaliści</button>
+          <button onClick={() => navigate("/offer")}>Nasze usługi</button>
+          <button onClick={() => navigate("/news")}>Aktualności</button>
+          <button onClick={() => navigate("/contact")}>Kontakt</button>
         </div>
       </header>
 
@@ -142,11 +183,16 @@ const News = () => {
             )}
           </div>
         </div>
+
         <section className="articles">
           {paginateArticles().map((article) => (
             <div className="article" key={article.slug}>
               <div className="image-wrapper">
-                <img src={article.img} alt={article.title} />
+                <img
+                  src={article.img}
+                  alt={article.title}
+                  style={{ objectFit: "cover" }}
+                />
                 <button
                   className="read-button"
                   onClick={() => navigate(`/news/${article.slug}`)}
@@ -162,16 +208,10 @@ const News = () => {
               <p className="description">
                 {truncate(article.description, 120)}
               </p>
-              {/* <div className="authorData">
-                <img src={article.authorImg} alt={article.authorName} />
-                <div className="authorInfo">
-                  <p>{article.authorName}</p>
-                  <p>{article.authorRole}</p>
-                </div>
-              </div> */}
             </div>
           ))}
         </section>
+
         <div className="pagination">
           <button
             className="pagination-arrow"
@@ -182,30 +222,31 @@ const News = () => {
           </button>
           <span className="pagination-label">Strona</span>
           {Array.from({ length: totalPages }).map((_, idx) => {
+            const page = idx + 1;
             if (
-              idx + 1 === 1 ||
-              idx + 1 === totalPages ||
-              Math.abs(idx + 1 - currentPage) <= 1
+              page === 1 ||
+              page === totalPages ||
+              Math.abs(page - currentPage) <= 1
             ) {
               return (
                 <button
-                  key={idx}
+                  key={page}
                   className={`pagination-page${
-                    currentPage === idx + 1 ? " active" : ""
+                    currentPage === page ? " active" : ""
                   }`}
-                  onClick={() => handlePageChange(idx + 1)}
-                  disabled={currentPage === idx + 1}
+                  onClick={() => handlePageChange(page)}
+                  disabled={currentPage === page}
                 >
-                  {idx + 1}
+                  {page}
                 </button>
               );
             } else if (
-              (idx + 1 === currentPage - 2 && currentPage > 3) ||
-              (idx + 1 === currentPage + 2 && currentPage < totalPages - 2)
+              (page === currentPage - 2 && currentPage > 3) ||
+              (page === currentPage + 2 && currentPage < totalPages - 2)
             ) {
               return (
-                <span key={idx} className="pagination-dots">
-                  ...
+                <span key={page} className="pagination-dots">
+                  …
                 </span>
               );
             }
@@ -231,21 +272,6 @@ const News = () => {
               Skontaktuj się z nami.
             </p>
           </div>
-          {/* NARAZIE UKRYTE {/* NARAZIE UKRYTE <form className="footer-newsletter">
-            <label htmlFor="footer-email">Dołącz do newslettera</label>
-            <input
-              type="email"
-              id="footer-email"
-              placeholder="imie@gmail.com"
-            />
-            <div className="checkbox-row">
-              <input type="checkbox" id="footer-agreement" />
-              <label htmlFor="footer-agreement">
-                Akceptuję politykę prywatności i chcę otrzymywać newsletter,
-                czyli informacje handlowe o promocjach.
-              </label>
-            </div>
-          </form> */}
         </div>
         <hr />
         <div className="footer-bottom">
@@ -254,23 +280,12 @@ const News = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs" onClick={() => navigate("/about")}>
-              O nas
-            </button>
-            <button className="news" onClick={() => navigate("/news")}>
-              Aktualności
-            </button>
-            <button className="specialists" onClick={() => navigate("/")}>
-              Specjaliści
-            </button>
-            <button className="services" onClick={() => navigate("/offer")}>
-              Oferta
-            </button>
-            <button className="contact" onClick={() => navigate("/contact")}>
-              Kontakt
-            </button>
+            <button onClick={() => navigate("/about")}>O nas</button>
+            <button onClick={() => navigate("/news")}>Aktualności</button>
+            <button onClick={() => navigate("/")}>Specjaliści</button>
+            <button onClick={() => navigate("/offer")}>Oferta</button>
+            <button onClick={() => navigate("/contact")}>Kontakt</button>
             <button
-              className="privacy-policy"
               onClick={() =>
                 window.open(
                   "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.docx",
