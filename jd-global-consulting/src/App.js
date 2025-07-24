@@ -44,58 +44,70 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/offer" element={<Offer />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/specialist" element={<Specialist />} />
-          <Route path="/underControl" element={<UnderControl />}></Route>
-          <Route path="/cyberSec" element={<CyberSec />}></Route>
-          <Route path="/taxes" element={<Taxes />}></Route>
-          <Route path="/tech" element={<Tech />}></Route>
-          <Route path="/marketing" element={<Marketing />}></Route>
-          <Route path="/finances" element={<Finances />}></Route>
-          <Route path="/techSpecialist" element={<TechSpecialist />}></Route>
+          <Route path="/oNas" element={<AboutUs />} />
+          <Route path="/kontakt" element={<Contact />} />
+          <Route path="/oferta" element={<Offer />} />
+          <Route path="/aktualności" element={<News />} />
+          <Route path="/specjalistaDS.strategii" element={<Specialist />} />
           <Route
-            path="/financeSpecialist"
+            path="/twójBiznesPodKontrolą"
+            element={<UnderControl />}
+          ></Route>
+          <Route path="/cyberbezpieczeństwo" element={<CyberSec />}></Route>
+          <Route path="/podatki" element={<Taxes />}></Route>
+          <Route path="/technologia" element={<Tech />}></Route>
+          <Route path="/marketing" element={<Marketing />}></Route>
+          <Route path="/finanse" element={<Finances />}></Route>
+          <Route
+            path="/specjalistaDS.technologii"
+            element={<TechSpecialist />}
+          ></Route>
+          <Route
+            path="/specjalistaDS.finansów"
             element={<FinanceSpecialist />}
           ></Route>
-          <Route path="/taxSpecialist" element={<TaxSpecialist />}></Route>
           <Route
-            path="/fusionSpecialist"
+            path="/specjalistaDS.podatków"
+            element={<TaxSpecialist />}
+          ></Route>
+          <Route
+            path="/specjalistaDS.fuzjii"
             element={<FusionSpecialist />}
           ></Route>
-          <Route path="/lawSpecialist" element={<LawSpecialist />}></Route>
           <Route
-            path="/HumanResourcesSpecialist"
+            path="/specjalistaDS.prawnych"
+            element={<LawSpecialist />}
+          ></Route>
+          <Route
+            path="/specjalistaDS.zasobówLudzkich"
             element={<HResourcesSpecialist />}
           ></Route>
           <Route
-            path="/marketingSpecialist"
+            path="/specjalistaDS.marketingu"
             element={<MarketingSpecialist />}
           ></Route>
           <Route
-            path="/developmentSpecialist"
+            path="/specjalistaDS.rozwoju"
             element={<DevelopmentSpecialist />}
           ></Route>
           <Route
-            path="/productionSpecialist"
+            path="/specjalistaDS.produkcji"
             element={<ProductionSpecialist />}
           ></Route>
           <Route
-            path="/logisticSpecialist"
+            path="/specjalistaDS.logistyki"
             element={<LogisticSpecialist />}
           ></Route>
           <Route
-            path="/UEfundsSpecialist"
+            path="/specjalistaDS.funduszyUE"
             element={<UEfundsSpecialist />}
           ></Route>
           <Route path="/biznes" element={<Biznes />}></Route>
           <Route path="/HR" element={<HR />}></Route>
-          <Route path="/logistic" element={<Logistic />}></Route>
-          <Route path="/transformation" element={<Transformation />}></Route>
-          <Route path="/economic" element={<Economic />}></Route>
-          <Route path="/news/:slug" element={<Article />} />
+          <Route path="/logistyka" element={<Logistic />}></Route>
+          <Route path="/transformacja" element={<Transformation />}></Route>
+          <Route path="/ekonomia" element={<Economic />}></Route>
+          <Route path="/akutalności/:slug" element={<Article />} />
           <Route
             path="/login"
             element={<Login onAuth={() => setIsAuth(true)} />}

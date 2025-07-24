@@ -56,7 +56,7 @@ const MainPage = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/about")}>
+          <button className="aboutUs" onClick={() => navigate("/oNas")}>
             O nas
           </button>
           <button
@@ -67,7 +67,7 @@ const MainPage = () => {
           </button>
           <button
             className="services"
-            onClick={() => handleSectionClick("offer")}
+            onClick={() => handleSectionClick("oferta")}
           >
             Nasze usługi
           </button>
@@ -111,7 +111,7 @@ const MainPage = () => {
                 <wbr /> wdrażać innowacyjne strategie i zdobywać przewagę
                 konkurencyjną.
               </span>
-              <button className="learnMore" onClick={() => navigate("/about")}>
+              <button className="learnMore" onClick={() => navigate("/oNas")}>
                 Dowiedz się więcej
               </button>
             </div>
@@ -126,7 +126,7 @@ const MainPage = () => {
                 <wbr /> wdrażać innowacyjne strategie i zdobywać przewagę
                 konkurencyjną.
               </span>
-              <button className="learnMore" onClick={() => navigate("/about")}>
+              <button className="learnMore" onClick={() => navigate("/oNas")}>
                 Dowiedz się więcej
               </button>
             </div>
@@ -228,7 +228,7 @@ const MainPage = () => {
               <br />
               to strategia na przyszłość.
             </p>
-            <button onClick={() => navigate("/underControl")}>
+            <button onClick={() => navigate("/twójBiznesPodKontrolą")}>
               Zobacz więcej
             </button>
           </div>
@@ -247,7 +247,9 @@ const MainPage = () => {
               Z nami cyberbezpieczeństwo to nie tylko technologia – to strategia
               obrony Twojej firmy.
             </p>
-            <button onClick={() => navigate("/cyberSec")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/cyberbezpieczeństwo")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="service">
             <p>
@@ -266,7 +268,7 @@ const MainPage = () => {
               Z nami zyskujesz pewność, że Twoja firma jest zawsze w zgodzie z
               prawem i optymalizuje obciążenia podatkowe.
             </p>
-            <button onClick={() => navigate("/taxes")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/podatki")}>Zobacz więcej</button>
           </div>
           <div className="service">
             <p>
@@ -280,7 +282,9 @@ const MainPage = () => {
               strategiczną z praktycznym podejściem do transformacji cyfrowej.
             </span>
             <p>Z nami technologia staje się Twoją przewagą – nie przeszkodą.</p>
-            <button onClick={() => navigate("/tech")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/technologia")}>
+              Zobacz więcej
+            </button>
           </div>
           <div className="service">
             <p>
@@ -314,10 +318,10 @@ const MainPage = () => {
             <p>
               Z nami pieniądze <br /> nie są przeszkodą – są narzędziem rozwoju.
             </p>
-            <button onClick={() => navigate("/finances")}>Zobacz więcej</button>
+            <button onClick={() => navigate("/finanse")}>Zobacz więcej</button>
           </div>
         </div>
-        <button onClick={() => navigate("/offer")}>Zobacz więcej usług</button>
+        <button onClick={() => navigate("/oferta")}>Zobacz więcej usług</button>
       </section>
       <section className={`team${isMobile ? " mobile" : ""}`} id="team-header">
         <h3>Nasi Specjaliści</h3>
@@ -334,73 +338,73 @@ const MainPage = () => {
         <div className="employees">
           <div className="employee">
             <p>Specjalista ds. Strategii i Zarządzania</p>
-            <button onClick={() => navigate("/specialist")}>
+            <button onClick={() => navigate("/specjalistaDS.strategii")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Technologii i Cyfrowej Transformacji</p>
-            <button onClick={() => navigate("/techSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.technologii")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Finansów</p>
-            <button onClick={() => navigate("/financeSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.finansów")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Podatków</p>
-            <button onClick={() => navigate("/taxSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.podatków")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Fuzji i Przejęć</p>
-            <button onClick={() => navigate("/fusionSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.fuzjii")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Prawnych</p>
-            <button onClick={() => navigate("/lawSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.prawnych")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Zarządzania Zasobami Ludzkimi</p>
-            <button onClick={() => navigate("/HumanResourcesSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.zasobówLudzkich")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Marketingu</p>
-            <button onClick={() => navigate("/marketingSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.marketingu")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Rozwoju</p>
-            <button onClick={() => navigate("/developmentSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.rozwoju")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Produkcji</p>
-            <button onClick={() => navigate("/productionSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.produkcji")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Transportu i Logistyki</p>
-            <button onClick={() => navigate("/logisticSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.logistyki")}>
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Funduszy Unijnych</p>
-            <button onClick={() => navigate("/UEfundsSpecialist")}>
+            <button onClick={() => navigate("/specjalistaDS.funduszyUE")}>
               Zobacz więcej
             </button>
           </div>
@@ -504,7 +508,10 @@ const MainPage = () => {
             </div>
           ))}
         </div>
-        <button className="main-news-btn" onClick={() => navigate("/news")}>
+        <button
+          className="main-news-btn"
+          onClick={() => navigate("/aktualności")}
+        >
           Zobacz wszystkie artykuły
         </button>
       </section>
@@ -622,26 +629,26 @@ const MainPage = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs" onClick={() => navigate("/about")}>
+            <button className="aboutUs" onClick={() => navigate("/oNas")}>
               O nas
             </button>
-            <button className="news" onClick={() => navigate("/news")}>
+            <button className="news" onClick={() => navigate("/aktualności")}>
               Aktualności
             </button>
             <button className="specialists" onClick={() => navigate("/")}>
               Specjaliści
             </button>
-            <button className="services" onClick={() => navigate("/offer")}>
+            <button className="services" onClick={() => navigate("/oferta")}>
               Oferta
             </button>
-            <button className="contact" onClick={() => navigate("/contact")}>
+            <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt
             </button>
             <button
               className="privacy-policy"
               onClick={() =>
                 window.open(
-                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.docx",
+                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.pdf",
                   "_blank",
                   "noopener,noreferrer"
                 )

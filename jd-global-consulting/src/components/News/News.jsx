@@ -2,6 +2,7 @@ import "./News.scss";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../hooks/useIsMobile";
+import { Helmet } from "react-helmet";
 
 const COCKPIT_URL =
   process.env.REACT_APP_COCKPIT_URL || "http://localhost/cockpit";
@@ -126,6 +127,14 @@ const News = () => {
   return (
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <Helmet>
+        <title>Aktualności | JD Global Consulting</title>
+        <meta
+          name="description"
+          content="Zobacz najnowsze artykuły o zarządzaniu, technologii i biznesie na JD Global Consulting."
+        />
+        <link rel="canonical" href="https://jdgc.pl/aktualności" />
+      </Helmet>
       <header className={`baner${isMobile ? " mobile" : ""}`}>
         <img
           src="/logo JD global.png"
@@ -144,11 +153,21 @@ const News = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button onClick={() => navigate("/about")}>O nas</button>
-          <button onClick={() => navigate("/")}>Specjaliści</button>
-          <button onClick={() => navigate("/offer")}>Nasze usługi</button>
-          <button onClick={() => navigate("/news")}>Aktualności</button>
-          <button onClick={() => navigate("/contact")}>Kontakt</button>
+          <button className="aboutUs" onClick={() => navigate("/oNas")}>
+            O nas
+          </button>
+          <button className="specialists" onClick={() => navigate("/")}>
+            Specjaliści
+          </button>
+          <button className="services" onClick={() => navigate("/oferta")}>
+            Nasze usługi
+          </button>
+          <button className="news" onClick={() => navigate("/aktualności")}>
+            Aktualności
+          </button>
+          <button className="contact" onClick={() => navigate("/kontakt")}>
+            Kontakt
+          </button>
         </div>
       </header>
 
@@ -272,6 +291,21 @@ const News = () => {
               Skontaktuj się z nami.
             </p>
           </div>
+          {/* NARAZIE UKRYTE  {/* NARAZIE UKRYTE <form className="footer-newsletter">
+            <label htmlFor="footer-email">Dołącz do newslettera</label>
+            <input
+              type="email"
+              id="footer-email"
+              placeholder="imie@gmail.com"
+            />
+            <div className="checkbox-row">
+              <input type="checkbox" id="footer-agreement" />
+              <label htmlFor="footer-agreement">
+                Akceptuję politykę prywatności i chcę otrzymywać newsletter,
+                czyli informacje handlowe o promocjach.
+              </label>
+            </div>
+          </form> */}
         </div>
         <hr />
         <div className="footer-bottom">
@@ -280,15 +314,26 @@ const News = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button onClick={() => navigate("/about")}>O nas</button>
-            <button onClick={() => navigate("/news")}>Aktualności</button>
-            <button onClick={() => navigate("/")}>Specjaliści</button>
-            <button onClick={() => navigate("/offer")}>Oferta</button>
-            <button onClick={() => navigate("/contact")}>Kontakt</button>
+            <button className="aboutUs" onClick={() => navigate("/oNas")}>
+              O nas
+            </button>
+            <button className="news" onClick={() => navigate("/aktualności")}>
+              Aktualności
+            </button>
+            <button className="specialists" onClick={() => navigate("/")}>
+              Specjaliści
+            </button>
+            <button className="services" onClick={() => navigate("/oferta")}>
+              Oferta
+            </button>
+            <button className="contact" onClick={() => navigate("/kontakt")}>
+              Kontakt
+            </button>
             <button
+              className="privacy-policy"
               onClick={() =>
                 window.open(
-                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.docx",
+                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.pdf",
                   "_blank",
                   "noopener,noreferrer"
                 )

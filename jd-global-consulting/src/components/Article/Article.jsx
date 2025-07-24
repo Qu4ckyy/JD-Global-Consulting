@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import useIsMobile from "../../hooks/useIsMobile";
 import "./Article.scss";
+import { Helmet } from "react-helmet";
 
 const COCKPIT_URL =
   process.env.REACT_APP_COCKPIT_URL || "http://localhost/cockpit";
@@ -135,6 +136,17 @@ const Article = () => {
 
   return (
     <div className={`page${isMobile ? " mobile" : ""}`}>
+      <Helmet>
+        <title>{article.title} | JD Global Consulting</title>
+        <meta
+          name="description"
+          content={stripHTML(article.description).slice(0, 150)}
+        />
+        <link
+          rel="canonical"
+          href={`https://jdgc.pl/news/${encodeURIComponent(article.slug)}`}
+        />
+      </Helmet>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
         <img
@@ -154,19 +166,19 @@ const Article = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/about")}>
+          <button className="aboutUs" onClick={() => navigate("/oNas")}>
             O nas
           </button>
           <button className="specialists" onClick={() => navigate("/")}>
             Specjaliści
           </button>
-          <button className="services" onClick={() => navigate("/offer")}>
+          <button className="services" onClick={() => navigate("/oferta")}>
             Nasze usługi
           </button>
-          <button className="news" onClick={() => navigate("/news")}>
+          <button className="news" onClick={() => navigate("/aktualności")}>
             Aktualności
           </button>
-          <button className="contact" onClick={() => navigate("/contact")}>
+          <button className="contact" onClick={() => navigate("/kontakt")}>
             Kontakt
           </button>
         </div>
@@ -271,26 +283,26 @@ const Article = () => {
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
-            <button className="aboutUs" onClick={() => navigate("/about")}>
+            <button className="aboutUs" onClick={() => navigate("/oNas")}>
               O nas
             </button>
-            <button className="news" onClick={() => navigate("/news")}>
+            <button className="news" onClick={() => navigate("/aktualności")}>
               Aktualności
             </button>
             <button className="specialists" onClick={() => navigate("/")}>
               Specjaliści
             </button>
-            <button className="services" onClick={() => navigate("/offer")}>
+            <button className="services" onClick={() => navigate("/oferta")}>
               Oferta
             </button>
-            <button className="contact" onClick={() => navigate("/contact")}>
+            <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt
             </button>
             <button
               className="privacy-policy"
               onClick={() =>
                 window.open(
-                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.docx",
+                  "/Informacja-o-administratorze-danych-osobowych-JD%20GLOBAL.pdf",
                   "_blank",
                   "noopener,noreferrer"
                 )
