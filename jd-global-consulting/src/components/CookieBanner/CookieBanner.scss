@@ -1,0 +1,184 @@
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f6f6f6;
+  color: #070046;
+  padding: 16px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-out;
+  z-index: 1000;
+
+  &.visible {
+    transform: translateY(0);
+  }
+
+  .cookie-banner__inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: #070046;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &__intro {
+    font-size: 16px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+    max-width: 730px;
+    margin: 0 auto 16px;
+
+    label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      line-height: 1.3;
+      text-align: left;
+
+      input {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        accent-color: #070046;
+      }
+
+      .cookie-banner__opt-label {
+        font-weight: bold;
+      }
+
+      small {
+        display: block;
+        font-size: 14px;
+        color: #555;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .btn {
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: #070046;
+      border: 1px solid #070046;
+
+      &:hover {
+        background: #0041d8;
+        color: #fff;
+        border-color: #0041d8;
+      }
+    }
+
+    .btn--primary {
+      background: #070046;
+      color: #fff;
+      border: none;
+
+      &:hover {
+        background: #0041d8;
+      }
+    }
+
+    .btn--secondary {
+      background: #0041d8;
+      color: #fff;
+      border: none;
+
+      &:hover {
+        background: darken(#0041d8, 10%);
+      }
+    }
+  }
+}
+
+// breakpoint mobilny — możesz dostosować do swoich potrzeb
+@media (max-width: 600px) {
+  .cookie-banner {
+    padding: 16px !important; // więcej przestrzeni dookoła
+    text-align: center; // centrowanie intro i wszystkich nagłówków
+    padding-top: 32px !important;
+
+    &__intro {
+      font-size: 16px !important;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    &__options {
+      max-width: none; // na 100% szerokości
+      width: 100%;
+      margin: 0 0 16px;
+
+      label {
+        flex-direction: column; // checkbox nad tekstem
+        align-items: flex-start; // tekst dalej do lewej w środku boxa
+        gap: 8px;
+
+        .cookie-banner__opt-label {
+          font-size: 16px;
+        }
+        small {
+          font-size: 14px;
+        }
+
+        input {
+          transform: scale(1.3); // większe checkboxy dla palca
+        }
+      }
+    }
+
+    &__actions {
+      flex-direction: column;
+      gap: 12px;
+
+      .btn {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 0;
+        border-radius: 6px;
+      }
+      .btn--outline {
+        border-width: 2px;
+      }
+    }
+
+    &__close {
+      font-size: 18px !important;
+      // przesuwamy go nieco w dół i w prawo
+      top: 8px !important;
+      right: 8px !important;
+      // zmniejszamy obszar klikalny, żeby nie rozpychać banneru
+      padding: 4px !important;
+    }
+  }
+}

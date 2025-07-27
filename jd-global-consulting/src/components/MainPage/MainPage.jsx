@@ -3,6 +3,7 @@ import "./MainPage.scss";
 import useIsMobile from "../../hooks/useIsMobile";
 import { useNavigate } from "react-router-dom";
 import { articles } from "../../data/articles";
+import CookieBanner from "./../CookieBanner/CookieBanner";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -43,6 +44,7 @@ const MainPage = () => {
     <div className={`page${isMobile ? " mobile" : ""}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
+        <CookieBanner />
         <img src="/logo2.png" alt="logo" onClick={() => navigate("/")} />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
