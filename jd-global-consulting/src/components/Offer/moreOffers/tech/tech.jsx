@@ -47,19 +47,19 @@ const Tech = () => {
             isMenuOpen ? " open" : ""
           }`}
         >
-          <button className="aboutUs" onClick={() => navigate("/about")}>
+          <button className="aboutUs" onClick={() => navigate("/oNas")}>
             O nas
           </button>
           <button className="specialists" onClick={() => navigate("/")}>
             Specjaliści
           </button>
-          <button className="services" onClick={() => navigate("/offer")}>
+          <button className="services" onClick={() => navigate("/oferta")}>
             Nasze usługi
           </button>
-          <button className="news" onClick={() => navigate("/news")}>
+          <button className="news" onClick={() => navigate("/aktualności")}>
             Aktualności
           </button>
-          <button className="contact" onClick={() => navigate("/contact")}>
+          <button className="contact" onClick={() => navigate("/kontakt")}>
             Kontakt
           </button>
         </div>
@@ -88,7 +88,7 @@ const Tech = () => {
               Z nami technologia staje się Twoją przewagą – <br /> nie
               przeszkodą.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -145,7 +145,7 @@ const Tech = () => {
               Współpracujemy z menedżerami, zespołami IT i dostawcami, by całość
               była spójna, opłacalna i przyszłościowa.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -172,7 +172,7 @@ const Tech = () => {
               strategii. Dzięki naszej pomocy Twoja firma staje się bardziej
               nowoczesna, elastyczna i gotowa na wyzwania cyfrowej gospodarki.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

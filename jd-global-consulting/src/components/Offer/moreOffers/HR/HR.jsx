@@ -88,7 +88,7 @@ const HR = () => {
               Z nami HR przestaje być działem – <br /> staje się siłą napędową
               Twojej firmy.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -143,7 +143,7 @@ const HR = () => {
                 najlepsze praktyki finansowe.
               </span>
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -170,7 +170,7 @@ const HR = () => {
               <br /> Pomagamy firmom rosnąć mądrze – na solidnych, dobrze
               zaplanowanych fundamentach finansowych.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

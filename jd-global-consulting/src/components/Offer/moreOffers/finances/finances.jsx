@@ -88,7 +88,7 @@ const Finances = () => {
               Z nami pieniądze nie są przeszkodą – <br />
               są narzędziem rozwoju.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -143,7 +143,7 @@ const Finances = () => {
                 najlepsze praktyki finansowe.
               </span>
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -171,7 +171,7 @@ const Finances = () => {
               Pomagamy firmom rosnąć mądrze – na solidnych, dobrze zaplanowanych
               fundamentach finansowych.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

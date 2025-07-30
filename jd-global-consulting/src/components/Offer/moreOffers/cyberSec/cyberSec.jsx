@@ -89,7 +89,7 @@ const CyberSec = () => {
               Z nami cyberbezpieczeństwo to nie tylko technologia <br /> – to
               strategia obrony Twojej firmy.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -145,7 +145,7 @@ const CyberSec = () => {
               Współpracujemy z firmami z różnych branż – od małych
               przedsiębiorstw po duże korporacje.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -172,7 +172,7 @@ const CyberSec = () => {
                 klientów i partnerów.
               </span>
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

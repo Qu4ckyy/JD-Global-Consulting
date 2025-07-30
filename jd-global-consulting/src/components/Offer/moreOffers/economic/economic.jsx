@@ -88,7 +88,7 @@ const Economic = () => {
               Z nami rozwój to coś więcej niż hasło. <br /> To konkretny plan i
               trwały efekt.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -143,7 +143,7 @@ const Economic = () => {
               </span>{" "}
               – od prostych weryfikacji po pogłębione due diligence.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -169,7 +169,7 @@ const Economic = () => {
               <br /> Dbasz o stabilność firmy, zanim pojawi się problem. Z nami
               działasz rozważnie, a nie reaktywnie.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

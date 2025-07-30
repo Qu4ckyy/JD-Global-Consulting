@@ -49,7 +49,7 @@ const UEfundsSpecialist = () => {
       </header>
       <section className="header">
         <h1>Specjalista ds. Funduszy Unijnych</h1>
-        <button onClick={() => navigate("/contact")}>
+        <button onClick={() => navigate("/kontakt")}>
           Umów się na konsultacje
         </button>
       </section>

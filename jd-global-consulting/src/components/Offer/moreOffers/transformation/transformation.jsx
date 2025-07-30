@@ -87,7 +87,7 @@ const Transformation = () => {
               Z nami rozwój to coś więcej niż hasło. <br /> To konkretny plan i
               trwały efekt.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -140,7 +140,7 @@ const Transformation = () => {
               </span>{" "}
               i zrozumiałe dla całej organizacji.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -166,7 +166,7 @@ const Transformation = () => {
               </span>{" "}
               Działasz nowocześniej, szybciej i skuteczniej.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

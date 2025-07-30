@@ -88,7 +88,7 @@ const Logistic = () => {
             <p className="ending">
               Z nami logistyka staje się Twoim atutem, <br /> a nie kosztem.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -143,7 +143,7 @@ const Logistic = () => {
               Wspieramy także we wdrożeniu zmian i współpracy z operatorami
               logistycznymi.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -171,7 +171,7 @@ const Logistic = () => {
                 pomagamy firmom działać szybciej, sprawniej i taniej.
               </span>
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

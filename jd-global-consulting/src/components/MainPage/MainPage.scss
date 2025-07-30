@@ -1039,6 +1039,7 @@ html {
       .contactInfo,
       .email,
       .phone,
+      .adress,
       .guardian {
         text-align: left;
         align-items: flex-start;
@@ -1073,6 +1074,7 @@ html {
 
         .email,
         .phone,
+        .adress,
         .guardian {
           display: flex;
           align-items: center;
@@ -1231,6 +1233,7 @@ html {
         .contactInfo,
         .email,
         .phone,
+        .adress,
         .guardian {
           text-align: left;
           align-items: flex-start;

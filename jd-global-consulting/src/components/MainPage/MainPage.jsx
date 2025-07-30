@@ -444,6 +444,15 @@ const MainPage = () => {
                 <span>+ 48 601 27 26 25</span>
               </div>
             </div>
+            <div className="adress">
+              <span className="icon">
+                <img src="location_icon.svg" alt="adress" />
+              </span>
+              <div>
+                <p>Adres</p>
+                <span>ul. Dobrzańskiego 3 Lublin, 20-262</span>
+              </div>
+            </div>
             {/* <div className="guardian">
               <img src="piotr.png" alt="person" />
               <div>

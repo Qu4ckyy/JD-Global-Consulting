@@ -88,7 +88,7 @@ const Marketing = () => {
               Z nami Twój marketing wreszcie zaczyna działać. <br /> Skutecznie.
               Strategicznie. Sprzedażowo.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -144,7 +144,7 @@ const Marketing = () => {
               Współpracujemy z menedżerami, zespołami IT i dostawcami, by całość
               była spójna, opłacalna i przyszłościowa.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -171,7 +171,7 @@ const Marketing = () => {
               <br /> Dzięki naszej pomocy Twoja firma staje się bardziej
               nowoczesna, elastyczna i gotowa na wyzwania cyfrowej gospodarki.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

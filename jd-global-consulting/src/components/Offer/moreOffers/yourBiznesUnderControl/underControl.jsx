@@ -84,7 +84,7 @@ const UnderControl = () => {
             <p className="ending">
               Z nami audyt to nie kontrola - <br /> to strategia na przyszłość
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -138,7 +138,7 @@ const UnderControl = () => {
               </span>{" "}
               od MŚP, po duże organizacje.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -162,7 +162,7 @@ const UnderControl = () => {
               <span className="bolder">i budujesz zaufanie </span> – klientów,
               inwestorów i partnerów.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>

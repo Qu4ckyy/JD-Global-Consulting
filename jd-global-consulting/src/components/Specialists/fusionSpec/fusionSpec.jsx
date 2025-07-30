@@ -49,7 +49,7 @@ const FusionSpecialist = () => {
       </header>
       <section className="header">
         <h1>Specjalista ds. Fuzji i Przejęć</h1>
-        <button onClick={() => navigate("/contact")}>
+        <button onClick={() => navigate("/kontakt")}>
           Umów się na konsultacje
         </button>
       </section>

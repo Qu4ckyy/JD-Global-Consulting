@@ -48,7 +48,7 @@ const TechSpecialist = () => {
       </header>
       <section className="header">
         <h1>Specjalista ds. Technologii i Cyfrowej Transformacji</h1>
-        <button onClick={() => navigate("/contact")}>
+        <button onClick={() => navigate("/kontakt")}>
           Umów się na konsultacje
         </button>
       </section>

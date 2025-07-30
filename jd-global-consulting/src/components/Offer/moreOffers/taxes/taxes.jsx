@@ -89,7 +89,7 @@ const Taxes = () => {
               Z nami zyskujesz pewność, że Twoja firma jest <br /> zawsze w
               zgodzie z prawem i optymalizuje <br /> obciążenia podatkowe.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -146,7 +146,7 @@ const Taxes = () => {
                 skuteczne w obniżeniu obciążeń podatkowych i prawnych.
               </span>
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
@@ -177,7 +177,7 @@ const Taxes = () => {
               co w dłuższej perspektywie przyczynia się do jej stabilności i
               rozwoju.
             </p>
-            <button className="visitation" onClick={() => navigate("/contact")}>
+            <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje
             </button>
           </div>
