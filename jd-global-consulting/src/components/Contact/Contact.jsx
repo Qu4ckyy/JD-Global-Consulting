@@ -103,7 +103,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="contactForm__right">
-          <form action="https://formspree.io/f/mrbkgrww" method="POST">
+          <form action="https://formsubmit.co/biuro@jdgc.pl" method="POST">
             <label>Imie</label>
             <input type="text" name="name" placeholder="Jan Kowalski" />
             <label>Email</label>

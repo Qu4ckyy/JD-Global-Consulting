@@ -32,8 +32,6 @@ import Logistic from "./components/Offer/moreOffers/logistic/logistic";
 import Transformation from "./components/Offer/moreOffers/transformation/transformation";
 import Economic from "./components/Offer/moreOffers/economic/economic";
 import Article from "./components/Article/Article";
-import Login from "./components/CMS/Login";
-import CMS from "./components/CMS/CMS";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -108,15 +106,6 @@ function App() {
           <Route path="/transformacja" element={<Transformation />}></Route>
           <Route path="/ekonomia" element={<Economic />}></Route>
           <Route path="/akutalności/:slug" element={<Article />} />
-          <Route
-            path="/login"
-            element={<Login onAuth={() => setIsAuth(true)} />}
-          ></Route>
-          <Route
-            path="/cms/*"
-            element={isAuth ? <CMS /> : <Navigate to="/login" replace />}
-          />
-          <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </div>
     </Router>
