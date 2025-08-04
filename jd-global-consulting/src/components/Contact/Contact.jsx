@@ -103,7 +103,10 @@ const Contact = () => {
           </div>
         </div>
         <div className="contactForm__right">
-          <form action="https://formsubmit.co/biuro@jdgc.pl" method="POST">
+          <form
+            action="https://formsubmit.co/0ea6a996a3b02edcfc716fed5ab14963"
+            method="POST"
+          >
             <label>Imie</label>
             <input type="text" name="name" placeholder="Jan Kowalski" />
             <label>Email</label>
