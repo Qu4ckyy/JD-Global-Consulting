@@ -45,7 +45,12 @@ const MainPage = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <header className={`baner${isMobile ? " mobile" : ""}`}>
         <CookieBanner />
-        <img src="/logo2.png" alt="logo" onClick={() => navigate("/")} />
+        <img
+          src="/logo2.png"
+          alt="logo"
+          loading="lazy"
+          onClick={() => navigate("/")}
+        />
         {isMobile && (
           <button className="hamburger-icon" onClick={toggleMenu}>
             <div className="line"></div>
@@ -67,10 +72,7 @@ const MainPage = () => {
           >
             Specjaliści
           </button>
-          <button
-            className="services"
-            onClick={() => handleSectionClick("oferta")}
-          >
+          <button className="services" onClick={() => navigate("/oferta")}>
             Nasze usługi
           </button>
           {/*NARAZIE UKRYTE <button
@@ -79,10 +81,7 @@ const MainPage = () => {
           >
             Rekomendacje
           </button> */}
-          <button
-            className="news"
-            onClick={() => handleSectionClick("newsFeed")}
-          >
+          <button className="news" onClick={() => navigate("/aktualności")}>
             Aktualności
           </button>
           <button
@@ -180,7 +179,7 @@ const MainPage = () => {
         </div>
       </div> */}
       <div className="buildingImage">
-        <img className="building" src="Rectangle 1.png" alt="" />
+        <img className="building" src="Rectangle 1.png" loading="lazy" alt="" />
       </div>
       <section className={`whatWeDo${isMobile ? " mobile" : ""}`} id="whatWeDo">
         <h2>Zmieniamy wyzwania w możliwości</h2>
@@ -340,73 +339,169 @@ const MainPage = () => {
         <div className="employees">
           <div className="employee">
             <p>Specjalista ds. Strategii i Zarządzania</p>
-            <button onClick={() => navigate("/specjalistaDS.strategii")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.strategii",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Technologii i Cyfrowej Transformacji</p>
-            <button onClick={() => navigate("/specjalistaDS.technologii")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.technologii",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Finansów</p>
-            <button onClick={() => navigate("/specjalistaDS.finansów")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.finansów",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Podatków</p>
-            <button onClick={() => navigate("/specjalistaDS.podatków")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.podatków",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Fuzji i Przejęć</p>
-            <button onClick={() => navigate("/specjalistaDS.fuzjii")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.fuzji",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Prawnych</p>
-            <button onClick={() => navigate("/specjalistaDS.prawnych")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.prawnych",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Zarządzania Zasobami Ludzkimi</p>
-            <button onClick={() => navigate("/specjalistaDS.zasobówLudzkich")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.zasobówLudzkich",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Marketingu</p>
-            <button onClick={() => navigate("/specjalistaDS.marketingu")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.marketingu",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Rozwoju</p>
-            <button onClick={() => navigate("/specjalistaDS.rozwoju")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.rozwoju",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Produkcji</p>
-            <button onClick={() => navigate("/specjalistaDS.produkcji")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.produkcji",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Transportu i Logistyki</p>
-            <button onClick={() => navigate("/specjalistaDS.logistyki")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.logistyki",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
           <div className="employee">
             <p>Specjalista ds. Funduszy Unijnych</p>
-            <button onClick={() => navigate("/specjalistaDS.funduszyUE")}>
+            <button
+              onClick={() =>
+                window.open(
+                  "/specjalistaDS.funduszyUE",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Zobacz więcej
             </button>
           </div>
@@ -432,7 +527,7 @@ const MainPage = () => {
               </span>
               <div>
                 <p>Email</p>
-                <span>biuro@jdgc.pl</span>
+                <a href="mailto:biuro@jdgc.pl">biuro@jdgc.pl</a>
               </div>
             </div>
             <div className="phone">
@@ -491,37 +586,57 @@ const MainPage = () => {
         <h1>Aktualności</h1>
         <hr />
         <div className="articles">
-          {articles.slice(0, 3).map((article) => (
-            <div className="article" key={article.slug}>
-              <div className="image-wrapper">
-                <img
-                  src={
-                    article.img.startsWith("/")
-                      ? article.img.slice(1)
-                      : article.img
-                  }
-                  alt={article.title}
-                />
-                <button
-                  className="read-button"
-                  onClick={() => navigate(`/news/${article.slug}`)}
-                >
-                  Przeczytaj artykuł
-                </button>
+          {articles.slice(0, 3).map((article) => {
+            const open = () => navigate(`/news/${article.slug}`);
+
+            return (
+              <div
+                className="article"
+                key={article.slug}
+                role="link"
+                tabIndex={0}
+                onClick={open}
+                onKeyDown={(e) =>
+                  (e.key === "Enter" || e.key === " ") && open()
+                }
+              >
+                <div className="image-wrapper">
+                  <img
+                    src={
+                      article.img.startsWith("/")
+                        ? article.img.slice(1)
+                        : article.img
+                    }
+                    alt={article.title}
+                  />
+                  <button
+                    className="read-button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      open();
+                    }}
+                  >
+                    Przeczytaj artykuł
+                  </button>
+                </div>
+
+                <div className="readingTime">
+                  <img src="clock.png" alt="clock" />
+                  <p>{article.time}</p>
+                </div>
+
+                <h3>{article.title}</h3>
+
+                <p className="description">
+                  {article.description.length > 120
+                    ? article.description.slice(0, 120).trim() + "..."
+                    : article.description}
+                </p>
               </div>
-              <div className="readingTime">
-                <img src="clock.png" alt="clock" />
-                <p>{article.time}</p>
-              </div>
-              <h3>{article.title}</h3>
-              <p className="description">
-                {article.description.length > 120
-                  ? article.description.slice(0, 120).trim() + "..."
-                  : article.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
         <button
           className="main-news-btn"
           onClick={() => navigate("/aktualności")}
@@ -639,7 +754,7 @@ const MainPage = () => {
         <hr />
         <div className="footer-bottom">
           <div className="footer-logo">
-            <img src="/logo JD global.png" alt="logo" />
+            <img src="/logo JD global.png" loading="lazy" alt="logo" />
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
@@ -653,7 +768,7 @@ const MainPage = () => {
               Specjaliści
             </button>
             <button className="services" onClick={() => navigate("/oferta")}>
-              Oferta
+              Nasze usługi
             </button>
             <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt

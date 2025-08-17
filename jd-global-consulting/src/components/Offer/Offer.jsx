@@ -9,20 +9,20 @@ const servicesData = [
     title: "Twój biznes pod kontrolą. \nRyzyko – pod naszą.",
     description:
       "W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad ryzykiem to zbyt duże ryzyko....",
-    href: "/underControl",
+    href: "/twójBiznesPodKontrolą",
   },
   {
     img: "trade.png",
     title: "Cyberbezpieczeństwo, \nna które możesz liczyć.",
     description:
       "W dobie cyfryzacji zagrożenia w sieci stają się coraz bardziej zaawansowane i powszechne...",
-    href: "/cyberSec",
+    href: "/cyberbezpieczeństwo",
   },
   {
     img: "doradztwoBiznesowe.png",
     title: "Doradztwo biznesowe, \nktóre przyspiesza rozwój Twojej firmy.",
     description:
-      "W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad ryzykiem to zbyt duże ryzyko....",
+      "Każdy biznes napotyka wyzwania, ale to sposób, w jaki je pokonujesz, decyduje o przyszłości firmy.....",
     href: "/biznes",
   },
   {
@@ -30,14 +30,14 @@ const servicesData = [
     title: "Doradztwo prawno-podatkowe, \nktóre chroni i wspiera Twój biznes.",
     description:
       "Zarządzanie kwestiami prawnymi i podatkowymi to kluczowy element sukcesu każdej firmy...",
-    href: "/taxes",
+    href: "/podatki",
   },
   {
     img: "stocks.png",
     title: "Doradztwo technologiczne, \nktóre napędza innowacje.",
     description:
       "Technologia to dziś nie dodatek – to fundament konkurencyjnego biznesu...",
-    href: "/tech",
+    href: "/technologia",
   },
   {
     img: "marketing1.png",
@@ -50,8 +50,8 @@ const servicesData = [
     img: "calculator.png",
     title: "Doradztwo finansowe \ni fundusze unijne w jednym miejscu.",
     description:
-      "W dzisiejszym dynamicznym środowisku biznesowym brak kontroli nad ryzykiem to zbyt duże ryzyko....",
-    href: "/finances",
+      "Rozwój firmy wymaga solidnych fundamentów finansowych i dostępu do odpowiednich źródeł finansowania. Nasze....",
+    href: "/finanse",
   },
   {
     img: "doradztwoHR.png",
@@ -65,21 +65,21 @@ const servicesData = [
     title: "Doradztwo logistyczne, \nktóre nie zawodzi.",
     description:
       "Sprawna logistyka i efektywny transport to dziś niezbędne ogniwa konkurencyjnego biznesu...",
-    href: "/logistic",
+    href: "/logistyka",
   },
   {
     img: "doradztwoTransform.png",
     title: "Doradztwo transformacyjne, \nktóre przynosi realny rozwój.",
     description:
       "Każda organizacja potrzebuje zmian – ale tylko dobrze zaplanowana transformacja prowadzi do trwałego rozwoju...",
-    href: "/transformation",
+    href: "/transformacja",
   },
   {
     img: "wywiadGosp.png",
     title: "Doradztwo w zakresie wywiadu gospodarczego.",
     description:
       "Każda współpraca biznesowa niesie ryzyko, dlatego warto znać swojego kontrahenta...",
-    href: "/economic",
+    href: "/ekonomia",
   },
 ];
 
@@ -104,6 +104,7 @@ const Offer = () => {
         <img
           src="/logo JD global.png"
           alt="logo"
+          loading="lazy"
           onClick={() => navigate("/")}
         />
         {isMobile && (
@@ -143,7 +144,7 @@ const Offer = () => {
           <div className="ourServices">
             {servicesData.map((service, index) => (
               <div className="ourService" key={index}>
-                <img src={service.img} alt="" />
+                <img src={service.img} alt="" loading="lazy" />
                 <div className="boxContent">
                   <h5 className="bold">{service.title}</h5>
                   <p>{service.description}</p>
@@ -186,7 +187,7 @@ const Offer = () => {
         <hr />
         <div className="footer-bottom">
           <div className="footer-logo">
-            <img src="/logo JD global.png" alt="logo" />
+            <img src="/logo JD global.png" alt="logo" loading="lazy" />
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
@@ -200,7 +201,7 @@ const Offer = () => {
               Specjaliści
             </button>
             <button className="services" onClick={() => navigate("/oferta")}>
-              Oferta
+              Nasze usługi
             </button>
             <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt

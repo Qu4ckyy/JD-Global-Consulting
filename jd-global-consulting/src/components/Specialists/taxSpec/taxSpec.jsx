@@ -128,7 +128,7 @@ const TaxSpecialist = () => {
               Specjaliści
             </button>
             <button className="services" onClick={() => navigate("/oferta")}>
-              Oferta
+              Nasze usługi
             </button>
             <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt

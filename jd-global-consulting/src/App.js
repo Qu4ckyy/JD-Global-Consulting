@@ -32,6 +32,7 @@ import Logistic from "./components/Offer/moreOffers/logistic/logistic";
 import Transformation from "./components/Offer/moreOffers/transformation/transformation";
 import Economic from "./components/Offer/moreOffers/economic/economic";
 import Article from "./components/Article/Article";
+import GlobalWidowsFixer from "./GlobalWidowsFixer/GlobalWidowsFixer";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -39,6 +40,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <GlobalWidowsFixer />
       <div className="App">
         <Routes>
           <Route path="/" element={<MainPage />} />

@@ -139,6 +139,7 @@ const News = () => {
         <img
           src="/logo JD global.png"
           alt="logo"
+          loading="lazy"
           onClick={() => navigate("/")}
         />
         {isMobile && (
@@ -205,19 +206,25 @@ const News = () => {
 
         <section className="articles">
           {paginateArticles().map((article) => (
-            <div className="article" key={article.slug}>
+            <div
+              className="article"
+              key={article.slug}
+              role="button"
+              tabIndex="0"
+              onClick={() => navigate(`/news/${article.slug}`)}
+              onKeyDown={(e) =>
+                (e.key === "Enter" || e.key === " ") &&
+                navigate(`/news/${article.slug}`)
+              }
+            >
               <div className="image-wrapper">
                 <img
                   src={article.img}
                   alt={article.title}
+                  loading="lazy"
                   style={{ objectFit: "cover" }}
                 />
-                <button
-                  className="read-button"
-                  onClick={() => navigate(`/news/${article.slug}`)}
-                >
-                  Przeczytaj artykuł
-                </button>
+                <button className="read-button">Przeczytaj artykuł</button>
               </div>
               <div className="readingTime">
                 <img src="clock.png" alt="czas czytania" />
@@ -310,7 +317,7 @@ const News = () => {
         <hr />
         <div className="footer-bottom">
           <div className="footer-logo">
-            <img src="/logo JD global.png" alt="logo" />
+            <img src="/logo JD global.png" alt="logo" loading="lazy" />
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
@@ -324,7 +331,7 @@ const News = () => {
               Specjaliści
             </button>
             <button className="services" onClick={() => navigate("/oferta")}>
-              Oferta
+              Nasze usługi
             </button>
             <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt

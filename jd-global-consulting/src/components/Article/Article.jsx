@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import useIsMobile from "../../hooks/useIsMobile";
 import "./Article.scss";
 import { Helmet } from "react-helmet";
+import { articles as localArticles } from "../../data/articles";
 
 const COCKPIT_URL =
   process.env.REACT_APP_COCKPIT_URL || "http://localhost/cockpit";
@@ -115,8 +116,18 @@ const Article = () => {
       setAlsoSee(others);
     }
 
-    fetchArticle();
-    fetchAlsoSee();
+    fetchArticle().catch((err) => {
+      console.error("Błąd pobierania artykułu:", err);
+      const fallback = (localArticles || []).find((a) => a.slug === slug);
+      if (fallback) {
+        setArticle(fallback);
+        setNotFound(false);
+      } else {
+        setNotFound(true);
+      }
+      setLoading(false);
+    });
+    fetchAlsoSee().catch(() => {});
   }, [slug]);
 
   if (loading) {
@@ -152,6 +163,7 @@ const Article = () => {
         <img
           src="/logo JD global.png"
           alt="logo"
+          loading="lazy"
           onClick={() => navigate("/")}
         />
         {isMobile && (
@@ -198,6 +210,7 @@ const Article = () => {
         <img
           src={article.heroImg || article.img}
           alt={article.title}
+          loading="lazy"
           style={{
             objectPosition: heroCrop[slug] || "center center",
           }}
@@ -225,14 +238,14 @@ const Article = () => {
               onClick={() => navigate(`/news/${a.slug}`)}
             >
               <div className="also-see-image-wrapper">
-                <img src={a.img} alt={a.title} />
+                <img src={a.img} alt={a.title} loading="lazy" />
                 <button className="also-see-read-button">
                   Przeczytaj artykuł
                 </button>
               </div>
               <div className="also-see-meta">
                 <div className="also-see-readingTime">
-                  <img src="/clock.png" alt="czas czytania" />
+                  <img src="/clock.png" alt="czas czytania" loading="lazy" />
                   <span>{a.time}</span>
                 </div>
                 <h3>{a.title}</h3>
@@ -279,7 +292,7 @@ const Article = () => {
         <hr />
         <div className="footer-bottom">
           <div className="footer-logo">
-            <img src="/logo JD global.png" alt="logo" />
+            <img src="/logo JD global.png" alt="logo" loading="lazy" />
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
@@ -293,7 +306,7 @@ const Article = () => {
               Specjaliści
             </button>
             <button className="services" onClick={() => navigate("/oferta")}>
-              Oferta
+              Nasze usługi
             </button>
             <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt

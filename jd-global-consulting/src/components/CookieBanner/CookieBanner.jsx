@@ -10,6 +10,18 @@ const CookieBanner = () => {
   const necessary = true;
 
   useEffect(() => {
+    try {
+      const raw = localStorage.getItem("cookieConsent");
+      if (raw) {
+        const data = JSON.parse(raw);
+        if (
+          data?.acceptedAt &&
+          Date.now() - data.acceptedAt < 24 * 60 * 60 * 1000
+        ) {
+          return;
+        }
+      }
+    } catch (_) {}
     const timer = setTimeout(() => setVisible(true), 500);
     return () => clearTimeout(timer);
   }, []);
@@ -19,76 +31,120 @@ const CookieBanner = () => {
   const acceptAll = () => {
     setAnalytics(true);
     setMarketing(true);
+    localStorage.setItem(
+      "cookieConsent",
+      JSON.stringify({
+        analytics: true,
+        marketing: true,
+        acceptedAt: Date.now(),
+      })
+    );
     hide();
   };
 
   const rejectAll = () => {
     setAnalytics(false);
     setMarketing(false);
+    localStorage.setItem(
+      "cookieConsent",
+      JSON.stringify({
+        analytics: false,
+        marketing: false,
+        acceptedAt: Date.now(),
+      })
+    );
     hide();
   };
 
   const saveSelected = () => {
-    sessionStorage.setItem(
-      "cookieSettings",
-      JSON.stringify({ analytics, marketing })
+    localStorage.setItem(
+      "cookieConsent",
+      JSON.stringify({ analytics, marketing, acceptedAt: Date.now() })
     );
     hide();
   };
 
   return (
     <div className={`cookie-banner${visible ? " visible" : ""}`}>
-      <button className="cookie-banner__close" onClick={hide}>
-        ✕
-      </button>
+      <div className="cookie-banner__inner">
+        <button
+          className="cookie-banner__close"
+          onClick={hide}
+          aria-label="Zamknij baner cookies"
+        >
+          ✕
+        </button>
 
-      <p className="cookie-banner__intro">
-        Ta strona używa plików cookie i przetwarza dane osobowe w celu
-        personalizacji treści i reklam oraz analizy ruchu.
-      </p>
+        <p className="cookie-banner__lead">
+          Ta strona używa plików cookie i przetwarza dane osobowe w celu
+          personalizacji treści i reklam oraz analizy ruchu.
+        </p>
 
-      <div className="cookie-banner__options">
-        <label>
-          <input type="checkbox" checked={necessary} disabled />
-          <span className="cookie-banner__opt-label">Niezbędne</span>
-          <small>Wymagane do prawidłowego działania strony</small>
-        </label>
-        <label>
+        {/* Niezbędne */}
+        <div className="cookie-banner__group">
           <input
+            id="cb-necessary"
+            className="cookie-banner__checkbox"
+            type="checkbox"
+            checked
+            readOnly
+            disabled
+          />
+          <label htmlFor="cb-necessary" className="cookie-banner__label">
+            <span className="cookie-banner__label-title">Niezbędne</span>
+            <span className="cookie-banner__label-desc">
+              Wymagane do prawidłowego działania strony
+            </span>
+          </label>
+        </div>
+
+        {/* Analityczne */}
+        <div className="cookie-banner__group">
+          <input
+            id="cb-analytics"
+            className="cookie-banner__checkbox"
             type="checkbox"
             checked={analytics}
-            onChange={() => setAnalytics((v) => !v)}
+            onChange={(e) => setAnalytics(e.target.checked)}
           />
-          <span className="cookie-banner__opt-label">Analityczne</span>
-          <small>
-            Pomagają nam zrozumieć, jak użytkownicy korzystają z naszej strony
-          </small>
-        </label>
-        <label>
+          <label htmlFor="cb-analytics" className="cookie-banner__label">
+            <span className="cookie-banner__label-title">Analityczne</span>
+            <span className="cookie-banner__label-desc">
+              Pomagają nam zrozumieć, jak użytkownicy korzystają z naszej strony
+            </span>
+          </label>
+        </div>
+
+        {/* Marketingowe i personalizacja */}
+        <div className="cookie-banner__group">
           <input
+            id="cb-marketing"
+            className="cookie-banner__checkbox"
             type="checkbox"
             checked={marketing}
-            onChange={() => setMarketing((v) => !v)}
+            onChange={(e) => setMarketing(e.target.checked)}
           />
-          <span className="cookie-banner__opt-label">
-            Marketingowe i Personalizacja
-          </span>
-          <small>
-            Używane do wyświetlania spersonalizowanych reklam i treści
-          </small>
-        </label>
-      </div>
+          <label htmlFor="cb-marketing" className="cookie-banner__label">
+            <span className="cookie-banner__label-title">
+              Marketingowe i Personalizacja
+            </span>
+            <span className="cookie-banner__label-desc">
+              Używane do wyświetlania spersonalizowanych reklam i treści
+            </span>
+          </label>
+        </div>
 
-      <div className="cookie-banner__actions">
-        <button className="btn btn--outline" onClick={rejectAll}>
-          Odrzuć wszystkie
-        </button>
-        <button className="btn btn--primary" onClick={saveSelected}>
-          Zapisz wybrane
-        </button>
-        <button className="btn btn--secondary" onClick={acceptAll}>
-          Akceptuj wszystkie
-        </button>
+        <div className="cookie-banner__buttons">
+          <button className="btn btn--ghost" onClick={rejectAll}>
+            Odrzuć wszystkie
+          </button>
+          <button className="btn btn--primary" onClick={saveSelected}>
+            Zapisz wybrane
+          </button>
+          <button className="btn btn--secondary" onClick={acceptAll}>
+            Akceptuj wszystkie
+          </button>
+        </div>
       </div>
     </div>
   );

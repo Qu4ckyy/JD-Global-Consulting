@@ -162,15 +162,16 @@ html {
     align-items: center;
     flex-direction: row;
     background-color: #f6f6f6;
-    padding-left: 81px;
-    padding-right: 81px;
-    padding-top: 108px;
-    padding-bottom: 108px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 64px;
+    padding-bottom: 64px;
     .mission {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 108px;
+      height: auto;
+      min-height: 0;
       text-align: left;
 
       h4 {
@@ -1730,7 +1731,7 @@ hr {
   background: #070046;
   color: #fff;
   margin-top: 50px;
-  padding: 64px 0 0 0;
+  padding: 40px 0 0 0;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -1747,8 +1748,8 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 48px 48px 48px;
-  gap: 80px;
+  padding: 0 48px 32px 48px;
+  gap: 40px;
   @media (max-width: 900px) {
     flex-direction: column;
     gap: 32px;
@@ -1832,7 +1833,7 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 48px 32px 48px;
+  padding: 0 48px 24px 48px;
   gap: 60px;
   @media (max-width: 900px) {
     flex-direction: column;
@@ -2018,6 +2019,24 @@ hr {
   margin-bottom: 100px !important;
 }
 
+.page .info {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+@media (min-width: 1200px) {
+  .page .info {
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+}
+
+.page footer {
+  padding: 32px 0 0 0 !important;
+}
+.page .footer-bottom {
+  gap: 40px !important;
+}
+
 @media (max-width: 600px) {
   .info {
     margin-top: 50px !important;
@@ -2120,4 +2139,23 @@ hr {
     text-align: left !important;
     line-height: 1.5 !important;
   }
+}
+
+.baner::before,
+.baner::after {
+  pointer-events: none;
+}
+
+.baner * {
+  pointer-events: auto;
+}
+
+.newsfeed .articles .article {
+  cursor: pointer;
+}
+
+.newsfeed .articles .article:focus-visible {
+  outline: 2px solid #0041d8;
+  outline-offset: 2px;
+  border-radius: 12px;
 }

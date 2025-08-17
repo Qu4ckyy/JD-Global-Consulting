@@ -170,3 +170,31 @@
     padding-right: 8px;
   }
 }
+
+.ourService img {
+  height: clamp(180px, 18vw, 240px);
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Na węższych ekranach lekko zmieniamy zakres, żeby nadal wyglądało proporcjonalnie */
+@media (max-width: 1000px) {
+  .ourService img {
+    height: clamp(160px, 28vw, 220px);
+  }
+}
+
+/* Wyrównanie treści i stabilna wysokość kafelka bez zmiany siatki */
+.boxContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.boxContent p {
+  flex: 1 1 auto; /* tekst może „zająć” miejsce, a przycisk spadnie na dół */
+}
+
+.ourService button {
+  margin-top: 8px; /* delikatny oddech nad CTA */
+}

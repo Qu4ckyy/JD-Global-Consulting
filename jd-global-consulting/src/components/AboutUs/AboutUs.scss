@@ -90,7 +90,9 @@
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    margin-left: 90px;
+
+    margin-left: 0;
+    padding-left: 106px;
 
     h1 {
       font-size: 40px;
@@ -106,6 +108,7 @@
       color: #151515cc;
       width: 60%;
     }
+
     @media (max-width: 1024px) {
       text-align: center;
       display: flex;
@@ -114,16 +117,23 @@
   }
 
   .visionRight {
-    flex: 1;
+    flex: 1.1;
+
     img {
-      width: 100%;
-      max-width: 100%;
+      width: 95%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+
+      margin-left: auto;
+      margin-right: 0;
+      align-self: flex-end;
     }
   }
 }
 
 .vision .aboutSection-inner {
-  gap: 32px;
+  gap: 131px;
 }
 
 .whoAreWe {
@@ -340,4 +350,65 @@
   gap: 131px;
   min-height: 400px;
   height: 100%;
+}
+
+.aboutUsPage-content {
+  padding-top: 56px !important;
+}
+
+.aboutMission .aboutSection-inner,
+.vision .aboutSection-inner,
+.whoAreWe .aboutSection-inner {
+  align-items: center !important;
+}
+
+.aboutMission .missionLeft img,
+.vision .visionRight img,
+.whoAreWe .whoLeft img {
+  width: 100% !important;
+  max-width: clamp(360px, 40vw, 520px) !important;
+  height: auto !important;
+  border-radius: 16px;
+}
+
+.aboutMission .missionRight span,
+.vision .visionLeft span,
+.whoAreWe .whoRight span {
+  width: 100% !important;
+  max-width: 60ch;
+}
+
+.aboutMission .missionRight h1,
+.vision .visionLeft h1,
+.whoAreWe .whoRight h1 {
+  font-size: clamp(24px, 3.2vw, 40px) !important;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.vision .visionLeft {
+  margin-left: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .aboutMission .aboutSection-inner,
+  .vision .aboutSection-inner,
+  .whoAreWe .aboutSection-inner {
+    gap: 20px !important;
+  }
+
+  .aboutMission .missionLeft img,
+  .vision .visionRight img,
+  .whoAreWe .whoLeft img {
+    max-width: min(420px, 90vw) !important;
+    margin: 0 auto;
+  }
+
+  .aboutMission .missionRight span,
+  .vision .visionLeft span,
+  .whoAreWe .whoRight span {
+    max-width: 70ch;
+    text-align: center;
+    margin: 0 auto;
+  }
 }

@@ -20,6 +20,7 @@ const Contact = () => {
         <img
           src="/logo JD global.png"
           alt="logo"
+          loading="lazy"
           onClick={() => navigate("/")}
         />
         {isMobile && (
@@ -72,7 +73,7 @@ const Contact = () => {
               </span>
               <div>
                 <p>Email</p>
-                <span>biuro@jdgc.pl</span>
+                <a href="mailto:biuro@jdgc.pl">biuro@jdgc.pl</a>
               </div>
             </div>
             <div className="phone">
@@ -157,7 +158,7 @@ const Contact = () => {
         <hr />
         <div className="footer-bottom">
           <div className="footer-logo">
-            <img src="/logo JD global.png" alt="logo" />
+            <img src="/logo JD global.png" alt="logo" loading="lazy" />
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
@@ -171,7 +172,7 @@ const Contact = () => {
               Specjaliści
             </button>
             <button className="services" onClick={() => navigate("/oferta")}>
-              Oferta
+              Nasze usługi
             </button>
             <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt

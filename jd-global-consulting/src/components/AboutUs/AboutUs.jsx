@@ -24,6 +24,7 @@ const AboutUs = () => {
         <img
           src="/logo JD global.png"
           alt="logo"
+          loading="lazy"
           onClick={() => navigate("/")}
         />
         {isMobile && (
@@ -61,7 +62,7 @@ const AboutUs = () => {
           <hr />
           <div className="aboutSection-inner">
             <div className="missionLeft">
-              <img src="mission.png" alt="misja" />
+              <img src="mission.png" loading="lazy" alt="misja" />
             </div>
             <div className="missionRight">
               <h1>Misja</h1>
@@ -90,14 +91,14 @@ const AboutUs = () => {
               </span>
             </div>
             <div className="visionRight">
-              <img src="vision.png" alt="wizja" />
+              <img src="vision.png" alt="wizja" loading="lazy" />
             </div>
           </div>
         </section>
         <section className="whoAreWe">
           <div className="aboutSection-inner">
             <div className="whoLeft">
-              <img src="aboutUs.png" alt="kim jesteśmy?" />
+              <img src="aboutUs.png" alt="kim jesteśmy?" loading="lazy" />
             </div>
             <div className="whoRight">
               <h1>Kim jesteśmy?</h1>
@@ -117,27 +118,27 @@ const AboutUs = () => {
           <h2 className="whyUs-title">Dlaczego my?</h2>
           <div className="whyUs-cards">
             <div className="why">
-              <img src="statistics.png" alt="" />
+              <img src="statistics.png" alt="" loading="lazy" />
               <span>
                 Skutecznie łączymy doradztwo strategiczne z operacyjnym
                 wsparciem
               </span>
             </div>
             <div className="why">
-              <img src="dollar.png" alt="" />
+              <img src="dollar.png" alt="" loading="lazy" />
               <span>
                 Wdrażamy innowacyjne technologie wspierające transformację
                 cyfrową
               </span>
             </div>
             <div className="why">
-              <img src="exchange.png" alt="" />
+              <img src="exchange.png" alt="" loading="lazy" />
               <span>
                 Stawiamy na długoterminową współpracę i realne rezultaty
               </span>
             </div>
             <div className="why">
-              <img src="account.png" alt="" />
+              <img src="account.png" alt="" loading="lazy" />
               <span>
                 Rozumiemy zróżnicowane wyzwania sektora MŚP oraz dużych
                 korporacji
@@ -176,7 +177,7 @@ const AboutUs = () => {
         <hr />
         <div className="footer-bottom">
           <div className="footer-logo">
-            <img src="/logo JD global.png" alt="logo" />
+            <img src="/logo JD global.png" alt="logo" loading="lazy" />
             <span>Wszystkie prawa zastrzeżone</span>
           </div>
           <nav className="footer-nav">
@@ -190,7 +191,7 @@ const AboutUs = () => {
               Specjaliści
             </button>
             <button className="services" onClick={() => navigate("/oferta")}>
-              Oferta
+              Nasze usługi
             </button>
             <button className="contact" onClick={() => navigate("/kontakt")}>
               Kontakt
