@@ -5,11 +5,12 @@ import "./Article.scss";
 import { Helmet } from "react-helmet";
 import { articles as localArticles } from "../../data/articles";
 
-const COCKPIT_URL =
-  process.env.REACT_APP_COCKPIT_URL || "https://jdc.technischools.com/";
+const COCKPIT_URL = (
+  process.env.REACT_APP_COCKPIT_URL || "https://jdc.technischools.com"
+).replace(/\/+$/, "");
 const COCKPIT_TOKEN =
   process.env.REACT_APP_COCKPIT_TOKEN ||
-  "API-920e6ce6751e922bf7fc2700b936c98b4526aa10";
+  "API_920e6ce6751e922bf7fc2700b936c98b4526aa10";
 
 function stripHTML(html = "") {
   const tmp = document.createElement("div");
@@ -18,15 +19,12 @@ function stripHTML(html = "") {
 }
 
 function makeUrl(input, baseUrl) {
-  if (Array.isArray(input) && input[0]?.path) {
-    const p = input[0].path;
-    return p.startsWith("http") ? p : `${baseUrl}/storage/uploads${p}`;
-  }
-  if (input?.path) {
-    const p = input.path;
-    return p.startsWith("http") ? p : `${baseUrl}/storage/uploads${p}`;
-  }
-  return "";
+  const pick = Array.isArray(input) ? input[0] : input;
+  const p = pick?.path || "";
+  if (!p) return "";
+  if (p.startsWith("http")) return p;
+  const origin = (baseUrl || "").replace(/\/+$/, "");
+  return `${origin}/storage/uploads${p.startsWith("/") ? "" : "/"}${p}`;
 }
 
 const Article = () => {
@@ -40,29 +38,36 @@ const Article = () => {
 
   const heroCrop = {
     "5-kluczowych-zasad-jak-skutecznie-rozwijac": "center bottom",
-    "co-napedza-rozwoj-it-5-trendow-ktore-trzeba-znać": "center center",
+    // jeśli slug w CMS jest bez ogonków, użyj "znac"
+    "co-napedza-rozwoj-it-5-trendow-ktore-trzeba-znac": "center center",
   };
+
   const [article, setArticle] = useState(null);
   const [alsoSee, setAlsoSee] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
-    const baseUrl = COCKPIT_URL.replace(/\/api$/, "");
-    const headers = { "api-key": COCKPIT_TOKEN };
+    const baseUrl = COCKPIT_URL.replace(/\/api$/, "").replace(/\/+$/, "");
 
     async function fetchArticle() {
       const res = await fetch(
-        `${COCKPIT_URL}/api/content/items/article?filter[slug]=${encodeURIComponent(
-          slug
-        )}`,
-        { headers }
+        `${COCKPIT_URL}/api/content/items/article?filter=${encodeURIComponent(
+          JSON.stringify({ slug })
+        )}&token=${encodeURIComponent(COCKPIT_TOKEN)}`,
+        { mode: "cors" }
       );
+      if (!res.ok) {
+        throw new Error(`${res.status} ${await res.text()}`);
+      }
+
       const json = await res.json();
       const list = Array.isArray(json)
         ? json
         : Array.isArray(json.items)
         ? json.items
+        : Array.isArray(json.entries)
+        ? json.entries
         : [];
 
       if (list.length === 0) {
@@ -72,12 +77,13 @@ const Article = () => {
       }
 
       const it = list[0];
-      const blocks = (Array.isArray(it.content) ? it.content : []).flatMap(
-        (entry) => [
-          { type: "h2", text: entry.heading },
-          { type: "p", text: entry.text },
-        ]
-      );
+
+      const blocks = (Array.isArray(it.content) ? it.content : [])
+        .flatMap((entry) => [
+          entry?.heading ? { type: "h2", text: entry.heading } : null,
+          entry?.text ? { type: "p", text: entry.text } : null,
+        ])
+        .filter(Boolean);
 
       setArticle({
         slug: it.slug,
@@ -94,15 +100,22 @@ const Article = () => {
 
     async function fetchAlsoSee() {
       const res = await fetch(
-        `${COCKPIT_URL}/api/content/items/article?limit=4`,
-        { headers }
+        `${COCKPIT_URL}/api/content/items/article?limit=4&token=${encodeURIComponent(
+          COCKPIT_TOKEN
+        )}`,
+        { mode: "cors" }
       );
+      if (!res.ok) return;
+
       const json = await res.json();
       const list = Array.isArray(json)
         ? json
         : Array.isArray(json.items)
         ? json.items
+        : Array.isArray(json.entries)
+        ? json.entries
         : [];
+
       const others = list
         .filter((it) => it.slug !== slug)
         .slice(0, 3)
@@ -116,18 +129,20 @@ const Article = () => {
       setAlsoSee(others);
     }
 
-    fetchArticle().catch((err) => {
-      console.error("Błąd pobierania artykułu:", err);
-      const fallback = (localArticles || []).find((a) => a.slug === slug);
-      if (fallback) {
-        setArticle(fallback);
-        setNotFound(false);
-      } else {
-        setNotFound(true);
-      }
-      setLoading(false);
-    });
-    fetchAlsoSee().catch(() => {});
+    Promise.all([
+      fetchArticle().catch((err) => {
+        console.error("Błąd pobierania artykułu:", err);
+        const fallback = (localArticles || []).find((a) => a.slug === slug);
+        if (fallback) {
+          setArticle(fallback);
+          setNotFound(false);
+        } else {
+          setNotFound(true);
+        }
+        setLoading(false);
+      }),
+      fetchAlsoSee().catch(() => {}),
+    ]);
   }, [slug]);
 
   if (loading) {

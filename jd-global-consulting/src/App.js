@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 import "./App.css";
 import MainPage from "./components/MainPage/MainPage";
 import AboutUs from "./components/AboutUs/AboutUs";
@@ -35,8 +34,6 @@ import Article from "./components/Article/Article";
 import GlobalWidowsFixer from "./GlobalWidowsFixer/GlobalWidowsFixer";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
-
   return (
     <Router>
       <ScrollToTop />
@@ -107,7 +104,7 @@ function App() {
           <Route path="/logistyka" element={<Logistic />}></Route>
           <Route path="/transformacja" element={<Transformation />}></Route>
           <Route path="/ekonomia" element={<Economic />}></Route>
-          <Route path="/akutalności/:slug" element={<Article />} />
+          <Route path="/aktualności/:slug" element={<Article />} />
         </Routes>
       </div>
     </Router>

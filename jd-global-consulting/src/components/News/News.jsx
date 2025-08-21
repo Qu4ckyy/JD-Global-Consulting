@@ -5,10 +5,10 @@ import useIsMobile from "../../hooks/useIsMobile";
 import { Helmet } from "react-helmet";
 
 const COCKPIT_URL =
-  process.env.REACT_APP_COCKPIT_URL || "https://jdc.technischools.com/";
+  process.env.REACT_APP_COCKPIT_URL || "https://jdc.technischools.com";
 const COCKPIT_TOKEN =
   process.env.REACT_APP_COCKPIT_TOKEN ||
-  "API-920e6ce6751e922bf7fc2700b936c98b4526aa10";
+  "API_920e6ce6751e922bf7fc2700b936c98b4526aa10";
 
 function stripHTML(html = "") {
   const tmp = document.createElement("div");
@@ -46,9 +46,14 @@ const News = () => {
   useEffect(() => {
     async function loadArticles() {
       try {
-        const res = await fetch(`${COCKPIT_URL}/api/content/items/article`, {
-          headers: { "api-key": COCKPIT_TOKEN },
-        });
+        const res = await fetch(
+          `${COCKPIT_URL.replace(
+            /\/+$/,
+            ""
+          )}/api/content/items/article?token=${encodeURIComponent(
+            COCKPIT_TOKEN
+          )}`
+        );
         const json = await res.json();
         console.log("cockpit raw json:", json);
 
@@ -60,7 +65,7 @@ const News = () => {
           ? json.items
           : [];
 
-        const baseUrl = COCKPIT_URL.replace(/\/api$/, "");
+        const baseUrl = COCKPIT_URL.replace(/\/api$/, "").replace(/\/+$/, "");
 
         const makeUrl = (assetOrArray) => {
           let asset = null;
@@ -75,7 +80,9 @@ const News = () => {
           if (!asset || !asset.path) return "";
           const p = asset.path;
           if (p.startsWith("http")) return p;
-          return `${baseUrl}/storage/uploads${p}`;
+          return `${baseUrl}/storage/uploads${
+            p.startsWith("/") ? "" : "/"
+          }${p}`;
         };
 
         const formatted = list.map((item) => ({
@@ -205,37 +212,51 @@ const News = () => {
         </div>
 
         <section className="articles">
-          {paginateArticles().map((article) => (
-            <div
-              className="article"
-              key={article.slug}
-              role="button"
-              tabIndex="0"
-              onClick={() => navigate(`/aktualności/${article.slug}`)}
-              onKeyDown={(e) =>
-                (e.key === "Enter" || e.key === " ") &&
-                navigate(`/aktualności/${article.slug}`)
-              }
-            >
-              <div className="image-wrapper">
-                <img
-                  src={article.img}
-                  alt={article.title}
-                  loading="lazy"
-                  style={{ objectFit: "cover" }}
-                />
-                <button className="read-button">Przeczytaj artykuł</button>
+          {paginateArticles().map((article) => {
+            const open = () => navigate(`/aktualności/${article.slug}`);
+
+            return (
+              <div
+                className="article"
+                key={article.slug}
+                role="link"
+                tabIndex={0}
+                onClick={open}
+                onKeyDown={(e) =>
+                  (e.key === "Enter" || e.key === " ") && open()
+                }
+                aria-label={`Przejdź do artykułu: ${article.title}`}
+              >
+                <div className="image-wrapper">
+                  <img
+                    src={article.img}
+                    alt={article.title}
+                    loading="lazy"
+                    style={{ objectFit: "cover" }}
+                  />
+                  <button
+                    className="read-button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      open();
+                    }}
+                  >
+                    Przeczytaj artykuł
+                  </button>
+                </div>
+
+                <div className="readingTime">
+                  <img src="clock.png" alt="czas czytania" />
+                  <p>{article.time}</p>
+                </div>
+
+                <h3>{article.title}</h3>
+                <p className="description">
+                  {truncate(article.description, 120)}
+                </p>
               </div>
-              <div className="readingTime">
-                <img src="clock.png" alt="czas czytania" />
-                <p>{article.time}</p>
-              </div>
-              <h3>{article.title}</h3>
-              <p className="description">
-                {truncate(article.description, 120)}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </section>
 
         <div className="pagination">
