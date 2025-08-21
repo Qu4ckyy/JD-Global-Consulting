@@ -5,7 +5,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 import { Helmet } from "react-helmet";
 
 const COCKPIT_URL =
-  process.env.REACT_APP_COCKPIT_URL || "http://localhost/cockpit";
+  process.env.REACT_APP_COCKPIT_URL || "https://jdc.technischools.com/";
 const COCKPIT_TOKEN =
   process.env.REACT_APP_COCKPIT_TOKEN ||
   "API-920e6ce6751e922bf7fc2700b936c98b4526aa10";
@@ -211,10 +211,10 @@ const News = () => {
               key={article.slug}
               role="button"
               tabIndex="0"
-              onClick={() => navigate(`/news/${article.slug}`)}
+              onClick={() => navigate(`/aktualności/${article.slug}`)}
               onKeyDown={(e) =>
                 (e.key === "Enter" || e.key === " ") &&
-                navigate(`/news/${article.slug}`)
+                navigate(`/aktualności/${article.slug}`)
               }
             >
               <div className="image-wrapper">

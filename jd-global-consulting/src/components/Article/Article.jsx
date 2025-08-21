@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import { articles as localArticles } from "../../data/articles";
 
 const COCKPIT_URL =
-  process.env.REACT_APP_COCKPIT_URL || "http://localhost/cockpit";
+  process.env.REACT_APP_COCKPIT_URL || "https://jdc.technischools.com/";
 const COCKPIT_TOKEN =
   process.env.REACT_APP_COCKPIT_TOKEN ||
   "API-920e6ce6751e922bf7fc2700b936c98b4526aa10";
@@ -138,7 +138,7 @@ const Article = () => {
     return (
       <div className="article-page">
         <p>Nie znaleziono artykułu.</p>
-        <Link to="/news" className="back-button">
+        <Link to="/aktualności" className="back-button">
           ‹ Powrót do listy
         </Link>
       </div>
@@ -155,7 +155,9 @@ const Article = () => {
         />
         <link
           rel="canonical"
-          href={`https://jdgc.pl/news/${encodeURIComponent(article.slug)}`}
+          href={`https://jdgc.pl/aktualności/${encodeURIComponent(
+            article.slug
+          )}`}
         />
       </Helmet>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -235,7 +237,7 @@ const Article = () => {
             <div
               className="also-see-article"
               key={a.slug}
-              onClick={() => navigate(`/news/${a.slug}`)}
+              onClick={() => navigate(`/aktualności/${a.slug}`)}
             >
               <div className="also-see-image-wrapper">
                 <img src={a.img} alt={a.title} loading="lazy" />
@@ -260,7 +262,7 @@ const Article = () => {
         </div>
       </section>
 
-      <Link to="/news" className="back-button">
+      <Link to="/aktualności" className="back-button">
         ‹ Powrót do aktualności
       </Link>
       <footer className={`footer${isMobile ? " mobile" : ""}`}>

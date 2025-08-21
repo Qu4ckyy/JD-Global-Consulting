@@ -587,7 +587,7 @@ const MainPage = () => {
         <hr />
         <div className="articles">
           {articles.slice(0, 3).map((article) => {
-            const open = () => navigate(`/news/${article.slug}`);
+            const open = () => navigate(`/aktualności/${article.slug}`);
 
             return (
               <div
