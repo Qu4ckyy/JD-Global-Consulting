@@ -2,6 +2,7 @@ import "./Contact.scss";
 import useIsMobile from "../../hooks/useIsMobile";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import { fixPolishWidows } from "../../utils/typography";
 
 const Contact = () => {
   const isMobile = useIsMobile(825);
@@ -64,7 +65,9 @@ const Contact = () => {
             Twojego biznesu
           </h1>
           <p>
-            Chcesz dowiedzieć się, jak możemy Ci pomóc? Skontaktuj się z nami.
+            {fixPolishWidows(
+              "Chcesz dowiedzieć się, jak możemy Ci pomóc? Skontaktuj się z nami."
+            )}
           </p>
           <div className="contactInfo">
             <div className="email">
@@ -120,8 +123,9 @@ const Contact = () => {
             <div className="checkbox-row">
               <input type="checkbox" id="agreement" required />
               <label htmlFor="agreement">
-                Akceptuję politykę prywatności i chce otrzymywać newsletter,
-                czyli informacje handlowe o promocjach.
+                {fixPolishWidows(
+                  "Akceptuję politykę prywatności i chce otrzymywać newsletter, czyli informacje handlowe o promocjach."
+                )}
               </label>
             </div>
             <button type="submit">Wyślij wiadomość</button>

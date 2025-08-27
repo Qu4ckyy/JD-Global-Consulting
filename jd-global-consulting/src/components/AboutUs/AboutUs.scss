@@ -16,6 +16,17 @@
   padding: 0 24px;
 }
 
+.tilesBox {
+  background: #f6f6f6;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
 .title {
   font-size: 40px;
   color: #070046;
@@ -35,7 +46,6 @@
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: #f6f6f6;
 }
 
 .aboutMission {
@@ -432,5 +442,26 @@
 @media (max-width: 825px) {
   .vision .aboutSection-inner {
     flex-direction: column-reverse !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .title {
+    margin-top: 24px;
+    padding-left: 24px;
+    font-size: clamp(28px, 2.6vw, 34px);
+  }
+
+  .aboutMission .aboutSection-inner,
+  .vision .aboutSection-inner,
+  .whoAreWe .aboutSection-inner {
+    padding: 24px 16px;
+    gap: 64px;
+  }
+
+  .aboutMission .missionLeft img,
+  .vision .visionRight img,
+  .whoAreWe .whoLeft img {
+    max-width: clamp(320px, 34vw, 480px);
   }
 }

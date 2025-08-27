@@ -598,3 +598,45 @@
     font-size: 1rem;
   }
 }
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .mainHeader .headerLeft img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    max-height: clamp(280px, 32vw, 420px);
+    border-radius: 24px;
+  }
+
+  .subHeaderRight img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    max-height: clamp(280px, 32vw, 420px);
+    border-radius: 24px;
+  }
+
+  .subHeader {
+    gap: 64px;
+  }
+  .subHeaderLeft {
+    padding: clamp(24px, 2.5vw, 32px);
+  }
+
+  .subLeft2 img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    max-height: clamp(280px, 32vw, 420px);
+    border-radius: 24px;
+  }
+
+  .subHeader2 {
+    gap: 64px;
+  }
+  .subRight2 {
+    padding: clamp(24px, 2.5vw, 32px);
+  }
+}

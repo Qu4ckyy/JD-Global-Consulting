@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Helmet } from "react-helmet";
+import { fixPolishWidows } from "../../utils/typography";
 
 const COCKPIT_URL =
   process.env.REACT_APP_COCKPIT_URL || "https://jdc.technischools.com";
@@ -88,12 +89,16 @@ const News = () => {
         const formatted = list.map((item) => ({
           slug: item.slug,
           title: item.title,
-          description: stripHTML(item.description),
+          description: fixPolishWidows(stripHTML(item.description)),
           date: item.date,
           time: item.time,
           img: makeUrl(item.img),
           heroImg: makeUrl(item.heroImg),
-          content: item.content || [],
+          content: Array.isArray(item.content)
+            ? item.content.map((block) =>
+                typeof block === "string" ? fixPolishWidows(block) : block
+              )
+            : [],
         }));
 
         setArticles(formatted);
@@ -252,7 +257,7 @@ const News = () => {
 
                 <h3>{article.title}</h3>
                 <p className="description">
-                  {truncate(article.description, 120)}
+                  {fixPolishWidows(truncate(article.description, 120))}
                 </p>
               </div>
             );

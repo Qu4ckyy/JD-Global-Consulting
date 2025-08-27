@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../hooks/useIsMobile";
 import "./AboutUs.scss";
+import { fixPolishWidows } from "../../utils/typography";
 
 const AboutUs = () => {
   const isMobile = useIsMobile(825);
@@ -56,64 +57,76 @@ const AboutUs = () => {
           </button>
         </div>
       </header>
+
       <div className="aboutUsPage-content">
         <h1 className="title">O Nas</h1>
-        <section className="aboutMission">
-          <hr />
-          <div className="aboutSection-inner">
-            <div className="missionLeft">
-              <img src="mission.png" loading="lazy" alt="misja" />
+
+        {/* WRAPPER NA 3 KAFELKI */}
+        <div className="tilesBox">
+          <section className="aboutMission">
+            <hr />
+            <div className="aboutSection-inner">
+              <div className="missionLeft">
+                <img src="mission.png" loading="lazy" alt="misja" />
+              </div>
+              <div className="missionRight">
+                <h1>Misja</h1>
+                <span>
+                  {fixPolishWidows(
+                    "Naszą misją jest wspieranie przedsiębiorstw w opracowywaniu i wdrażaniu strategii, które umożliwiają fundamentalne zmiany, podnoszą efektywność oraz prowadzą do osiągnięcia wyższych poziomów dojrzałości biznesowej."
+                  )}
+                  <br /> <br />
+                  {fixPolishWidows(
+                    "Pomagamy organizacjom nie tylko rozwiązywać bieżące problemy, ale również budować trwałe fundamenty dla długoterminowego rozwoju."
+                  )}
+                </span>
+              </div>
             </div>
-            <div className="missionRight">
-              <h1>Misja</h1>
-              <span>
-                Naszą misją jest wspieranie przedsiębiorstw w opracowywaniu i
-                wdrażaniu strategii, które umożliwiają fundamentalne zmiany,
-                podnoszą efektywność oraz prowadzą do osiągnięcia wyższych
-                poziomów dojrzałości biznesowej. <br /> <br />
-                Pomagamy organizacjom nie tylko rozwiązywać bieżące problemy,
-                ale również budować trwałe fundamenty dla długoterminowego
-                rozwoju.
-              </span>
+          </section>
+
+          <section className="vision">
+            <div className="aboutSection-inner">
+              <div className="visionLeft">
+                <h1>Wizja</h1>
+                <span>
+                  {fixPolishWidows(
+                    "Chcemy być pierwszym wyborem dla firm poszukujących przełomowych rozwiązań, niezależnie od skali czy branży."
+                  )}
+                  <br /> <br />
+                  {fixPolishWidows(
+                    "Dążymy do tego, by dzięki naszemu wsparciu przedsiębiorstwa skutecznie reagowały na zmieniające się warunki rynkowe, rozwijały się dynamicznie i osiągały trwałą przewagę konkurencyjną."
+                  )}
+                </span>
+              </div>
+              <div className="visionRight">
+                <img src="vision.png" alt="wizja" loading="lazy" />
+              </div>
             </div>
-          </div>
-        </section>
-        <section className="vision">
-          <div className="aboutSection-inner">
-            <div className="visionLeft">
-              <h1>Wizja</h1>
-              <span>
-                Chcemy być pierwszym wyborem dla firm poszukujących przełomowych
-                rozwiązań, niezależnie od skali czy branży. <br /> <br /> Dążymy
-                do tego, by dzięki naszemu wsparciu przedsiębiorstwa skutecznie
-                reagowały na zmieniające się warunki rynkowe, rozwijały się
-                dynamicznie i osiągały trwałą przewagę konkurencyjną.
-              </span>
+          </section>
+
+          <section className="whoAreWe">
+            <div className="aboutSection-inner">
+              <div className="whoLeft">
+                <img src="aboutUs.png" alt="kim jesteśmy?" loading="lazy" />
+              </div>
+              <div className="whoRight">
+                <h1>Kim jesteśmy?</h1>
+                <span>
+                  {fixPolishWidows(
+                    "JD Global Consulting to zaufany partner biznesowy, który łączy doświadczenie, wiedzę i innowacyjność."
+                  )}
+                  <br />
+                  <br />
+                  {fixPolishWidows(
+                    "Tworzymy zespół ekspertów oraz praktyków, którzy zdobywali doświadczenie na strategicznych stanowiskach w różnych sektorach gospodarki. Dzięki temu oferujemy nie tylko doradztwo, ale również realne, wdrażalne rozwiązania."
+                  )}
+                </span>
+              </div>
             </div>
-            <div className="visionRight">
-              <img src="vision.png" alt="wizja" loading="lazy" />
-            </div>
-          </div>
-        </section>
-        <section className="whoAreWe">
-          <div className="aboutSection-inner">
-            <div className="whoLeft">
-              <img src="aboutUs.png" alt="kim jesteśmy?" loading="lazy" />
-            </div>
-            <div className="whoRight">
-              <h1>Kim jesteśmy?</h1>
-              <span>
-                JD Global Consulting to zaufany partner biznesowy, który łączy
-                doświadczenie, wiedzę i innowacyjność. <br />
-                <br />
-                Tworzymy zespół ekspertów oraz praktyków, którzy zdobywali
-                doświadczenie na strategicznych stanowiskach w różnych sektorach
-                gospodarki. Dzięki temu oferujemy nie tylko doradztwo, ale
-                również realne, wdrażalne rozwiązania.
-              </span>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
+        {/* /tilesBox */}
+
         <section className="whyUs">
           <h2 className="whyUs-title">Dlaczego my?</h2>
           <div className="whyUs-cards">

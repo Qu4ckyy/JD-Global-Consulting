@@ -4,6 +4,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 import "./Article.scss";
 import { Helmet } from "react-helmet";
 import { articles as localArticles } from "../../data/articles";
+import { fixPolishWidows } from "../../utils/typography";
 
 const COCKPIT_URL = (
   process.env.REACT_APP_COCKPIT_URL || "https://jdc.technischools.com"
@@ -78,17 +79,22 @@ const Article = () => {
 
       const it = list[0];
 
+      // H2 bez helpera; akapity z helperem
       const blocks = (Array.isArray(it.content) ? it.content : [])
         .flatMap((entry) => [
-          entry?.heading ? { type: "h2", text: entry.heading } : null,
-          entry?.text ? { type: "p", text: entry.text } : null,
+          entry?.heading
+            ? { type: "h2", text: stripHTML(entry.heading) }
+            : null,
+          entry?.text
+            ? { type: "p", text: fixPolishWidows(stripHTML(entry.text)) }
+            : null,
         ])
         .filter(Boolean);
 
       setArticle({
         slug: it.slug,
         title: it.title,
-        description: stripHTML(it.description),
+        description: fixPolishWidows(stripHTML(it.description)),
         date: it.date,
         time: it.time,
         img: makeUrl(it.img, baseUrl),
@@ -124,7 +130,7 @@ const Article = () => {
           title: it.title,
           time: it.time,
           img: makeUrl(it.img, baseUrl),
-          description: stripHTML(it.description),
+          description: fixPolishWidows(stripHTML(it.description)),
         }));
       setAlsoSee(others);
     }
@@ -134,7 +140,15 @@ const Article = () => {
         console.error("Błąd pobierania artykułu:", err);
         const fallback = (localArticles || []).find((a) => a.slug === slug);
         if (fallback) {
-          setArticle(fallback);
+          setArticle({
+            ...fallback,
+            description: fixPolishWidows(stripHTML(fallback.description || "")),
+            content: (fallback.content || []).map((b) =>
+              b.type === "p"
+                ? { ...b, text: fixPolishWidows(stripHTML(b.text || "")) }
+                : { ...b, text: stripHTML(b.text || "") }
+            ),
+          });
           setNotFound(false);
         } else {
           setNotFound(true);
@@ -248,32 +262,34 @@ const Article = () => {
         <h2 className="also-see-title">Zobacz również</h2>
         <hr />
         <div className="also-see-articles">
-          {alsoSee.map((a) => (
-            <div
-              className="also-see-article"
-              key={a.slug}
-              onClick={() => navigate(`/aktualności/${a.slug}`)}
-            >
-              <div className="also-see-image-wrapper">
-                <img src={a.img} alt={a.title} loading="lazy" />
-                <button className="also-see-read-button">
-                  Przeczytaj artykuł
-                </button>
-              </div>
-              <div className="also-see-meta">
-                <div className="also-see-readingTime">
-                  <img src="/clock.png" alt="czas czytania" loading="lazy" />
-                  <span>{a.time}</span>
+          {alsoSee.map((a) => {
+            const short =
+              a.description.length > 120
+                ? a.description.slice(0, 120).trim() + "..."
+                : a.description;
+            return (
+              <div
+                className="also-see-article"
+                key={a.slug}
+                onClick={() => navigate(`/aktualności/${a.slug}`)}
+              >
+                <div className="also-see-image-wrapper">
+                  <img src={a.img} alt={a.title} loading="lazy" />
+                  <button className="also-see-read-button">
+                    Przeczytaj artykuł
+                  </button>
                 </div>
-                <h3>{a.title}</h3>
-                <p className="also-see-description">
-                  {a.description.length > 120
-                    ? a.description.slice(0, 120).trim() + "..."
-                    : a.description}
-                </p>
+                <div className="also-see-meta">
+                  <div className="also-see-readingTime">
+                    <img src="/clock.png" alt="czas czytania" loading="lazy" />
+                    <span>{a.time}</span>
+                  </div>
+                  <h3>{a.title}</h3>
+                  <p className="also-see-description">{short}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

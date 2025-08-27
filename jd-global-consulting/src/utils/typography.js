@@ -32,6 +32,8 @@ const NBSP_WORDS = [
   "jak",
   "gdy",
   "aby",
+  "aż",
+  "więc",
 ];
 
 const WORDS_RE = new RegExp(String.raw`\b(${NBSP_WORDS.join("|")})\s`, "giu");
