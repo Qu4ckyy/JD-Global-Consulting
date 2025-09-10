@@ -177,14 +177,12 @@
   object-fit: cover;
 }
 
-/* Na węższych ekranach lekko zmieniamy zakres, żeby nadal wyglądało proporcjonalnie */
 @media (max-width: 1000px) {
   .ourService img {
     height: clamp(160px, 28vw, 220px);
   }
 }
 
-/* Wyrównanie treści i stabilna wysokość kafelka bez zmiany siatki */
 .boxContent {
   display: flex;
   flex-direction: column;
@@ -192,9 +190,9 @@
 }
 
 .boxContent p {
-  flex: 1 1 auto; /* tekst może „zająć” miejsce, a przycisk spadnie na dół */
+  flex: 1 1 auto;
 }
 
 .ourService button {
-  margin-top: 8px; /* delikatny oddech nad CTA */
+  margin-top: 8px;
 }

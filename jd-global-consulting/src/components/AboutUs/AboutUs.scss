@@ -1,19 +1,28 @@
 .aboutUsPage-content {
+  --container: 1200px;
   width: 100%;
   max-width: 100vw;
   margin: 0 auto;
-  padding: 100px 0 48px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 48px;
+  padding: 16px 0 48px 0;
 }
 
-.aboutUsInner {
-  max-width: 1200px;
+.aboutUsPage-content > .title {
+  max-width: var(--container);
+  margin: 48px auto 12px;
+  color: #070046;
+  font-weight: 400;
+  font-size: 40px;
+  padding: 0;
+  text-align: left;
+}
+
+.aboutMission > hr {
+  display: block;
+  border: 0;
+  height: 1px;
+  background: #e6e8f0;
+  width: calc(min(var(--container), 100%));
   margin: 0 auto;
-  width: 100%;
-  padding: 0 24px;
 }
 
 .tilesBox {
@@ -27,19 +36,6 @@
   margin-bottom: 48px;
 }
 
-.title {
-  font-size: 40px;
-  color: #070046;
-  font-weight: 400;
-  text-align: left;
-  margin-top: 70px;
-  padding-left: 40px;
-
-  @media (max-width: 1024px) {
-    text-align: center;
-  }
-}
-
 .aboutMission,
 .vision,
 .whoAreWe {
@@ -48,420 +44,196 @@
   margin-right: calc(50% - 50vw);
 }
 
-.aboutMission {
-  .missionLeft {
-    flex: 1.1;
-    img {
-      width: 95%;
-      height: auto;
-      border-radius: 16px;
-      display: block;
-      margin-left: 0;
-      margin-right: auto;
-      align-self: flex-start;
-    }
-  }
-
-  .missionRight {
-    flex: 1.1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-
-    h1 {
-      font-size: 40px;
-      color: #060041;
-      font-weight: 400;
-      margin-bottom: 16px;
-      margin-left: 0;
-    }
-
-    span {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #151515cc;
-      width: 60%;
-    }
-
-    @media (max-width: 1024px) {
-      text-align: center;
-      display: flex;
-      align-items: center;
-    }
-  }
+.aboutSection-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  padding: 48px 24px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.vision {
-  .visionLeft {
-    flex: 0.9;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-
-    margin-left: 0;
-    padding-left: 106px;
-
-    h1 {
-      font-size: 40px;
-      color: #060041;
-      font-weight: 400;
-      margin-bottom: 16px;
-      margin-left: 0;
-    }
-
-    span {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #151515cc;
-      width: 60%;
-    }
-
-    @media (max-width: 1024px) {
-      text-align: center;
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .visionRight {
-    flex: 1.1;
-
-    img {
-      width: 95%;
-      height: auto;
-      border-radius: 16px;
-      display: block;
-
-      margin-left: auto;
-      margin-right: 0;
-      align-self: flex-end;
-    }
-  }
+.aboutMission .missionLeft {
+  flex: 1.1;
+}
+.aboutMission .missionLeft img {
+  width: 95%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  box-shadow: 0 8px 24px rgba(10, 13, 58, 0.06);
+}
+.aboutMission .missionRight {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.aboutMission .missionRight h1 {
+  font-size: 40px;
+  color: #060041;
+  font-weight: 400;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.aboutMission .missionRight span {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #151515cc;
+  width: min(720px, 95%);
+  text-align: left;
 }
 
-.vision .aboutSection-inner {
-  gap: 131px;
+.vision .visionLeft {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.vision .visionLeft h1 {
+  font-size: 40px;
+  color: #060041;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.vision .visionLeft span {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #151515cc;
+  width: min(720px, 95%);
+  text-align: left;
+}
+.vision .visionRight {
+  flex: 1.1;
+}
+.vision .visionRight img {
+  width: 95%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  box-shadow: 0 8px 24px rgba(10, 13, 58, 0.06);
 }
 
-.whoAreWe {
-  .whoLeft {
-    flex: 1.1;
-    img {
-      width: 95%;
-      height: auto;
-      border-radius: 16px;
-      display: block;
-      margin-left: 0;
-      margin-right: auto;
-      align-self: flex-start;
-    }
-  }
-
-  .whoRight {
-    flex: 1.1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-
-    h1 {
-      font-size: 40px;
-      color: #060041;
-      font-weight: 400;
-      margin-bottom: 16px;
-      margin-left: 0;
-    }
-
-    span {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #151515cc;
-      width: 60%;
-    }
-    @media (max-width: 1024px) {
-      text-align: center;
-      display: flex;
-      align-items: center;
-    }
-  }
+.whoAreWe .whoLeft {
+  flex: 1.1;
 }
-
-@media (max-width: 768px) {
-  .aboutMission .aboutSection-inner,
-  .vision .aboutSection-inner,
-  .whoAreWe .aboutSection-inner {
-    flex-direction: column !important;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 32px 0;
-    gap: 24px;
-  }
-  .aboutSection-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 32px 0;
-    gap: 24px;
-  }
-  .aboutMission .missionLeft,
-  .vision .visionRight,
-  .whoAreWe .whoLeft {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-  .aboutMission .missionLeft img,
-  .vision .visionRight img,
-  .whoAreWe .whoLeft img {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    display: block;
-    border-radius: 0;
-  }
-  .aboutMission .missionRight,
-  .vision .visionLeft,
-  .whoAreWe .whoRight {
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  .aboutMission .missionRight span,
-  .vision .visionLeft span,
-  .whoAreWe .whoRight span {
-    width: 100%;
-    max-width: 95vw;
-    margin: 0 auto;
-    display: block;
-  }
-  .aboutMission .aboutSection-inner,
-  .vision .aboutSection-inner,
-  .whoAreWe .aboutSection-inner {
-    padding-left: 0;
-    padding-right: 0;
-  }
+.whoAreWe .whoLeft img {
+  width: 95%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  box-shadow: 0 8px 24px rgba(10, 13, 58, 0.06);
+}
+.whoAreWe .whoRight {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.whoAreWe .whoRight h1 {
+  font-size: 40px;
+  color: #070046;
+  font-weight: 400;
+  margin-bottom: 16px;
+  line-height: 135%;
+  text-align: left;
+}
+.whoAreWe .whoRight span {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #151515cc;
+  width: min(720px, 95%);
+  text-align: left;
 }
 
 .whyUs {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  padding: 48px 0;
-
-  .whyUs-title {
-    font-size: 1.8rem;
-    color: #181c5a;
-    font-weight: 400;
-  }
-
-  .whyUs-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 24px;
-    width: 100%;
-
-    .why {
-      flex: 1;
-      max-width: 350px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 16px;
-      padding: 24px;
-      background-color: #f7f7fa;
-      border-radius: 16px;
-
-      img {
-        width: 70px;
-        height: 70px;
-      }
-
-      span {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #151515cc;
-      }
-    }
-  }
-}
-@media (max-width: 1024px) {
-  .whyUs {
-    padding: 32px 0;
-  }
-
-  .whyUs-cards {
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-  }
-
-  .whyUs-cards .why {
-    max-width: 45%;
-  }
-}
-
-@media (max-width: 600px) {
-  .whyUs {
-    padding: 24px 0;
-  }
-
-  .whyUs-cards {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .whyUs-cards .why {
-    max-width: 100%;
-  }
-}
-
-.aboutSection-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto 64px;
   padding: 0 24px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 48px;
-  width: 100%;
-  box-sizing: border-box;
+}
+.whyUs .whyUs-title {
+  text-align: center;
+  color: #070046;
+  font-weight: 400;
+  font-size: 34px;
+  margin-bottom: 24px;
+}
+.whyUs .whyUs-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.whyUs .why {
+  background: #f3f4fa;
+  border-radius: 20px;
+  text-align: center;
+  padding: 24px;
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(10, 13, 58, 0.06);
+}
+.whyUs .why img {
+  width: 48px;
+  height: auto;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(10%) sepia(11%) saturate(2492%)
+    hue-rotate(203deg) brightness(92%) contrast(92%);
+}
+.whyUs .why span {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #151515cc;
 }
 
-.aboutMission .aboutSection-inner,
-.vision .aboutSection-inner,
-.whoAreWe .aboutSection-inner {
-  max-width: none;
-  margin: 0;
-  width: 100%;
-  padding: 40px 20px;
-}
-
-.aboutMission .aboutSection-inner {
-  align-items: stretch;
-  gap: 131px;
-  min-height: 400px;
-  height: 100%;
-}
-
-.aboutUsPage-content {
-  padding-top: 56px !important;
-}
-
-.aboutMission .aboutSection-inner,
-.vision .aboutSection-inner,
-.whoAreWe .aboutSection-inner {
-  align-items: center !important;
-}
-
-.aboutMission .missionLeft img,
-.vision .visionRight img,
-.whoAreWe .whoLeft img {
-  width: 100% !important;
-  max-width: clamp(360px, 40vw, 520px) !important;
-  height: auto !important;
-  border-radius: 16px;
-}
-
-.aboutMission .missionRight span,
-.vision .visionLeft span,
-.whoAreWe .whoRight span {
-  width: 100% !important;
-  max-width: 60ch;
-}
-
-.aboutMission .missionRight h1,
-.vision .visionLeft h1,
-.whoAreWe .whoRight h1 {
-  font-size: clamp(24px, 3.2vw, 40px) !important;
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-.vision .visionLeft {
-  margin-left: 0 !important;
-}
-
-@media (max-width: 900px) {
-  .aboutMission .aboutSection-inner,
-  .vision .aboutSection-inner,
-  .whoAreWe .aboutSection-inner {
-    gap: 20px !important;
+@media (max-width: 1100px) {
+  .whyUs .whyUs-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .aboutMission .missionLeft img,
-  .vision .visionRight img,
-  .whoAreWe .whoLeft img {
-    max-width: min(420px, 90vw) !important;
-    margin: 0 auto;
+@media (max-width: 1024px) {
+  .aboutSection-inner {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 16px;
   }
-
-  .aboutMission .missionRight span,
-  .vision .visionLeft span,
-  .whoAreWe .whoRight span {
-    max-width: 70ch;
+  .aboutMission .missionRight,
+  .whoAreWe .whoRight {
     text-align: center;
+    align-items: center;
+  }
+  .aboutMission .missionLeft img,
+  .vision .visionRight img,
+  .whoAreWe .whoLeft img {
+    width: 100%;
+    max-width: 520px;
     margin: 0 auto;
   }
-}
-
-@media (max-width: 768px) {
-  .aboutMission .missionLeft img,
-  .vision .visionRight img,
-  .whoAreWe .whoLeft img {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-
-    height: clamp(200px, 56vw, 320px) !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    border-radius: 0 !important;
+  .aboutUsPage-content > .title {
+    padding-left: 16px;
+  }
+  .aboutUsPage-content > hr {
+    margin-left: 16px;
+    margin-right: 16px;
   }
 }
 
-@media (max-width: 825px) {
-  .vision .aboutSection-inner {
-    flex-direction: column-reverse !important;
+@media (max-width: 560px) {
+  .whyUs .whyUs-cards {
+    grid-template-columns: 1fr;
   }
-}
-
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .title {
-    margin-top: 24px;
-    padding-left: 24px;
-    font-size: clamp(28px, 2.6vw, 34px);
-  }
-
-  .aboutMission .aboutSection-inner,
-  .vision .aboutSection-inner,
-  .whoAreWe .aboutSection-inner {
-    padding: 24px 16px;
-    gap: 64px;
-  }
-
-  .aboutMission .missionLeft img,
-  .vision .visionRight img,
-  .whoAreWe .whoLeft img {
-    max-width: clamp(320px, 34vw, 480px);
+  .tilesBox {
+    border-radius: 30px;
   }
 }

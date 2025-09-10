@@ -59,7 +59,7 @@ const AboutUs = () => {
       </header>
 
       <div className="aboutUsPage-content">
-        <h1 className="title">O Nas</h1>
+        <h1 className="title">O nas</h1>
 
         {/* WRAPPER NA 3 KAFELKI */}
         <div className="tilesBox">
