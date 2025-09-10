@@ -2,6 +2,11 @@
   max-width: 1400px;
   margin: 60px auto 0 auto;
   width: 100%;
+
+  @media (max-width: 600px) {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .newsfeed-header {
@@ -20,6 +25,10 @@
     margin-bottom: 0;
     text-align: left;
     padding-left: 0;
+
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   }
   .newsfeed-hr {
     border: none;
@@ -76,6 +85,12 @@
     color: #070046;
     text-decoration: underline;
     background: #f5f5fa;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
   }
 }
 
@@ -321,6 +336,10 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+
+  @media (max-width: 600px) {
+    align-items: center;
+  }
 }
 
 .newsfeed-title-block h1 {

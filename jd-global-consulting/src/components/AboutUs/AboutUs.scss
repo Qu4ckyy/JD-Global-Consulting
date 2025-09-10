@@ -8,7 +8,7 @@
 
 .aboutUsPage-content > .title {
   max-width: var(--container);
-  margin: 48px auto 12px;
+  margin: 24px auto 12px;
   color: #070046;
   font-weight: 400;
   font-size: 40px;
@@ -203,6 +203,10 @@
 }
 
 @media (max-width: 1024px) {
+  .aboutUsPage-content {
+    padding-top: 4px;
+  }
+
   .aboutSection-inner {
     flex-direction: column;
     gap: 24px;
@@ -221,11 +225,19 @@
     margin: 0 auto;
   }
   .aboutUsPage-content > .title {
+    padding-top: 0;
     padding-left: 16px;
   }
   .aboutUsPage-content > hr {
     margin-left: 16px;
     margin-right: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutUsPage-content > .title {
+    margin: 0;
+    text-align: center;
   }
 }
 
@@ -235,5 +247,22 @@
   }
   .tilesBox {
     border-radius: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vision .aboutSection-inner {
+    flex-direction: column-reverse;
+  }
+
+  .vision .visionLeft {
+    align-items: center;
+    text-align: center;
+  }
+
+  .vision .visionLeft h1 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

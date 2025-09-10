@@ -61,7 +61,6 @@ const AboutUs = () => {
       <div className="aboutUsPage-content">
         <h1 className="title">O nas</h1>
 
-        {/* WRAPPER NA 3 KAFELKI */}
         <div className="tilesBox">
           <section className="aboutMission">
             <hr />
