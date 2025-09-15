@@ -167,7 +167,7 @@ const Economic = () => {
                 inwestycji.
               </span>{" "}
               <br /> Dbasz o stabilność firmy, zanim pojawi się problem. Z nami
-              działasz rozważnie, a nie reaktywnie.
+              działasz rozważnie, <br /> a nie reaktywnie.
             </p>
             <button className="visitation" onClick={() => navigate("/kontakt")}>
               Umów się na konsultacje

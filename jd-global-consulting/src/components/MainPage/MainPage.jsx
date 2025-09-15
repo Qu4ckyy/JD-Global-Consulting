@@ -533,7 +533,6 @@ const MainPage = () => {
             )}
           </p>
           <div className="contactInfo">
-            {/* krótkie pola kontaktowe – bez wrappera */}
             <div className="email">
               <span className="icon">
                 <img src="mail vector.svg" alt="email" />

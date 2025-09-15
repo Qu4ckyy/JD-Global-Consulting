@@ -80,8 +80,8 @@ const Transformation = () => {
                 kulturowe,
               </span>{" "}
               które przekładają się na konkretne wyniki. Łączymy wizję z
-              działaniem, by Twoja firma nie tylko się zmieniała – ale rosła w
-              siłę.
+              działaniem, by Twoja firma <br /> nie tylko się zmieniała – ale
+              rosła w siłę.
             </p>
             <p className="ending">
               Z nami rozwój to coś więcej niż hasło. <br /> To konkretny plan i
@@ -161,8 +161,8 @@ const Transformation = () => {
               Pomagamy wyjść poza codzienność i zaplanować przyszłość, która
               daje przewagę.{" "}
               <span className="bolder">
-                Dzięki naszemu wsparciu transformacja nie rozbija firmy, tylko
-                ją wzmacnia.
+                Dzięki naszemu wsparciu transformacja nie rozbija firmy,
+                <br /> tylko ją wzmacnia.
               </span>{" "}
               Działasz nowocześniej, szybciej i skuteczniej.
             </p>

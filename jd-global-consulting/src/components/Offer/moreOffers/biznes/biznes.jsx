@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../../../../hooks/useIsMobile";
+import { fixPolishWidows } from "../../../../utils/typography";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -69,14 +70,15 @@ const Biznes = () => {
             <h1 className="bold">Doradztwo biznesowe,</h1>
             <h1 className="thin">które przyspiesza rozwój Twojej firmy.</h1>
             <p className="description">
-              Każdy biznes napotyka wyzwania, ale to sposób, w jaki je
-              pokonujesz, decyduje o przyszłości firmy.{" "}
+              {fixPolishWidows(
+                "Każdy biznes napotyka wyzwania, ale to sposób, w jaki je pokonujesz, decyduje o przyszłości firmy."
+              )}{" "}
               <span className="bolder">
                 Nasze doradztwo biznesowe to klucz do efektywnego rozwoju,
               </span>{" "}
-              poprawy wyników i optymalizacji działań. Dzięki naszej wiedzy i
-              doświadczeniu możesz w pełni wykorzystać potencjał swojej
-              organizacji.
+              {fixPolishWidows(
+                "poprawy wyników i optymalizacji działań. Dzięki naszej wiedzy i doświadczeniu możesz w pełni wykorzystać potencjał swojej organizacji."
+              )}
             </p>
             <p className="ending">
               Z nami Twoja firma zyska nową jakość – <br /> osiągnij sukces z

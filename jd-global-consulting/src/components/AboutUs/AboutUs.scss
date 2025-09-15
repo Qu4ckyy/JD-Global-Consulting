@@ -14,6 +14,7 @@
   font-size: 40px;
   padding: 0;
   text-align: left;
+  transform: translateX(-76px);
 }
 
 .aboutMission > hr {
@@ -251,6 +252,10 @@
 }
 
 @media (max-width: 1024px) {
+  .aboutUsPage-content > .title {
+    transform: none;
+  }
+
   .vision .aboutSection-inner {
     flex-direction: column-reverse;
   }

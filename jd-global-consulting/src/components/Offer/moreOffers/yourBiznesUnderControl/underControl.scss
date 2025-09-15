@@ -13,13 +13,14 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  justify-content: stretch;
+  justify-content: center; /* było: stretch */
   width: 100%;
   max-width: 100%;
   min-height: 420px;
   background: #f6f6f6;
   border-radius: 32px;
   overflow: hidden;
+  gap: 162px; /* dodane – jak w pozostałych sekcjach */
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -63,15 +64,15 @@
 }
 
 .headerRight {
-  flex: 1 1 auto;
-  width: auto;
+  width: 50%;
+  min-width: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   text-align: left;
-  padding: 0 64px 0 64px;
+  padding: 56px 64px;
   background: #f6f6f6;
   box-sizing: border-box;
 
@@ -79,7 +80,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 64px 0 0;
+    padding: 32px 24px;
   }
 
   @media (max-width: 768px) {
@@ -322,14 +323,21 @@
   width: 50%;
   min-width: 0;
   height: 100%;
-  position: relative;
-  padding: 56px 48px 56px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 64px;
   background: transparent;
   box-sizing: border-box;
 
   @media (max-width: 768px) {
     width: 100%;
     padding: 32px 24px;
+  }
+
+  @media (min-width: 1400px) {
+    justify-content: flex-end;
+    padding: 56px 24px 56px 64px;
   }
 }
 
@@ -338,8 +346,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  text-align: center;
-  margin-left: 70px;
+  text-align: left;
+  margin-left: 0;
 
   @media (max-width: 768px) {
     margin-left: 0;
@@ -420,8 +428,8 @@
   min-width: 0;
   height: auto;
   display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   padding: 0;
   margin: 0;

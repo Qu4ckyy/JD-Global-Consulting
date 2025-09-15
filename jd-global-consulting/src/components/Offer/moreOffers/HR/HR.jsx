@@ -82,7 +82,7 @@ const HR = () => {
               <span className="bolder">
                 Pomagamy firmom przyciągać, rozwijać i zatrzymywać{" "}
               </span>
-              – bo wiemy, że za każdą strategią stoją konkretni ludzie.
+              – <br /> bo wiemy, że za każdą strategią stoją konkretni ludzie.
             </p>
             <p className="ending">
               Z nami HR przestaje być działem – <br /> staje się siłą napędową

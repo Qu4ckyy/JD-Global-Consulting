@@ -36,6 +36,11 @@ const NBSP_WORDS = [
   "więc",
   "się",
   "jeśli",
+  "są",
+  "je",
+  "jaki",
+  "jest",
+  "także",
 ];
 
 const WORDS_RE = new RegExp(String.raw`\b(${NBSP_WORDS.join("|")})\s`, "giu");

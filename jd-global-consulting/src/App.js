@@ -68,7 +68,7 @@ function App() {
             element={<TaxSpecialist />}
           ></Route>
           <Route
-            path="/specjalistaDS.fuzjii"
+            path="/specjalistaDS.fuzji"
             element={<FusionSpecialist />}
           ></Route>
           <Route

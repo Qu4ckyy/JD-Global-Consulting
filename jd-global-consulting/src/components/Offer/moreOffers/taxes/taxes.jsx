@@ -86,7 +86,7 @@ const Taxes = () => {
               a nie na problemach prawnych.
             </p>
             <p className="ending">
-              Z nami zyskujesz pewność, że Twoja firma jest <br /> zawsze w
+              Z nami zyskujesz pewność, że Twoja firma <br /> jest zawsze w
               zgodzie z prawem i optymalizuje <br /> obciążenia podatkowe.
             </p>
             <button className="visitation" onClick={() => navigate("/kontakt")}>
@@ -141,7 +141,7 @@ const Taxes = () => {
               do branży i specyfiki Twojego biznesu. <br /> Dzięki naszej wiedzy
               prawnej i podatkowej{" "}
               <span className="bolder">oferujemy praktyczne rozwiązania,</span>{" "}
-              które są zgodne z aktualnymi przepisami, ale także{" "}
+              które są zgodne z aktualnymi przepisami, <br /> ale także{" "}
               <span className="bolder">
                 skuteczne w obniżeniu obciążeń podatkowych i prawnych.
               </span>
