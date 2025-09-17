@@ -671,7 +671,18 @@ const MainPage = () => {
             <button className="news" onClick={() => navigate("/aktualności")}>
               Aktualności
             </button>
-            <button className="specialists" onClick={() => navigate("/")}>
+            <button
+              className="specialists"
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  const teamSection = document.getElementById("team-header");
+                  if (teamSection) {
+                    teamSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }, 100);
+              }}
+            >
               Specjaliści
             </button>
             <button className="services" onClick={() => navigate("/oferta")}>
